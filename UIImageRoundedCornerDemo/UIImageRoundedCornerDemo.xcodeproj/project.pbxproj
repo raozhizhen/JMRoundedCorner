@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		886AF3C31C7C621E000FF00E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3C21C7C621E000FF00E /* main.m */; };
+		886AF3C61C7C621E000FF00E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3C51C7C621E000FF00E /* AppDelegate.m */; };
+		886AF3C91C7C621E000FF00E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3C81C7C621E000FF00E /* ViewController.m */; };
+		886AF3CC1C7C621E000FF00E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3CA1C7C621E000FF00E /* Main.storyboard */; };
+		886AF3CE1C7C621E000FF00E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3CD1C7C621E000FF00E /* Assets.xcassets */; };
+		886AF3D11C7C621E000FF00E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3CF1C7C621E000FF00E /* LaunchScreen.storyboard */; };
+		886AF3DC1C7C621E000FF00E /* UIImageRoundedCornerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3DB1C7C621E000FF00E /* UIImageRoundedCornerDemoTests.m */; };
+		886AF3E71C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3E61C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m */; };
+		886AF40A1C7C6779000FF00E /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 886AF4091C7C6779000FF00E /* avatar.jpg */; };
+		886AF40D1C7C67DD000FF00E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF40C1C7C67DD000FF00E /* TableViewCell.m */; };
+		886AF4101C7C6CA5000FF00E /* LPFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF40F1C7C6CA5000FF00E /* LPFPSLabel.m */; };
+		886AF4131C7C7035000FF00E /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4121C7C7035000FF00E /* ViewController2.m */; };
+		886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4151C7C70A9000FF00E /* TableViewCell2.m */; };
+		886AF41C1C7C8EEE000FF00E /* LPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4191C7C8EEE000FF00E /* LPMath.m */; };
+		886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		886AF3D81C7C621E000FF00E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 886AF3B61C7C621E000FF00E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 886AF3BD1C7C621E000FF00E;
+			remoteInfo = UIImageRoundedCornerDemo;
+		};
+		886AF3E31C7C621E000FF00E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 886AF3B61C7C621E000FF00E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 886AF3BD1C7C621E000FF00E;
+			remoteInfo = UIImageRoundedCornerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		886AF3BE1C7C621E000FF00E /* UIImageRoundedCornerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIImageRoundedCornerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		886AF3C21C7C621E000FF00E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		886AF3C41C7C621E000FF00E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		886AF3C51C7C621E000FF00E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		886AF3C71C7C621E000FF00E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		886AF3C81C7C621E000FF00E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		886AF3CB1C7C621E000FF00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		886AF3CD1C7C621E000FF00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		886AF3D01C7C621E000FF00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		886AF3D21C7C621E000FF00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		886AF3D71C7C621E000FF00E /* UIImageRoundedCornerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIImageRoundedCornerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		886AF3DB1C7C621E000FF00E /* UIImageRoundedCornerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageRoundedCornerDemoTests.m; sourceTree = "<group>"; };
+		886AF3DD1C7C621E000FF00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		886AF3E21C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIImageRoundedCornerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		886AF3E61C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageRoundedCornerDemoUITests.m; sourceTree = "<group>"; };
+		886AF3E81C7C621E000FF00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		886AF4091C7C6779000FF00E /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
+		886AF40B1C7C67DD000FF00E /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		886AF40C1C7C67DD000FF00E /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		886AF40E1C7C6CA5000FF00E /* LPFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPFPSLabel.h; sourceTree = "<group>"; };
+		886AF40F1C7C6CA5000FF00E /* LPFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPFPSLabel.m; sourceTree = "<group>"; };
+		886AF4111C7C7035000FF00E /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		886AF4121C7C7035000FF00E /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		886AF4141C7C70A9000FF00E /* TableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell2.h; sourceTree = "<group>"; };
+		886AF4151C7C70A9000FF00E /* TableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell2.m; sourceTree = "<group>"; };
+		886AF4181C7C8EEE000FF00E /* LPMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMath.h; sourceTree = "<group>"; };
+		886AF4191C7C8EEE000FF00E /* LPMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMath.m; sourceTree = "<group>"; };
+		886AF41A1C7C8EEE000FF00E /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		886AF3BB1C7C621E000FF00E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886AF3D41C7C621E000FF00E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886AF3DF1C7C621E000FF00E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		886AF3B51C7C621E000FF00E = {
+			isa = PBXGroup;
+			children = (
+				886AF4171C7C8EEE000FF00E /* JMRoundedCorner */,
+				886AF3C01C7C621E000FF00E /* UIImageRoundedCornerDemo */,
+				886AF3DA1C7C621E000FF00E /* UIImageRoundedCornerDemoTests */,
+				886AF3E51C7C621E000FF00E /* UIImageRoundedCornerDemoUITests */,
+				886AF3BF1C7C621E000FF00E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		886AF3BF1C7C621E000FF00E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				886AF3BE1C7C621E000FF00E /* UIImageRoundedCornerDemo.app */,
+				886AF3D71C7C621E000FF00E /* UIImageRoundedCornerDemoTests.xctest */,
+				886AF3E21C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		886AF3C01C7C621E000FF00E /* UIImageRoundedCornerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				886AF3C41C7C621E000FF00E /* AppDelegate.h */,
+				886AF3C51C7C621E000FF00E /* AppDelegate.m */,
+				886AF3C71C7C621E000FF00E /* ViewController.h */,
+				886AF3C81C7C621E000FF00E /* ViewController.m */,
+				886AF4111C7C7035000FF00E /* ViewController2.h */,
+				886AF4121C7C7035000FF00E /* ViewController2.m */,
+				886AF40E1C7C6CA5000FF00E /* LPFPSLabel.h */,
+				886AF40F1C7C6CA5000FF00E /* LPFPSLabel.m */,
+				886AF40B1C7C67DD000FF00E /* TableViewCell.h */,
+				886AF40C1C7C67DD000FF00E /* TableViewCell.m */,
+				886AF4141C7C70A9000FF00E /* TableViewCell2.h */,
+				886AF4151C7C70A9000FF00E /* TableViewCell2.m */,
+				886AF4091C7C6779000FF00E /* avatar.jpg */,
+				886AF3CA1C7C621E000FF00E /* Main.storyboard */,
+				886AF3CD1C7C621E000FF00E /* Assets.xcassets */,
+				886AF3CF1C7C621E000FF00E /* LaunchScreen.storyboard */,
+				886AF3D21C7C621E000FF00E /* Info.plist */,
+				886AF3C11C7C621E000FF00E /* Supporting Files */,
+			);
+			path = UIImageRoundedCornerDemo;
+			sourceTree = "<group>";
+		};
+		886AF3C11C7C621E000FF00E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				886AF3C21C7C621E000FF00E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		886AF3DA1C7C621E000FF00E /* UIImageRoundedCornerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				886AF3DB1C7C621E000FF00E /* UIImageRoundedCornerDemoTests.m */,
+				886AF3DD1C7C621E000FF00E /* Info.plist */,
+			);
+			path = UIImageRoundedCornerDemoTests;
+			sourceTree = "<group>";
+		};
+		886AF3E51C7C621E000FF00E /* UIImageRoundedCornerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				886AF3E61C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m */,
+				886AF3E81C7C621E000FF00E /* Info.plist */,
+			);
+			path = UIImageRoundedCornerDemoUITests;
+			sourceTree = "<group>";
+		};
+		886AF4171C7C8EEE000FF00E /* JMRoundedCorner */ = {
+			isa = PBXGroup;
+			children = (
+				886AF4181C7C8EEE000FF00E /* LPMath.h */,
+				886AF4191C7C8EEE000FF00E /* LPMath.m */,
+				886AF41A1C7C8EEE000FF00E /* UIImage+RoundedCorner.h */,
+				886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */,
+			);
+			name = JMRoundedCorner;
+			path = ../JMRoundedCorner;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		886AF3BD1C7C621E000FF00E /* UIImageRoundedCornerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 886AF3EB1C7C621E000FF00E /* Build configuration list for PBXNativeTarget "UIImageRoundedCornerDemo" */;
+			buildPhases = (
+				886AF3BA1C7C621E000FF00E /* Sources */,
+				886AF3BB1C7C621E000FF00E /* Frameworks */,
+				886AF3BC1C7C621E000FF00E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIImageRoundedCornerDemo;
+			productName = UIImageRoundedCornerDemo;
+			productReference = 886AF3BE1C7C621E000FF00E /* UIImageRoundedCornerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		886AF3D61C7C621E000FF00E /* UIImageRoundedCornerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 886AF3EE1C7C621E000FF00E /* Build configuration list for PBXNativeTarget "UIImageRoundedCornerDemoTests" */;
+			buildPhases = (
+				886AF3D31C7C621E000FF00E /* Sources */,
+				886AF3D41C7C621E000FF00E /* Frameworks */,
+				886AF3D51C7C621E000FF00E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				886AF3D91C7C621E000FF00E /* PBXTargetDependency */,
+			);
+			name = UIImageRoundedCornerDemoTests;
+			productName = UIImageRoundedCornerDemoTests;
+			productReference = 886AF3D71C7C621E000FF00E /* UIImageRoundedCornerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		886AF3E11C7C621E000FF00E /* UIImageRoundedCornerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 886AF3F11C7C621E000FF00E /* Build configuration list for PBXNativeTarget "UIImageRoundedCornerDemoUITests" */;
+			buildPhases = (
+				886AF3DE1C7C621E000FF00E /* Sources */,
+				886AF3DF1C7C621E000FF00E /* Frameworks */,
+				886AF3E01C7C621E000FF00E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				886AF3E41C7C621E000FF00E /* PBXTargetDependency */,
+			);
+			name = UIImageRoundedCornerDemoUITests;
+			productName = UIImageRoundedCornerDemoUITests;
+			productReference = 886AF3E21C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		886AF3B61C7C621E000FF00E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Jim;
+				TargetAttributes = {
+					886AF3BD1C7C621E000FF00E = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					886AF3D61C7C621E000FF00E = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 886AF3BD1C7C621E000FF00E;
+					};
+					886AF3E11C7C621E000FF00E = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 886AF3BD1C7C621E000FF00E;
+					};
+				};
+			};
+			buildConfigurationList = 886AF3B91C7C621E000FF00E /* Build configuration list for PBXProject "UIImageRoundedCornerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 886AF3B51C7C621E000FF00E;
+			productRefGroup = 886AF3BF1C7C621E000FF00E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				886AF3BD1C7C621E000FF00E /* UIImageRoundedCornerDemo */,
+				886AF3D61C7C621E000FF00E /* UIImageRoundedCornerDemoTests */,
+				886AF3E11C7C621E000FF00E /* UIImageRoundedCornerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		886AF3BC1C7C621E000FF00E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886AF40A1C7C6779000FF00E /* avatar.jpg in Resources */,
+				886AF3D11C7C621E000FF00E /* LaunchScreen.storyboard in Resources */,
+				886AF3CE1C7C621E000FF00E /* Assets.xcassets in Resources */,
+				886AF3CC1C7C621E000FF00E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886AF3D51C7C621E000FF00E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886AF3E01C7C621E000FF00E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		886AF3BA1C7C621E000FF00E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886AF3C91C7C621E000FF00E /* ViewController.m in Sources */,
+				886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */,
+				886AF41C1C7C8EEE000FF00E /* LPMath.m in Sources */,
+				886AF40D1C7C67DD000FF00E /* TableViewCell.m in Sources */,
+				886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */,
+				886AF3C61C7C621E000FF00E /* AppDelegate.m in Sources */,
+				886AF4131C7C7035000FF00E /* ViewController2.m in Sources */,
+				886AF3C31C7C621E000FF00E /* main.m in Sources */,
+				886AF4101C7C6CA5000FF00E /* LPFPSLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886AF3D31C7C621E000FF00E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886AF3DC1C7C621E000FF00E /* UIImageRoundedCornerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		886AF3DE1C7C621E000FF00E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				886AF3E71C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		886AF3D91C7C621E000FF00E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 886AF3BD1C7C621E000FF00E /* UIImageRoundedCornerDemo */;
+			targetProxy = 886AF3D81C7C621E000FF00E /* PBXContainerItemProxy */;
+		};
+		886AF3E41C7C621E000FF00E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 886AF3BD1C7C621E000FF00E /* UIImageRoundedCornerDemo */;
+			targetProxy = 886AF3E31C7C621E000FF00E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		886AF3CA1C7C621E000FF00E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				886AF3CB1C7C621E000FF00E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		886AF3CF1C7C621E000FF00E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				886AF3D01C7C621E000FF00E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		886AF3E91C7C621E000FF00E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		886AF3EA1C7C621E000FF00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		886AF3EC1C7C621E000FF00E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UIImageRoundedCornerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.UIImageRoundedCornerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		886AF3ED1C7C621E000FF00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UIImageRoundedCornerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.UIImageRoundedCornerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		886AF3EF1C7C621E000FF00E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UIImageRoundedCornerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.UIImageRoundedCornerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIImageRoundedCornerDemo.app/UIImageRoundedCornerDemo";
+			};
+			name = Debug;
+		};
+		886AF3F01C7C621E000FF00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UIImageRoundedCornerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.UIImageRoundedCornerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UIImageRoundedCornerDemo.app/UIImageRoundedCornerDemo";
+			};
+			name = Release;
+		};
+		886AF3F21C7C621E000FF00E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UIImageRoundedCornerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.UIImageRoundedCornerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UIImageRoundedCornerDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		886AF3F31C7C621E000FF00E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UIImageRoundedCornerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.UIImageRoundedCornerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = UIImageRoundedCornerDemo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		886AF3B91C7C621E000FF00E /* Build configuration list for PBXProject "UIImageRoundedCornerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886AF3E91C7C621E000FF00E /* Debug */,
+				886AF3EA1C7C621E000FF00E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		886AF3EB1C7C621E000FF00E /* Build configuration list for PBXNativeTarget "UIImageRoundedCornerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886AF3EC1C7C621E000FF00E /* Debug */,
+				886AF3ED1C7C621E000FF00E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		886AF3EE1C7C621E000FF00E /* Build configuration list for PBXNativeTarget "UIImageRoundedCornerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886AF3EF1C7C621E000FF00E /* Debug */,
+				886AF3F01C7C621E000FF00E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		886AF3F11C7C621E000FF00E /* Build configuration list for PBXNativeTarget "UIImageRoundedCornerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				886AF3F21C7C621E000FF00E /* Debug */,
+				886AF3F31C7C621E000FF00E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 886AF3B61C7C621E000FF00E /* Project object */;
+}
