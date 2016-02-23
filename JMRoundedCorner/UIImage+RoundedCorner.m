@@ -50,7 +50,7 @@
         CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
     }
     if (backgroundImage) {
-//        backgroundImage = [backgroundImage scaleToSize:sizeToFit];
+        backgroundImage = [backgroundImage scaleToSize:sizeToFit];
         CGRect rect = (CGRect){0.f, 0.f, sizeToFit};
         CGContextAddPath(UIGraphicsGetCurrentContext(),
                          [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius].CGPath);
