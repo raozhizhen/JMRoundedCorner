@@ -29,8 +29,12 @@
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 6, 30, 30)];
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = image;
+    _imageView.layer.borderWidth = 1;
+    _imageView.layer.borderColor = [UIColor redColor].CGColor;
     _imageView.layer.cornerRadius = 15;
     _imageView.layer.masksToBounds = YES;
+    _imageView.layer.shouldRasterize = YES;
+    _imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
     [self.contentView addSubview:_imageView];
     
     _label = [[UILabel alloc] initWithFrame:CGRectMake(50, 6, 100, 30)];
@@ -39,6 +43,8 @@
     _label.textColor = [UIColor whiteColor];
     _label.layer.cornerRadius = 10;
     _label.layer.masksToBounds = YES;
+    _label.layer.shouldRasterize = YES;
+    _label.layer.rasterizationScale = [UIScreen mainScreen].scale;
     _label.backgroundColor = [UIColor redColor];
     _label.textAlignment = NSTextAlignmentCenter;
     
@@ -49,6 +55,8 @@
     _label2.layer.borderWidth = 1;
     _label2.layer.borderColor = [UIColor redColor].CGColor;
     _label2.layer.masksToBounds = YES;
+    _label2.layer.shouldRasterize = YES;
+    _label2.layer.rasterizationScale = [UIScreen mainScreen].scale;
     _label2.font = [UIFont systemFontOfSize:12];
     _label2.textAlignment = NSTextAlignmentCenter;
     
