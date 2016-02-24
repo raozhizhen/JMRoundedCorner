@@ -28,9 +28,13 @@
 	pod 'JMRoundedCorner', '~> 0.0.1'
 	
 	
-#####将UIImage绘制成一张sizeToFit大小，圆角为radius的UIImage,
+#####将UIImage绘制成一张sizeToFit大小，圆角为radius的UIImage,contentMode为UIViewContentModeScaleAspectFill
 
 	- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius;
+	
+#####将UIImage绘制成一张sizeToFit大小，圆角为radius的UIImage,并设置contentMode
+
+	- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius withContentMode:(UIViewContentMode)contentMode;
 
 #####生成一张sizeToFit大小，圆角为radius，边框颜色为borderColor，边框宽度为borderWidth的圆角矩形图片
 
@@ -42,10 +46,10 @@
 
 #####自由组合所有属性生成一张图片
 
-	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage;
+	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode;
 
 
-底层铺一个UIImageView,
+底层铺一个UIImageView,imageView.image为JMRoundedCorner生成的图片
 
     UIImageView *labelRoundedCornerView = [[UIImageView alloc] initWithFrame:_label.frame];
     labelRoundedCornerView.image = [UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(100, 30) andCornerRadius:10 andColor:[UIColor redColor]];
@@ -53,7 +57,7 @@
     [self.contentView addSubview:_label];
 
 
-这样，就可以避免在大量cell离屏渲染的时候拖慢FPS
+这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS
 
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2573.PNG?raw=true)
 

@@ -33,10 +33,10 @@
     
     UIImage *avatar = [UIImage imageNamed:@"avatar.jpg"];
     
-    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 6, 30, 30)];
+    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
     __weak __typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(30, 30) CornerRadius:15 borderColor:[UIColor redColor] borderWidth:1 backgroundColor:[UIColor whiteColor] backgroundImage:avatar];
+        UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(30, 30) CornerRadius:15 borderColor:[UIColor redColor] borderWidth:1 backgroundColor:[UIColor whiteColor] backgroundImage:avatar withContentMode:UIViewContentModeScaleAspectFill];
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.avatarView.image = image;
         });
