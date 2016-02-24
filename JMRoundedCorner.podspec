@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JMRoundedCorner"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Add a rounded corner to view"
   s.homepage     = "https://github.com/raozhizhen/JMRoundedCorner.git"
   s.author       = { "raozhizhen" => "raozhizhen@gmail.com" }

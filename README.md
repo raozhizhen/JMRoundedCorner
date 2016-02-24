@@ -25,7 +25,7 @@
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 0.0.1'
+	pod 'JMRoundedCorner', '~> 0.0.2'
 	
 	
 #####将UIImage绘制成一张sizeToFit大小，圆角为radius的UIImage,contentMode为UIViewContentModeScaleAspectFill
