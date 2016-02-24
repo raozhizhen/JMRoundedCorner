@@ -26,11 +26,23 @@
 	platform :ios, '7.0'
 	
 	pod 'JMRoundedCorner', '~> 0.0.1'
+	
+	
+#####将UIImage绘制成一张sizeToFit大小，圆角为radius的UIImage,
 
+	- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius;
 
-生成一张长宽为100，30，圆角为10的圆角矩形
+#####生成一张sizeToFit大小，圆角为radius，边框颜色为borderColor，边框宽度为borderWidth的圆角矩形图片
 
-[UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(100, 30) andCornerRadius:10 andColor:[UIColor redColor]];
+	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+
+#####生成一张sizeToFit大小，圆角为radius，填充色为color的的圆角矩形，
+
+	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius andColor:(UIColor *)color;
+
+#####自由组合所有属性生成一张图片
+
+	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage;
 
 
 底层铺一个UIImageView,
@@ -45,7 +57,10 @@
 
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2573.PNG?raw=true)
 
-可以将Demo下下来，比较一下使用JMRoundedCorner带来的顺滑提升，你会想使用它的。
+
+
+
+可以将Demo下下来，比较一下使用JMRoundedCorner带来的顺滑提升，我保证你会想使用它的。
 
 
 ####联系我
