@@ -12,7 +12,7 @@
 
 ####离屏渲染是什么？
 
-简单来说，就是本该由GPU干的活，交给CPU干了。又因为，cpu不太擅长干CPU的活，所以往往会拖慢UI层的FPS。
+简单来说，就是本该由GPU干的活，交给CPU干了。又因为，GPU不太擅长干CPU的活，所以往往会拖慢UI层的FPS。
 我们需要尽量避免这种情况。
 
 ####如何解决？
@@ -41,7 +41,7 @@
     [self.contentView addSubview:_label];
 
 
-这样，就可以避免在大量cell离屏渲染的时候拖慢fps
+这样，就可以避免在大量cell离屏渲染的时候拖慢FPS
 
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2573.PNG?raw=true)
 
