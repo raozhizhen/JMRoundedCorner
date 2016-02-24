@@ -8,7 +8,7 @@
   	 
 这种写法导致了离屏渲染，下图中黄色的部分就是离屏渲染的地方。
 
-![](https://github.com/raozhizhen/JMRoundedCorner/master/IMG_2574.PNG?raw=true)
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2574.PNG?raw=true)
 
 ####离屏渲染是什么？
 
@@ -43,7 +43,7 @@
 
 这样，就可以避免在大量cell离屏渲染的时候拖慢fps
 
-![](https://github.com/raozhizhen/JMRoundedCorner/master/IMG_2573.PNG?raw=true)
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2573.PNG?raw=true)
 
 可以将Demo下下来，比较一下使用JMRoundedCorner带来的顺滑提升，你会想使用它的。
 
