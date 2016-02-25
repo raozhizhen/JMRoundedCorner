@@ -21,7 +21,7 @@ cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问�
 	
 shouldRasterize = YES会使视图渲染内容被缓存起来，下次绘制的时候可以直接显示缓存，但如下图，依旧有离屏渲染，导致tableView滑动起来依旧很卡
 
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2581.PNG?raw=true)
 
 所以这个方法并不怎么靠谱
 
@@ -67,7 +67,7 @@ shouldRasterize = YES会使视图渲染内容被缓存起来，下次绘制的�
 
 这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS
 
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2581.PNG?raw=true)
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
 
 
 将Demo下下来，试试使用JMRoundedCorner带来的顺滑提升。
