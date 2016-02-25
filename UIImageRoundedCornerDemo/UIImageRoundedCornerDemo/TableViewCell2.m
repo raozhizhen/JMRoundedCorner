@@ -37,7 +37,9 @@
     _imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
     [self.contentView addSubview:_imageView];
     
-    _button = [[UIButton alloc] initWithFrame:CGRectMake(60, 7, 100, 40)];
+    CGFloat viewWidth = ([UIScreen mainScreen].bounds.size.width - 80) / 2;
+    
+    _button = [[UIButton alloc] initWithFrame:CGRectMake(60, 7, viewWidth, 40)];
     [_button setTitle:@"这是一个button" forState:UIControlStateNormal];
     _button.layer.cornerRadius = 10;
     _button.layer.masksToBounds = YES;
@@ -48,7 +50,7 @@
     _button.titleLabel.textColor = [UIColor whiteColor];
     [self.contentView addSubview:_button];
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(170, 7, 130, 40)];
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
     _label.text = @"这是一个lable";
     _label.backgroundColor = [UIColor whiteColor];
     _label.layer.cornerRadius = 10;

@@ -1,71 +1,76 @@
 # JMRoundedCorner
-告别消耗性能的layer.cornerRadius,让tableView顺滑起来
+给UIView设置圆角
 
-当我们需要给一个View添加圆角的时候，一般会这样写
+当我们需要给一个View设置圆角的时候，一般会这样写
 	
 	 _label.layer.cornerRadius = 10;
   	 _label.layer.masksToBounds = YES;
   	 
-这种写法导致了离屏渲染，下图中黄色的部分就是离屏渲染的地方。
+cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了屏幕外渲染，下图中黄色的部分就是离屏渲染的地方。
 
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2574.PNG?raw=true)
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2582.PNG?raw=true)
 
 ####离屏渲染是什么？
 
 简单来说，就是本该由GPU干的活，交给CPU干了。又因为，CPU不太擅长干GPU的活，所以往往会拖慢UI层的FPS。
 我们需要尽量避免这种情况。
 
-####如何解决？
+	_label.layer.shouldRasterize = YES;  
+	_label.layer.rasterizationScale = [UIScreen mainScreen].scale;
+	
+	
+shouldRasterize = YES会使视图渲染内容被缓存起来，下次绘制的时候可以直接显示缓存，但如下图，依旧有离屏渲染，导致tableView滑动起来依旧很卡
 
-圆角使用UIImageView来处理。
-底层铺一个UIImageView,然后用GraphicsContext生成一张带圆角的图。
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
 
-####JMRoundedCorner就是生成这个带圆角的图
+所以这个方法并不怎么靠谱
+
+####使用JMRoundedCorner来绘制圆角
 
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 0.0.2'
+	pod 'JMRoundedCorner', '~> 0.0.3'
+	
+	#import "UIView+RoundedCorner.h"
+
 	
 	
-#####将UIImage绘制成一张sizeToFit大小，圆角为radius的UIImage,contentMode为UIViewContentModeScaleAspectFill
+#####给view设置一个圆角边框
 
-	- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius;
-	
-#####将UIImage绘制成一张sizeToFit大小，圆角为radius的UIImage,并设置contentMode
+	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth size:(CGSize)size;
 
-	- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius withContentMode:(UIViewContentMode)contentMode;
+#####给view设置一个圆角背景颜色
 
-#####生成一张sizeToFit大小，圆角为radius，边框颜色为borderColor，边框宽度为borderWidth的圆角矩形图片
+	- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)color size:(CGSize)size;
 
-	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+#####给view设置一个圆角背景图
 
-#####生成一张sizeToFit大小，圆角为radius，填充色为color的的圆角矩形，
+	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image size:(CGSize)size;
 
-	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius andColor:(UIColor *)color;
+#####给view设置一个contentMode模式的圆角背景图
 
-#####自由组合所有属性生成一张图片
+	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode size:(CGSize)size;
 
-	+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode;
+#####设置所有属性配置出一个圆角背景图
+	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode size:(CGSize)size;
 
 
-底层铺一个UIImageView,imageView.image为JMRoundedCorner生成的图片
+#####代码示例
 
-    UIImageView *labelRoundedCornerView = [[UIImageView alloc] initWithFrame:_label.frame];
-    labelRoundedCornerView.image = [UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(100, 30) andCornerRadius:10 andColor:[UIColor redColor]];
-    [self.contentView addSubview:labelRoundedCornerView];
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
+    _label.text = @"这是一个lable";
+    [_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:1 size:CGSizeMake(viewWidth, 40)];
+    _label.font = [UIFont systemFontOfSize:12];
+    _label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_label];
-
 
 这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS
 
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2573.PNG?raw=true)
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2581.PNG?raw=true)
 
 
-
-
-可以将Demo下下来，比较一下使用JMRoundedCorner带来的顺滑提升，我保证你会想使用它的。
-
+将Demo下下来，试试使用JMRoundedCorner带来的顺滑提升。
 
 ####联系我
 

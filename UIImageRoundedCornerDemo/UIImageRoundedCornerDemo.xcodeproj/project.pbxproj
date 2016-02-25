@@ -22,7 +22,6 @@
 		886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4151C7C70A9000FF00E /* TableViewCell2.m */; };
 		886AF41C1C7C8EEE000FF00E /* LPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4191C7C8EEE000FF00E /* LPMath.m */; };
 		886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */; };
-		88A7E4331C7DA4AE001358B4 /* IMG_2573.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 88A7E4321C7DA4AE001358B4 /* IMG_2573.PNG */; };
 		88A7E43D1C7ECC49001358B4 /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7E43C1C7ECC49001358B4 /* UIView+RoundedCorner.m */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +72,6 @@
 		886AF4191C7C8EEE000FF00E /* LPMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMath.m; sourceTree = "<group>"; };
 		886AF41A1C7C8EEE000FF00E /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
-		88A7E4321C7DA4AE001358B4 /* IMG_2573.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2573.PNG; sourceTree = "<group>"; };
 		88A7E43B1C7ECC49001358B4 /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
 		88A7E43C1C7ECC49001358B4 /* UIView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorner.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,7 +137,6 @@
 				886AF40C1C7C67DD000FF00E /* TableViewCell.m */,
 				886AF4141C7C70A9000FF00E /* TableViewCell2.h */,
 				886AF4151C7C70A9000FF00E /* TableViewCell2.m */,
-				88A7E4321C7DA4AE001358B4 /* IMG_2573.PNG */,
 				886AF4091C7C6779000FF00E /* avatar.jpg */,
 				886AF3CA1C7C621E000FF00E /* Main.storyboard */,
 				886AF3CD1C7C621E000FF00E /* Assets.xcassets */,
@@ -295,7 +292,6 @@
 			files = (
 				886AF40A1C7C6779000FF00E /* avatar.jpg in Resources */,
 				886AF3D11C7C621E000FF00E /* LaunchScreen.storyboard in Resources */,
-				88A7E4331C7DA4AE001358B4 /* IMG_2573.PNG in Resources */,
 				886AF3CE1C7C621E000FF00E /* Assets.xcassets in Resources */,
 				886AF3CC1C7C621E000FF00E /* Main.storyboard in Resources */,
 			);

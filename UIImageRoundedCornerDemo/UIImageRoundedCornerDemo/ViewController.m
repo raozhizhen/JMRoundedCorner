@@ -21,7 +21,7 @@
 
 - (void)loadView {
     [super loadView];
-    self.title = @"自己绘制圆角";
+    self.title = @"使用JMRoundedCorner绘制圆角";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"切换" style:UIBarButtonItemStylePlain target:self action:@selector(action)];
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];

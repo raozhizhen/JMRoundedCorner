@@ -33,7 +33,6 @@
     [self.view addSubview:fpsLabel];
 }
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1000;
 }

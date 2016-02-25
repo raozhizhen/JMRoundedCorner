@@ -2,8 +2,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "JMRoundedCorner"
-  s.version      = "0.0.2"
-  s.summary      = "Add a rounded corner to view"
+  s.version      = "0.0.3"
+  s.summary      = "UIView set Corner Radius"
   s.homepage     = "https://github.com/raozhizhen/JMRoundedCorner.git"
   s.author       = { "raozhizhen" => "raozhizhen@gmail.com" }
   s.platform     = :ios, "7.0"
