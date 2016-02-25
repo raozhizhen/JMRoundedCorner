@@ -8,6 +8,7 @@
 
 #import "TableViewCell.h"
 #import "UIImage+RoundedCorner.h"
+#import "UIView+RoundedCorner.h"
 
 @interface TableViewCell ()
 
@@ -16,8 +17,8 @@
 @end
 
 @implementation TableViewCell {
+    UIButton *_button;
     UILabel *_label;
-    UILabel *_label2;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -33,36 +34,34 @@
     
     UIImage *avatar = [UIImage imageNamed:@"avatar.jpg"];
     
-    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 30, 30)];
-    __weak __typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(30, 30) CornerRadius:15 borderColor:[UIColor redColor] borderWidth:1 backgroundColor:[UIColor whiteColor] backgroundImage:avatar withContentMode:UIViewContentModeScaleAspectFill];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.avatarView.image = image;
-        });
-    });
+    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
+    [_avatarView setCornerRadius:20 withBorderColor:[UIColor redColor] borderWidth:1 backgroundColor:[UIColor whiteColor] backgroundImage:avatar ContentMode:UIViewContentModeScaleToFill size:CGSizeMake(40, 40)];
     [self.contentView addSubview:_avatarView];
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(50, 6, 100, 30)];
-    _label.text = @"一个label";
+    _button = [[UIButton alloc] initWithFrame:CGRectMake(60, 7, 100, 40)];
+    [_button setTitle:@"这是一个button" forState:UIControlStateNormal];
+    [_button setCornerRadius:10 withImage:[self imageWithColor:[UIColor redColor]] size:CGSizeMake(100, 40)];
+    _button.titleLabel.font = [UIFont systemFontOfSize:12];
+    _button.titleLabel.textColor = [UIColor whiteColor];
+    [self.contentView addSubview:_button];
+    
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(170, 7, 130, 40)];
+    _label.text = @"这是一个lable";
+    [_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:1 size:CGSizeMake(130, 40)];
     _label.font = [UIFont systemFontOfSize:12];
-    _label.textColor = [UIColor whiteColor];
     _label.textAlignment = NSTextAlignmentCenter;
-    
-    _label2 = [[UILabel alloc] initWithFrame:CGRectMake(160, 6, 130, 30)];
-    _label2.text = @"也是一个lable";
-    _label2.font = [UIFont systemFontOfSize:12];
-    _label2.textAlignment = NSTextAlignmentCenter;
-    
-    UIImageView *labelRoundedCornerView = [[UIImageView alloc] initWithFrame:_label.frame];
-    labelRoundedCornerView.image = [UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(100, 30) andCornerRadius:10 andColor:[UIColor redColor]];
-    [self.contentView addSubview:labelRoundedCornerView];
     [self.contentView addSubview:_label];
-    
-    UIImageView *labelRoundedCornerView2 = [[UIImageView alloc] initWithFrame:_label2.frame];
-    labelRoundedCornerView2.image = [UIImage jm_imageWithRoundedCornersAndSize:CGSizeMake(100, 30) CornerRadius:10 borderColor:[UIColor redColor] borderWidth:1];
-    [self.contentView addSubview:labelRoundedCornerView2];
-    [self.contentView addSubview:_label2];
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 + (NSString *)cellReuseIdentifier {

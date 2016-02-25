@@ -129,7 +129,6 @@
         } else if (contentMode == UIViewContentModeTopLeft) {
             return CGRectMake(rect.origin.x,
                               rect.origin.y,
-                              
                               self.size.width, self.size.height);
             
         } else if (contentMode == UIViewContentModeTopRight) {

@@ -26,7 +26,7 @@
     
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [tableView registerClass:[TableViewCell class] forCellReuseIdentifier:[TableViewCell cellReuseIdentifier]];
-    tableView.rowHeight = 44;
+    tableView.rowHeight = 54;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
     

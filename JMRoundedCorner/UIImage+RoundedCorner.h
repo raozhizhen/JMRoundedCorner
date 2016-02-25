@@ -5,6 +5,7 @@
 //  Created by jm on 16/2/22.
 //  Copyright © 2016年 Jim. All rights reserved.
 //
+//生成带圆角的图片
 
 #import <UIKit/UIKit.h>
 

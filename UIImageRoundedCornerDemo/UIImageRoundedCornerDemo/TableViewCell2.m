@@ -11,7 +11,7 @@
 @implementation TableViewCell2 {
     UIImageView *_imageView;
     UILabel *_label;
-    UILabel *_label2;
+    UIButton *_button;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -26,43 +26,51 @@
     self.contentView.backgroundColor = [UIColor lightGrayColor];
     
     UIImage *image = [UIImage imageNamed:@"avatar.jpg"];
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 6, 30, 30)];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = image;
     _imageView.layer.borderWidth = 1;
     _imageView.layer.borderColor = [UIColor redColor].CGColor;
-    _imageView.layer.cornerRadius = 15;
+    _imageView.layer.cornerRadius = 20;
     _imageView.layer.masksToBounds = YES;
     _imageView.layer.shouldRasterize = YES;
     _imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;
     [self.contentView addSubview:_imageView];
     
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(50, 6, 100, 30)];
-    _label.text = @"一个label";
-    _label.font = [UIFont systemFontOfSize:12];
-    _label.textColor = [UIColor whiteColor];
+    _button = [[UIButton alloc] initWithFrame:CGRectMake(60, 7, 100, 40)];
+    [_button setTitle:@"这是一个button" forState:UIControlStateNormal];
+    _button.layer.cornerRadius = 10;
+    _button.layer.masksToBounds = YES;
+    _button.layer.shouldRasterize = YES;
+    _button.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    [_button setBackgroundImage:[self imageWithColor:[UIColor redColor]] forState:UIControlStateNormal];
+    _button.titleLabel.font = [UIFont systemFontOfSize:12];
+    _button.titleLabel.textColor = [UIColor whiteColor];
+    [self.contentView addSubview:_button];
+    
+    _label = [[UILabel alloc] initWithFrame:CGRectMake(170, 7, 130, 40)];
+    _label.text = @"这是一个lable";
+    _label.backgroundColor = [UIColor whiteColor];
     _label.layer.cornerRadius = 10;
+    _label.layer.borderWidth = 1;
+    _label.layer.borderColor = [UIColor redColor].CGColor;
     _label.layer.masksToBounds = YES;
     _label.layer.shouldRasterize = YES;
     _label.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    _label.backgroundColor = [UIColor redColor];
+    _label.font = [UIFont systemFontOfSize:12];
     _label.textAlignment = NSTextAlignmentCenter;
-    
-    _label2 = [[UILabel alloc] initWithFrame:CGRectMake(160, 6, 130, 30)];
-    _label2.text = @"也是一个lable";
-    _label2.backgroundColor = [UIColor whiteColor];
-    _label2.layer.cornerRadius = 10;
-    _label2.layer.borderWidth = 1;
-    _label2.layer.borderColor = [UIColor redColor].CGColor;
-    _label2.layer.masksToBounds = YES;
-    _label2.layer.shouldRasterize = YES;
-    _label2.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    _label2.font = [UIFont systemFontOfSize:12];
-    _label2.textAlignment = NSTextAlignmentCenter;
-    
     [self.contentView addSubview:_label];
-    
-    [self.contentView addSubview:_label2];
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 + (NSString *)cellReuseIdentifier {

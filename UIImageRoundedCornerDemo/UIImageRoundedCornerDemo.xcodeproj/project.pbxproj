@@ -23,6 +23,7 @@
 		886AF41C1C7C8EEE000FF00E /* LPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4191C7C8EEE000FF00E /* LPMath.m */; };
 		886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */; };
 		88A7E4331C7DA4AE001358B4 /* IMG_2573.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 88A7E4321C7DA4AE001358B4 /* IMG_2573.PNG */; };
+		88A7E43D1C7ECC49001358B4 /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7E43C1C7ECC49001358B4 /* UIView+RoundedCorner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,8 @@
 		886AF41A1C7C8EEE000FF00E /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		88A7E4321C7DA4AE001358B4 /* IMG_2573.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2573.PNG; sourceTree = "<group>"; };
+		88A7E43B1C7ECC49001358B4 /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
+		88A7E43C1C7ECC49001358B4 /* UIView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorner.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				886AF4191C7C8EEE000FF00E /* LPMath.m */,
 				886AF41A1C7C8EEE000FF00E /* UIImage+RoundedCorner.h */,
 				886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */,
+				88A7E43B1C7ECC49001358B4 /* UIView+RoundedCorner.h */,
+				88A7E43C1C7ECC49001358B4 /* UIView+RoundedCorner.m */,
 			);
 			name = JMRoundedCorner;
 			path = ../JMRoundedCorner;
@@ -318,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				886AF3C91C7C621E000FF00E /* ViewController.m in Sources */,
+				88A7E43D1C7ECC49001358B4 /* UIView+RoundedCorner.m in Sources */,
 				886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */,
 				886AF41C1C7C8EEE000FF00E /* LPMath.m in Sources */,
 				886AF40D1C7C67DD000FF00E /* TableViewCell.m in Sources */,
