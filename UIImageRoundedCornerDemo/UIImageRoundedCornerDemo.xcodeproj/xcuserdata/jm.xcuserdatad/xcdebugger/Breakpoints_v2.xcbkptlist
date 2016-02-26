@@ -25,12 +25,28 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../JMRoundedCorner/UIImage+RoundedCorner.m"
-            timestampString = "478000415.667477"
+            filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
+            timestampString = "478151526.771197"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-setJMRadius:withBackgroundColor:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JMRoundedCorner/UIImage+RoundedCorner.m"
+            timestampString = "478148670.878757"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "+jm_imageWithRoundedCornersAndSize:CornerRadius:borderColor:borderWidth:backgroundColor:backgroundImage:withContentMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,44 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIImage+RoundedCorner.m"
-            timestampString = "478000415.667477"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "+jm_imageWithRoundedCornersAndSize:CornerRadius:borderColor:borderWidth:backgroundColor:backgroundImage:withContentMode:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478079228.517342"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-setCornerRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:ContentMode:size:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478079236.941427"
+            timestampString = "478148670.878757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
-            landmarkName = "-setCornerRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:ContentMode:size:"
+            landmarkName = "+jm_imageWithRoundedCornersAndSize:JMRadius:borderColor:borderWidth:backgroundColor:backgroundImage:withContentMode:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +74,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478079294.191652"
+            timestampString = "478152928.370024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "-setCornerRadius:withBackgroundColor:size:"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
+            timestampString = "478160547.72165"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:size:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
+            timestampString = "478152928.370024"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
+            timestampString = "478162075.186666"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:size:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
+            timestampString = "478160547.72165"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-setRadius:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../JMRoundedCorner/UIImage+RoundedCorner.m"
+            timestampString = "478164097.741539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "+jm_imageWithRoundedCornersAndSize:JMRadius:borderColor:borderWidth:backgroundColor:backgroundImage:withContentMode:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -29,7 +29,7 @@
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = image;
-    _imageView.layer.borderWidth = 1;
+    _imageView.layer.borderWidth = 0.5;
     _imageView.layer.borderColor = [UIColor redColor].CGColor;
     _imageView.layer.cornerRadius = 20;
     _imageView.layer.masksToBounds = YES;
@@ -51,10 +51,10 @@
     [self.contentView addSubview:_button];
     
     _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
-    _label.text = @"这是一个lable";
+    _label.text = @"这是一个label";
     _label.backgroundColor = [UIColor whiteColor];
     _label.layer.cornerRadius = 10;
-    _label.layer.borderWidth = 1;
+    _label.layer.borderWidth = 0.5;
     _label.layer.borderColor = [UIColor redColor].CGColor;
     _label.layer.masksToBounds = YES;
     _label.layer.shouldRasterize = YES;

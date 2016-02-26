@@ -7,7 +7,6 @@
 //
 
 #import "UIImage+RoundedCorner.h"
-#import "LPMath.h"
 
 @implementation UIImage (RoundedCorner)
 
@@ -33,42 +32,38 @@
 
 + (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode {
     
-    sizeToFit = CGSizeMake(pixel(sizeToFit.width), sizeToFit.height);
+    return [UIImage jm_imageWithRoundedCornersAndSize:sizeToFit JMRadius:JMRadiusMake(radius, radius, radius, radius) borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage withContentMode:contentMode];
+}
+
++ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit JMRadius:(JMRadius)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode {
     UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
     CGFloat halfBorderWidth = borderWidth / 2;
-    
-    if ((borderWidth != 0 && borderColor) || backgroundColor) {
-        //设置上下文
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        //边框大小
-        CGContextSetLineWidth(context, borderWidth);
-        //边框颜色
-        CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-        //矩形填充颜色
-        if (!backgroundColor) {
-            backgroundColor = [UIColor whiteColor];
-        }
-        CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
-        CGFloat height = sizeToFit.height;
-        CGFloat width = sizeToFit.width;
-        CGFloat drawRadius = radius - halfBorderWidth;
-        
-        CGContextMoveToPoint(context, width - halfBorderWidth, drawRadius + halfBorderWidth);  // 开始坐标右边开始
-        CGContextAddArcToPoint(context, width - halfBorderWidth, height - halfBorderWidth, width - drawRadius - halfBorderWidth, height - halfBorderWidth, drawRadius);  // 右下角角度
-        CGContextAddArcToPoint(context, halfBorderWidth, height - halfBorderWidth, halfBorderWidth, height - drawRadius - halfBorderWidth, drawRadius); // 左下角角度
-        CGContextAddArcToPoint(context, halfBorderWidth, halfBorderWidth, width - halfBorderWidth, halfBorderWidth, drawRadius); // 左上角
-        CGContextAddArcToPoint(context, width - halfBorderWidth, halfBorderWidth, width - halfBorderWidth, drawRadius + halfBorderWidth, drawRadius); // 右上角
-        CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
-    }
-    
+    //设置上下文
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    //边框大小
+    CGContextSetLineWidth(context, borderWidth);
+    //去锯齿处理
+    CGContextSetAllowsAntialiasing(context, true);
+    CGContextSetShouldAntialias(context, true);
+    //边框颜色
+    CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
+    //矩形填充颜色
     if (backgroundImage) {
-        backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width - 2 * borderWidth, sizeToFit.height - 2 * borderWidth) withContentMode:contentMode];
-        CGRect rect = (CGRect){borderWidth, borderWidth, sizeToFit.width - 2 * borderWidth, sizeToFit.height - 2 * borderWidth};
-        CGContextAddPath(UIGraphicsGetCurrentContext(),
-                         [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius - borderWidth].CGPath);
-        CGContextClip(UIGraphicsGetCurrentContext());
-        [backgroundImage drawInRect:rect];
+        backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode];
+        backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    } else {
+        backgroundColor = [UIColor whiteColor];
     }
+    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
+    CGFloat height = sizeToFit.height;
+    CGFloat width = sizeToFit.width;
+    
+    CGContextMoveToPoint(context, width - halfBorderWidth, radius.topRightRadius + halfBorderWidth);  // 开始坐标右边开始
+    CGContextAddArcToPoint(context, width - halfBorderWidth, height - halfBorderWidth, width - radius.bottomRightRadius  - halfBorderWidth, height - halfBorderWidth, radius.bottomRightRadius);  // 右下角角度
+    CGContextAddArcToPoint(context, halfBorderWidth, height - halfBorderWidth, halfBorderWidth, height - radius.bottomLeftRadius - halfBorderWidth, radius.bottomLeftRadius); // 左下角角度
+    CGContextAddArcToPoint(context, halfBorderWidth, halfBorderWidth, width - halfBorderWidth, halfBorderWidth, radius.topLeftRadius); // 左上角
+    CGContextAddArcToPoint(context, width , halfBorderWidth, width - halfBorderWidth, radius.topRightRadius + halfBorderWidth, radius.topRightRadius); // 右上角
+    CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
     
     UIImage *outImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
