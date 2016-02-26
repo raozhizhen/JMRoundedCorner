@@ -1,5 +1,5 @@
 # JMRoundedCorner
-给UIView设置圆角
+给UIView设置不触发离屏渲染的圆角
 
 当我们需要给一个View设置圆角的时候，一般会这样写
 	
@@ -15,22 +15,12 @@ cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问�
 简单来说，就是本该由GPU干的活，交给CPU干了。又因为，CPU不太擅长干GPU的活，所以往往会拖慢UI层的FPS。
 我们需要尽量避免这种情况。
 
-	_label.layer.shouldRasterize = YES;  
-	_label.layer.rasterizationScale = [UIScreen mainScreen].scale;
-	
-	
-shouldRasterize = YES会使视图渲染内容被缓存起来，下次绘制的时候可以直接显示缓存，但如下图，依旧有离屏渲染，导致tableView滑动起来依旧很卡
-
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2581.PNG?raw=true)
-
-所以这个方法并不怎么靠谱
-
 ####使用JMRoundedCorner来绘制圆角
 
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 0.0.3'
+	pod 'JMRoundedCorner', '~> 0.0.4'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -38,40 +28,45 @@ shouldRasterize = YES会使视图渲染内容被缓存起来，下次绘制的�
 	
 #####给view设置一个圆角边框
 
-	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth size:(CGSize)size;
+	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
 
 #####给view设置一个圆角背景颜色
 
-	- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)color size:(CGSize)size;
+	- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)color;
 
 #####给view设置一个圆角背景图
 
-	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image size:(CGSize)size;
+	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image;
 
 #####给view设置一个contentMode模式的圆角背景图
 
-	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode size:(CGSize)size;
+	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode;
 
 #####设置所有属性配置出一个圆角背景图
-	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode size:(CGSize)size;
+	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
 
 
 #####代码示例
 
     _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
     _label.text = @"这是一个lable";
-    [_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:1 size:CGSizeMake(viewWidth, 40)];
+    [_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:0.5];
     _label.font = [UIFont systemFontOfSize:12];
     _label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_label];
 
-这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS
-
+这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS，(支持Autolayout布局)
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
 
 
 将Demo下下来，试试使用JMRoundedCorner带来的顺滑提升。
 
+#####0.0.4版本支持通过JMRadius设置4个角为不同的弧度，例如：
+
+	- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+
+
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2592.PNG?raw=true)
 ####联系我
 
 - QQ:337519524
@@ -81,3 +76,9 @@ shouldRasterize = YES会使视图渲染内容被缓存起来，下次绘制的�
 
 - [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
 
+####更新日志
+
+2016/2/26  0.0.4版本 ：去掉了size参数及支持JMRadius设置4个角为不同的弧度
+2016/2/25  0.0.3版本 ：去掉了UIImageView这个中间控件
+2016/2/24  0.0.2版本 ：支持设置背景图片的绘制模式（cotentmode）
+2016/2/23  0.0.1版本 ：绘制一个圆角image

@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JMRoundedCorner"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "UIView set Corner Radius"
   s.homepage     = "https://github.com/raozhizhen/JMRoundedCorner.git"
   s.author       = { "raozhizhen" => "raozhizhen@gmail.com" }
