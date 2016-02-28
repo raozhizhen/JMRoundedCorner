@@ -1,6 +1,7 @@
 # JMRoundedCorner
 
 [![LICENSE](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/raozhizhen/JMRoundedCorner/master/LICENSE)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/v/JMRoundedCorner.svg?style=flat)](http://cocoapods.org/?q=JMRoundedCorner)&nbsp;
 [![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_7)&nbsp;
 [![BLOG](https://img.shields.io/badge/blog-raozhizhen.com-orange.svg?style=flat)](http://raozhizhen.com)&nbsp;
 
@@ -23,7 +24,7 @@ cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问�
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 0.0.4'
+	pod 'JMRoundedCorner', '~> 1.0.0'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -80,6 +81,8 @@ cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问�
 - [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
 
 ####更新日志
+
+- 2016/2/28  1.0.0版本 ：发布正式版本
 
 - 2016/2/26  0.0.4版本 ：去掉了size参数及支持JMRadius设置4个角为不同的弧度
 
