@@ -6,10 +6,11 @@
 [![BLOG](https://img.shields.io/badge/blog-raozhizhen.com-orange.svg?style=flat)](http://raozhizhen.com)&nbsp;
 
 当我们需要给一个View设置圆角的时候，一般会这样写
-	
+
+```objc	
 	 _label.layer.cornerRadius = 10;
   	 _label.layer.masksToBounds = YES;
-  	 
+```  	 
 cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了离屏渲染，
 Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选项。它会将已经被渲染到屏幕外缓冲区的区域标注为黄色，下图中黄色的部分就是离屏渲染的地方。
 
