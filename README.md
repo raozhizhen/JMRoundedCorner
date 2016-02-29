@@ -8,8 +8,8 @@
 当我们需要给一个View设置圆角的时候，一般会这样写
 
 ```objc	
-	 _label.layer.cornerRadius = 10;
-  	 _label.layer.masksToBounds = YES;
+_label.layer.cornerRadius = 10;
+_label.layer.masksToBounds = YES;
 ```  	 
   	 
 cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了离屏渲染，
@@ -39,42 +39,42 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 #####给view设置一个圆角边框
 
 ```objc	
-	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
 ```
 
 #####给view设置一个圆角背景颜色
 
 ```objc
-	- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)color;
+- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)color;
 ```
 
 #####给view设置一个圆角背景图
 
 ```objc
-	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image;
+- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image;
 ```
 
 #####给view设置一个contentMode模式的圆角背景图
 
 ```objc
-	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode;
+- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode;
 ```
 
 #####设置所有属性配置出一个圆角背景图
 
 ```objc
-	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
+- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
 ```
 
 #####代码示例
 
 ```objc
-    _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
-    _label.text = @"这是一个lable";
-    [_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:0.5];
-    _label.font = [UIFont systemFontOfSize:12];
-    _label.textAlignment = NSTextAlignmentCenter;
-    [self.contentView addSubview:_label];
+_label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
+_label.text = @"这是一个lable";
+[_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:0.5];
+_label.font = [UIFont systemFontOfSize:12];
+_label.textAlignment = NSTextAlignmentCenter;
+[self.contentView addSubview:_label];
 ```
 
 这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS，(支持Autolayout布局)
@@ -86,7 +86,7 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 #####0.0.4版本支持通过JMRadius设置4个角为不同的弧度，例如：
 
 ```objc
-	- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
 ```
 
 
