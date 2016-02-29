@@ -10,14 +10,18 @@
 	 _label.layer.cornerRadius = 10;
   	 _label.layer.masksToBounds = YES;
   	 
-cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了屏幕外渲染，下图中黄色的部分就是离屏渲染的地方。
+cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了离屏渲染，
+Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选项。它会将已经被渲染到屏幕外缓冲区的区域标注为黄色，下图中黄色的部分就是离屏渲染的地方。
 
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2582.PNG?raw=true)
 
 ####离屏渲染是什么？
 
-简单来说，就是本该由GPU干的活，交给CPU干了。又因为，CPU不太擅长干GPU的活，所以往往会拖慢UI层的FPS。
-我们需要尽量避免这种情况。
+离屏渲染绘制layer tree中的一部分到一个新的缓存里面（这个缓存不是屏幕，是另一个地方），然后再把这个缓存渲染到屏幕上面。一般来说，你需要避免离屏渲染。因为这个开销很大。在屏幕上面直接合成层要比先创建一个离屏缓存然后在缓存上面绘制，最后再绘制缓存到屏幕上面快很多。这里面有2个上下文环境的切换（切换到屏幕外缓存环境，和屏幕环境）。
+
+####解决方案
+
+在需要设置圆角的view里放置一个UIImageView,然后用GraphicsContext生成一张带圆角的图。
 
 ####使用JMRoundedCorner来绘制圆角
 
@@ -79,6 +83,9 @@ cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问�
 ####感谢
 
 - [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
+
+- [Getting Pixels Onto the Screen](https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen/)
+
 
 ####更新日志
 
