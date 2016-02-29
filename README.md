@@ -57,12 +57,14 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 
 #####代码示例
 
+```objc
     _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
     _label.text = @"这是一个lable";
     [_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:0.5];
     _label.font = [UIFont systemFontOfSize:12];
     _label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_label];
+```
 
 这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS，(支持Autolayout布局)
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
