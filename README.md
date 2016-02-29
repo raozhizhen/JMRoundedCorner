@@ -11,6 +11,7 @@
 	 _label.layer.cornerRadius = 10;
   	 _label.layer.masksToBounds = YES;
 ```  	 
+  	 
 cornerRadius和maskToBounds独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了离屏渲染，
 Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选项。它会将已经被渲染到屏幕外缓冲区的区域标注为黄色，下图中黄色的部分就是离屏渲染的地方。
 
@@ -37,23 +38,33 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 	
 #####给view设置一个圆角边框
 
+```objc	
 	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+```
 
 #####给view设置一个圆角背景颜色
 
+```objc
 	- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)color;
+```
 
 #####给view设置一个圆角背景图
 
+```objc
 	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image;
+```
 
 #####给view设置一个contentMode模式的圆角背景图
 
+```objc
 	- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode;
+```
 
 #####设置所有属性配置出一个圆角背景图
-	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
 
+```objc
+	- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
+```
 
 #####代码示例
 
@@ -74,7 +85,9 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 
 #####0.0.4版本支持通过JMRadius设置4个角为不同的弧度，例如：
 
+```objc
 	- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+```
 
 
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2592.PNG?raw=true)
