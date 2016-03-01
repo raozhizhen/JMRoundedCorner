@@ -102,6 +102,14 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 - [Getting Pixels Onto the Screen](https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen/)
 
+####已知问题
+
+UICollectionView中直接给label设置圆角会出现label的文字不显示的Bug,暂时解决方法可以在lable下方放置一个view，设置view的圆角
+
+如果设置view的边框出现上下左右边框宽度不一致的情况，可以试着让view的起始坐标和宽高都为整数。
+
+- [IOS CGContextSetLineWidth无法设置1像素线宽？](http://my.oschina.net/lych0317/blog/126215?fromerr=65dDkPes)
+
 
 ####更新日志
 - 2016/3/1   1.0.2版本 ：修复backgroundColor参数无效的BUG
