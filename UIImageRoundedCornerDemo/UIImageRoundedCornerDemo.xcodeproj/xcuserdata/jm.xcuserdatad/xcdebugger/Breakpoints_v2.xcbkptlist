@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478151526.771197"
+            timestampString = "478498343.656105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "-setJMRadius:withBackgroundColor:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478152928.370024"
+            timestampString = "478498343.656105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478160547.72165"
+            timestampString = "478498343.656105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:size:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478152928.370024"
+            timestampString = "478498343.656105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478162075.186666"
+            timestampString = "478498343.656105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "-setJMRadius:withBorderColor:borderWidth:backgroundColor:backgroundImage:contentMode:size:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIView+RoundedCorner.m"
-            timestampString = "478160547.72165"
+            timestampString = "478498343.656105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-setRadius:"
             landmarkType = "5">
          </BreakpointContent>

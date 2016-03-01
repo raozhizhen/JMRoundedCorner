@@ -12,8 +12,6 @@
 
 @interface UIView (RoundedCorner)
 
-@property (nonatomic, strong) UIImageView *roundedCornerView;
-
 /**给view设置一个圆角边框*/
 - (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
 

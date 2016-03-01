@@ -11,8 +11,6 @@
 
 @implementation UIView (RoundedCorner)
 
-static const NSString *MyRoundedCornerViewKey = @"MyRoundedCornerViewKey";
-
 - (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth {
     
     [self setCornerRadius:radius withBorderColor:borderColor borderWidth:borderWidth backgroundColor:nil backgroundImage:nil contentMode:UIViewContentModeScaleToFill];
@@ -121,19 +119,8 @@ static const NSString *MyRoundedCornerViewKey = @"MyRoundedCornerViewKey";
     } else if ([self isKindOfClass:[UIButton class]] && backgroundImage) {
         [((UIButton *)self) setBackgroundImage:image forState:UIControlStateNormal];
     } else {
-        self.roundedCornerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-        self.roundedCornerView.image = image;
-        [self addSubview:self.roundedCornerView];
-        [self sendSubviewToBack:self.roundedCornerView];
+        self.layer.contents = (__bridge id _Nullable)(image.CGImage);
     }
-}
-
-- (UIImageView *)roundedCornerView {
-    return objc_getAssociatedObject(self, &MyRoundedCornerViewKey);
-}
-
-- (void)setRoundedCornerView:(UIImageView *)roundedCornerView {
-    objc_setAssociatedObject(self, &MyRoundedCornerViewKey, roundedCornerView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
