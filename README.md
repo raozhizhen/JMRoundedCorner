@@ -30,7 +30,7 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.0.1'
+	pod 'JMRoundedCorner', '~> 1.0.2'
 	
 	#import "UIView+RoundedCorner.h"
 
