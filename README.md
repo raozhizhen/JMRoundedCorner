@@ -105,7 +105,7 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 ####更新日志
 
-- 2016/2/28  1.0.1版本 ：修复UILabel设置圆角时候label文字不显示的Bug
+- 2016/3/1   1.0.1版本 ：修复UILabel设置圆角时候label文字不显示的Bug
 
 - 2016/2/28  1.0.0版本 ：发布正式版本
 
