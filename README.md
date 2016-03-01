@@ -23,14 +23,14 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 
 ####解决方案
 
-在需要设置圆角的view里放置一个UIImageView,然后用GraphicsContext生成一张带圆角的图。
+用GraphicsContext生成一张带圆角的图,设置view.layer.contents为这张图片。
 
 ####使用JMRoundedCorner来绘制圆角
 
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.0.0'
+	pod 'JMRoundedCorner', '~> 1.0.1'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -70,7 +70,7 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 
 ```objc
 _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
-_label.text = @"这是一个lable";
+_label.text = @"这是一个label";
 [_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:0.5];
 _label.font = [UIFont systemFontOfSize:12];
 _label.textAlignment = NSTextAlignmentCenter;
@@ -104,6 +104,8 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 
 ####更新日志
+
+- 2016/2/28  1.0.1版本 ：修复UILabel设置圆角时候label文字不显示的Bug
 
 - 2016/2/28  1.0.0版本 ：发布正式版本
 
