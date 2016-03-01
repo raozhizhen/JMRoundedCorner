@@ -38,7 +38,7 @@
     [_avatarView setJMRadius:JMRadiusMake(20, 0, 0, 20) withBorderColor:[UIColor redColor] borderWidth:0.5 backgroundColor:[UIColor whiteColor] backgroundImage:avatar contentMode:UIViewContentModeScaleToFill];
     [self.contentView addSubview:_avatarView];
     
-    CGFloat viewWidth = ([UIScreen mainScreen].bounds.size.width - 78) / 2;
+    NSInteger viewWidth = ([UIScreen mainScreen].bounds.size.width - 78) / 2;
     
     _button = [[UIButton alloc] initWithFrame:CGRectMake(60, 7, viewWidth, 40)];
     [_button setTitle:@"这是一个button" forState:UIControlStateNormal];

@@ -51,7 +51,7 @@
     if (backgroundImage) {
         backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode];
         backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-    } else {
+    } else if (!backgroundColor){
         backgroundColor = [UIColor whiteColor];
     }
     CGContextSetFillColorWithColor(context, backgroundColor.CGColor);

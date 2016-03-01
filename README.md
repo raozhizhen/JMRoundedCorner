@@ -45,7 +45,7 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 #####给view设置一个圆角背景颜色
 
 ```objc
-- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)color;
+- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)backgroundColor;
 ```
 
 #####给view设置一个圆角背景图
@@ -63,7 +63,7 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 #####设置所有属性配置出一个圆角背景图
 
 ```objc
-- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)color backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
+- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
 ```
 
 #####代码示例
@@ -104,6 +104,7 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 
 ####更新日志
+- 2016/3/1   1.0.2版本 ：修复backgroundColor参数无效的BUG
 
 - 2016/3/1   1.0.1版本 ：修复UILabel设置圆角时候label文字不显示的Bug
 
