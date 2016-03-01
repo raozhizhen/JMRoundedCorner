@@ -77,6 +77,14 @@ _label.textAlignment = NSTextAlignmentCenter;
 [self.contentView addSubview:_label];
 ```
 
+```objc
+[[SDWebImageManager sharedManager] downloadImageWithURL:_model.avatarURL options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+	if (finished) {
+		[_avatarImageView setCornerRadius:19 withImage:image];
+	}
+}];
+```
+
 这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS，(支持Autolayout布局)
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
 
@@ -106,15 +114,15 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 UICollectionView中直接给label设置圆角会出现label的文字不显示的Bug,暂时解决方法可以在lable下方放置一个view，设置view的圆角
 
-如果设置view的边框出现上下左右边框宽度不一致的情况，可以试着让view的起始坐标和宽高都为整数。
+如果设置view的边框出现上下左右边框宽度不一致的情况，可以试着让view的起始坐标和宽高都为整数。[IOS CGContextSetLineWidth无法设置1像素线宽？](http://my.oschina.net/lych0317/blog/126215?fromerr=65dDkPes)
 
-- [IOS CGContextSetLineWidth无法设置1像素线宽？](http://my.oschina.net/lych0317/blog/126215?fromerr=65dDkPes)
+因为只是绘制了一个带圆角的图片，所以不能使子视图超出部分不显示。
 
 
 ####更新日志
 - 2016/3/1   1.0.2版本 ：修复backgroundColor参数无效的BUG
 
-- 2016/3/1   1.0.1版本 ：修复UILabel设置圆角时候label文字不显示的Bug
+- 2016/3/1   1.0.1版本 ：优化
 
 - 2016/2/28  1.0.0版本 ：发布正式版本
 
