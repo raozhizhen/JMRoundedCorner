@@ -112,13 +112,15 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 ####已知问题
 
-UICollectionView中直接给label设置圆角会出现label的文字不显示的Bug,暂时解决方法可以在lable下方放置一个view，设置view的圆角
+UILabel的text如果没有汉字只有英文的话，text就不显示（好神奇的BUG啊，我需要好好看看什么原因）,暂时解决方法可以在lable下方放置一个view，设置view的圆角
 
 如果设置view的边框出现上下左右边框宽度不一致的情况，可以试着让view的起始坐标和宽高都为整数。[IOS CGContextSetLineWidth无法设置1像素线宽？](http://my.oschina.net/lych0317/blog/126215?fromerr=65dDkPes)
 
 因为只是绘制了一个带圆角的图片，所以不能使子视图超出部分不显示。
 
 如果有背景图片在的话，就不会绘制背景颜色
+
+
 
 ####更新日志
 - 2016/3/1   1.0.2版本 ：修复backgroundColor参数无效的BUG

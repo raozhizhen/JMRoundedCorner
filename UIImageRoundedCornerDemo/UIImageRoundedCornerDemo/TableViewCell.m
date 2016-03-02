@@ -48,7 +48,7 @@
     [self.contentView addSubview:_button];
     
     _label = [[UILabel alloc] initWithFrame:CGRectMake(60, 7, viewWidth, 40)];
-    _label.text = @"这是一个label";
+    _label.text = @"label";
     [_label setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
     _label.font = [UIFont systemFontOfSize:12];
     _label.textAlignment = NSTextAlignmentCenter;
