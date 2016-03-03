@@ -23,14 +23,31 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 
 ####解决方案
 
-用GraphicsContext生成一张带圆角的图,设置view.layer.contents为这张图片。
+如果你的view不需要让子视图超出部分不显示，且不需要给view的image绘制圆角，
+
+可以查看 cornerRadius 属性的注释：
+
+	By default, the corner radius does not apply to the image in the layer’s contents property; it applies only to the background color and border of the layer. However, setting the masksToBounds property to true causes the content to be clipped to the rounded corners.
+
+这个属性会影响layout的背景颜色和border，所以如下代码即可避免离屏渲染。
+
+```objc	
+view.layer.cornerRadius =radius;
+view.layer.backgroundColor =backgroundColor.CGColor;
+```
+
+但如果需要给view的image绘制圆角，如UIImageView.image 和UIButton的背景图片。
+
+则用GraphicsContext绘制一张带圆角的image给view来避免离屏渲染。
+
+我将这个过程封装了一下
 
 ####使用JMRoundedCorner来绘制圆角
 
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.0.2'
+	pod 'JMRoundedCorner', '~> 1.0.3'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -85,7 +102,7 @@ _label.textAlignment = NSTextAlignmentCenter;
 }];
 ```
 
-这样，绘制出了圆角，也可以避免在大量cell离屏渲染的时候拖慢FPS，(支持Autolayout布局)
+这样，绘制出了圆角，也可以避免在大量view离屏渲染的时候拖慢FPS
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
 
 
@@ -94,9 +111,8 @@ _label.textAlignment = NSTextAlignmentCenter;
 #####0.0.4版本支持通过JMRadius设置4个角为不同的弧度，例如：
 
 ```objc
-- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+[_label setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
 ```
-
 
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2592.PNG?raw=true)
 ####联系我
@@ -112,17 +128,13 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 ####已知问题
 
-UILabel的text如果没有汉字只有英文的话，text就不显示（好神奇的BUG啊，我需要好好看看什么原因）,暂时解决方法可以在lable下方放置一个view，设置view的圆角
-
-如果设置view的边框出现上下左右边框宽度不一致的情况，可以试着让view的起始坐标和宽高都为整数。[IOS CGContextSetLineWidth无法设置1像素线宽？](http://my.oschina.net/lych0317/blog/126215?fromerr=65dDkPes)
-
 因为只是绘制了一个带圆角的图片，所以不能使子视图超出部分不显示。
 
-如果有背景图片在的话，就不会绘制背景颜色
-
-
+如果有背景图片在的话，就不会绘制背景颜色，可能有的图片有透明的地方需要显示背景颜色，解决办法是添加layer.backgroundColor和layer.cornerRadius，如果需要绘制的时4个不同弧度的角，则可以在view下方使用JMRoundedCorner再绘制一个带背景颜色的view。
 
 ####更新日志
+- 2016/3/3	 1.0.3版本 : 修复label里如果没有汉字，文字就不显示的BUG，以及做了使view落在像素点上的优化。
+
 - 2016/3/1   1.0.2版本 ：修复backgroundColor参数无效的BUG
 
 - 2016/3/1   1.0.1版本 ：优化

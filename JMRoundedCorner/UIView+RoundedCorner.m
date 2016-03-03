@@ -128,7 +128,6 @@
             }
         });
     });
-    
 }
 
 extern float pixel(float num) {
@@ -168,6 +167,5 @@ extern double floorbyunit(double num, double unit) {
     
     return num - fmod(num, unit);
 }
-
 
 @end

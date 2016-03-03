@@ -51,12 +51,11 @@
     [self.contentView addSubview:_button];
     
     _label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
-    _label.text = @"这是一个label";
-    _label.backgroundColor = [UIColor whiteColor];
+    _label.text = @"label";
+    _label.layer.backgroundColor = [UIColor whiteColor].CGColor;
     _label.layer.cornerRadius = 10;
     _label.layer.borderWidth = 0.5;
     _label.layer.borderColor = [UIColor redColor].CGColor;
-    _label.layer.masksToBounds = YES;
     _label.layer.shouldRasterize = YES;
     _label.layer.rasterizationScale = [UIScreen mainScreen].scale;
     _label.font = [UIFont systemFontOfSize:12];
