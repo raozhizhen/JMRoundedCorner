@@ -36,15 +36,14 @@
 }
 
 + (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit JMRadius:(JMRadius)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode {
+    
     UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
+//    sizeToFit = CGSizeMake(pixel(sizeToFit.width), pixel(sizeToFit.height));
     CGFloat halfBorderWidth = borderWidth / 2;
     //设置上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
     //边框大小
     CGContextSetLineWidth(context, borderWidth);
-    //去锯齿处理
-    CGContextSetAllowsAntialiasing(context, true);
-    CGContextSetShouldAntialias(context, true);
     //边框颜色
     CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
     //矩形填充颜色
@@ -70,7 +69,6 @@
     return outImage;
 }
 
-
 - (UIImage *)scaleToSize:(CGSize)size withContentMode:(UIViewContentMode)contentMode {
     
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
@@ -85,6 +83,7 @@
 }
 
 - (CGRect)convertRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode {
+    
     if (self.size.width != rect.size.width || self.size.height != rect.size.height) {
         if (contentMode == UIViewContentModeLeft) {
             return CGRectMake(rect.origin.x,
