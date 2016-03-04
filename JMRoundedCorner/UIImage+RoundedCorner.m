@@ -37,8 +37,15 @@
 
 + (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit JMRadius:(JMRadius)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode {
     
+    if (backgroundImage) {
+        backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode backgroundColor:backgroundColor];
+        backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    } else if (!backgroundColor){
+        backgroundColor = [UIColor whiteColor];
+    }
+    
     UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
-//    sizeToFit = CGSizeMake(pixel(sizeToFit.width), pixel(sizeToFit.height));
+
     CGFloat halfBorderWidth = borderWidth / 2;
     //设置上下文
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -47,12 +54,6 @@
     //边框颜色
     CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
     //矩形填充颜色
-    if (backgroundImage) {
-        backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode];
-        backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-    } else if (!backgroundColor){
-        backgroundColor = [UIColor whiteColor];
-    }
     CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
     CGFloat height = sizeToFit.height;
     CGFloat width = sizeToFit.width;
@@ -69,16 +70,22 @@
     return outImage;
 }
 
-- (UIImage *)scaleToSize:(CGSize)size withContentMode:(UIViewContentMode)contentMode {
+- (UIImage *)scaleToSize:(CGSize)size withContentMode:(UIViewContentMode)contentMode backgroundColor:(UIColor *)backgroundColor {
     
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
     
+    if (backgroundColor) {
+        
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
+        CGContextAddRect(context, rect);
+        CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
+    }
+
     [self drawInRect:[self convertRect:CGRectMake(0.0f, 0.0f, size.width, size.height) withContentMode:contentMode]];
-    
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
-    
     return scaledImage;
 }
 

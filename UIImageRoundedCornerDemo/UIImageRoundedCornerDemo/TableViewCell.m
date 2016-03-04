@@ -33,10 +33,10 @@
 - (void)setupViews {
     self.contentView.backgroundColor = [UIColor lightGrayColor];
     
-    UIImage *avatar = [UIImage imageNamed:@"avatar.jpg"];
+    UIImage *avatar = [UIImage imageNamed:@"luhu"];
     
     _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
-    [_avatarView setJMRadius:JMRadiusMake(20, 0, 0, 20) withBorderColor:[UIColor redColor] borderWidth:0.5 backgroundColor:[UIColor whiteColor] backgroundImage:avatar contentMode:UIViewContentModeScaleToFill];
+    [_avatarView setJMRadius:JMRadiusMake(20, 0, 0, 20) withBorderColor:[UIColor redColor] borderWidth:0.5 backgroundColor:[UIColor redColor] backgroundImage:avatar contentMode:UIViewContentModeScaleToFill];
     [self.contentView addSubview:_avatarView];
     
     NSInteger viewWidth = ([UIScreen mainScreen].bounds.size.width - 78) / 3;
