@@ -29,11 +29,11 @@ Instrument的Core Animation 有一个叫做Color Offscreen-Rendered Yellow的选
 
 	By default, the corner radius does not apply to the image in the layer’s contents property; it applies only to the background color and border of the layer. However, setting the masksToBounds property to true causes the content to be clipped to the rounded corners.
 
-这个属性会影响layout的背景颜色和border，所以如下代码即可避免离屏渲染。
+这个属性会影响layer的背景颜色和border，所以如下代码即可避免离屏渲染。
 
 ```objc	
-view.layer.cornerRadius =radius;
-view.layer.backgroundColor =backgroundColor.CGColor;
+view.layer.cornerRadius = radius;
+view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 但如果需要给view的image绘制圆角，如UIImageView.image 和UIButton的背景图片。
