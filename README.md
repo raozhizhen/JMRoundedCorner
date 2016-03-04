@@ -47,7 +47,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.0.3'
+	pod 'JMRoundedCorner', '~> 1.0.4'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -84,20 +84,16 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 #####代码示例
-
 ```objc
-_label = [[UILabel alloc] initWithFrame:CGRectMake(70 + viewWidth, 7, viewWidth, 40)];
-_label.text = @"这是一个label";
-[_label setCornerRadius:10 withBorderColor:[UIColor redColor] borderWidth:0.5];
-_label.font = [UIFont systemFontOfSize:12];
-_label.textAlignment = NSTextAlignmentCenter;
-[self.contentView addSubview:_label];
+    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
+    [_avatarView setCornerRadius:20 withImage:[UIImage imageNamed:@"avatar.jpg"]];
+    [self.contentView addSubview:_avatarView];
 ```
 
 ```objc
 [[SDWebImageManager sharedManager] downloadImageWithURL:_model.avatarURL options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
 	if (finished) {
-		[_avatarImageView setCornerRadius:19 withImage:image];
+		[_avatarView setCornerRadius:20 withImage:image];
 	}
 }];
 ```
@@ -130,9 +126,12 @@ _label.textAlignment = NSTextAlignmentCenter;
 
 因为只是绘制了一个带圆角的图片，所以不能使子视图超出部分不显示。
 
-如果有背景图片在的话，就不会绘制背景颜色，可能有的图片有透明的地方需要显示背景颜色，解决办法是添加layer.backgroundColor和layer.cornerRadius，如果需要绘制的时4个不同弧度的角，则可以在view下方使用JMRoundedCorner再绘制一个带背景颜色的view。
+虽然去掉了size参数，但某些场景可能会出现JMRoundedCorner拿不到size参数的情况，可以选择调用UIImage+RoundedCorner.h的方法绘制一张带圆角的图片解决。
+
 
 ####更新日志
+- 2016/3/4	 1.0.4版本 : 修复有背景图片就不绘制背景颜色的BUG
+
 - 2016/3/3	 1.0.3版本 : 修复label里如果没有汉字，文字就不显示的BUG，以及做了使view落在像素点上的优化。
 
 - 2016/3/1   1.0.2版本 ：修复backgroundColor参数无效的BUG
