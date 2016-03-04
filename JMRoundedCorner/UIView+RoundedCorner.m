@@ -57,6 +57,7 @@
 }
 
 - (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode {
+    
     [self setNeedsLayout];
     NSValue *radiusValue = [NSValue valueWithBytes:&radius objCType:@encode(JMRadius)];
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
@@ -114,8 +115,10 @@
 
     size = CGSizeMake(pixel(size.width), pixel(size.height));
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
         UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:size JMRadius:radius borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage withContentMode:contentMode];
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             self.frame = CGRectMake(pixel(self.frame.origin.x), pixel(self.frame.origin.y), size.width, size.height);
             if ([self isKindOfClass:[UIImageView class]]) {
                 ((UIImageView *)self).image = image;
@@ -132,40 +135,9 @@
 
 extern float pixel(float num) {
     
-    switch ((int)[UIScreen mainScreen].scale) {
-        case 1:
-            return roundbyunit(num, 1.0 / 1.0);
-            break;
-        case 2:
-            return roundbyunit(num, 1.0 / 2.0);
-            break;
-        case 3:
-            return roundbyunit(num, 1.0 / 3.0);
-            break;
-        default:
-            return num;
-            break;
-    }
-}
-
-extern double roundbyunit(double num, double unit) {
-    
+    float unit = 1.0 / [UIScreen mainScreen].scale;
     double remain = fmod(num, unit);
-    if (remain > unit / 2.0) {
-        return ceilbyunit(num, unit);
-    } else {
-        return floorbyunit(num, unit);
-    }
-}
-
-extern double ceilbyunit(double num, double unit) {
-    
-    return num - fmod(num, unit) + unit;
-}
-
-extern double floorbyunit(double num, double unit) {
-    
-    return num - fmod(num, unit);
+    return num - remain + (remain >= unit / 2.0? unit: 0);
 }
 
 @end

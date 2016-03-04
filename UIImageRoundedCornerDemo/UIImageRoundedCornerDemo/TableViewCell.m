@@ -32,9 +32,7 @@
 
 - (void)setupViews {
     self.contentView.backgroundColor = [UIColor lightGrayColor];
-    
-    UIImage *avatar = [UIImage imageNamed:@"luhu"];
-    
+        
     _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
     [_avatarView setCornerRadius:20 withImage:[UIImage imageNamed:@"avatar.jpg"]];
     [self.contentView addSubview:_avatarView];

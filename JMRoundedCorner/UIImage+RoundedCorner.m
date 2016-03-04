@@ -76,7 +76,6 @@
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
     
     if (backgroundColor) {
-        
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
         CGContextAddRect(context, rect);
