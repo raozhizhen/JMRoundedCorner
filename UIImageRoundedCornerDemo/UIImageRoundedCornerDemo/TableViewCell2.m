@@ -56,8 +56,6 @@
     _label.layer.cornerRadius = 10;
     _label.layer.borderWidth = 0.5;
     _label.layer.borderColor = [UIColor redColor].CGColor;
-    _label.layer.shouldRasterize = YES;
-    _label.layer.rasterizationScale = [UIScreen mainScreen].scale;
     _label.font = [UIFont systemFontOfSize:12];
     _label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_label];

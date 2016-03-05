@@ -81,7 +81,6 @@
         CGContextAddRect(context, rect);
         CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
     }
-
     [self drawInRect:[self convertRect:CGRectMake(0.0f, 0.0f, size.width, size.height) withContentMode:contentMode]];
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -141,7 +140,6 @@
             if (imageSize.height < imageSize.width) {
                 imageSize.width = floor((imageSize.width/imageSize.height) * rect.size.height);
                 imageSize.height = rect.size.height;
-                
             } else {
                 imageSize.height = floor((imageSize.height/imageSize.width) * rect.size.width);
                 imageSize.width = rect.size.width;
@@ -149,13 +147,11 @@
             return CGRectMake(rect.origin.x + floor(rect.size.width/2 - imageSize.width/2),
                               rect.origin.y + floor(rect.size.height/2 - imageSize.height/2),
                               imageSize.width, imageSize.height);
-            
         } else if (contentMode == UIViewContentModeScaleAspectFit) {
             CGSize imageSize = self.size;
             if (imageSize.height < imageSize.width) {
                 imageSize.height = floor((imageSize.height/imageSize.width) * rect.size.width);
                 imageSize.width = rect.size.width;
-                
             } else {
                 imageSize.width = floor((imageSize.width/imageSize.height) * rect.size.height);
                 imageSize.height = rect.size.height;
