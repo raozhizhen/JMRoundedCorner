@@ -38,7 +38,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 但如果需要给view的image绘制圆角，如UIImageView.image 和UIButton的背景图片。
 
-则用GraphicsContext绘制一张带圆角的image给view来避免离屏渲染。
+则可以用GraphicsContext绘制一张带圆角的image给view来避免离屏渲染。
 
 我将这个过程封装了一下
 
@@ -121,6 +121,12 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 - [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
 
 - [Getting Pixels Onto the Screen](https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen/)
+
+####性能上的优缺点
+
+优点：没有了离屏渲染，调整了image的像素大小以避免不必要的缩放
+
+缺点：会造成图层混合
 
 ####已知问题
 

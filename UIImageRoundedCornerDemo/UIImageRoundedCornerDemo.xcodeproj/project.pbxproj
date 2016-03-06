@@ -33,7 +33,6 @@
 		88EA46511C7FFA1E00C231FB /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA46421C7FFA1E00C231FB /* NSArray+MASAdditions.m */; };
 		88EA46521C7FFA1E00C231FB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA46451C7FFA1E00C231FB /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		88EA46531C7FFA1E00C231FB /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA46471C7FFA1E00C231FB /* View+MASAdditions.m */; };
-		88EA46541C7FFA1E00C231FB /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 88EA46491C7FFA1E00C231FB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +107,6 @@
 		88EA46461C7FFA1E00C231FB /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		88EA46471C7FFA1E00C231FB /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		88EA46481C7FFA1E00C231FB /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		88EA46491C7FFA1E00C231FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +225,6 @@
 			children = (
 				88EA46301C7FFA1E00C231FB /* LICENSE */,
 				88EA46311C7FFA1E00C231FB /* Masonry */,
-				88EA46491C7FFA1E00C231FB /* README.md */,
 			);
 			path = Masonry;
 			sourceTree = "<group>";
@@ -408,7 +405,6 @@
 				88EA464C1C7FFA1E00C231FB /* MASConstraint.m in Sources */,
 				886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */,
 				886AF3C61C7C621E000FF00E /* AppDelegate.m in Sources */,
-				88EA46541C7FFA1E00C231FB /* README.md in Sources */,
 				88EA46511C7FFA1E00C231FB /* NSArray+MASAdditions.m in Sources */,
 				88EA46521C7FFA1E00C231FB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				886AF4131C7C7035000FF00E /* ViewController2.m in Sources */,
