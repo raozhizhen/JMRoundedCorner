@@ -139,7 +139,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 ####更新日志
-- 2016/3/4	 1.0.5版本 : 优化
+- 2016/3/6	 1.0.5版本 : 优化
 
 - 2016/3/4	 1.0.4版本 : 修复有背景图片就不绘制背景颜色的BUG
 
