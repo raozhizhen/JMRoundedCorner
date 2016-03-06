@@ -47,7 +47,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.0.4'
+	pod 'JMRoundedCorner', '~> 1.0.5'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -132,10 +132,15 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 因为只是绘制了一个带圆角的图片，所以不能使子视图超出部分不显示。
 
-虽然去掉了size参数，但某些场景可能会出现JMRoundedCorner拿不到size参数的情况，可以选择调用UIImage+RoundedCorner.h的方法绘制一张带圆角的图片解决。
+虽然去掉了size参数，但某些场景可能会出现JMRoundedCorner拿不到size参数的情况，如果JMRoundedCorner没有拿到view的size，可以调用这个方法
 
+```objc
+- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size;
+```
 
 ####更新日志
+- 2016/3/4	 1.0.5版本 : 优化
+
 - 2016/3/4	 1.0.4版本 : 修复有背景图片就不绘制背景颜色的BUG
 
 - 2016/3/3	 1.0.3版本 : 修复label里如果没有汉字，文字就不显示的BUG，以及做了使view落在像素点上的优化。

@@ -46,4 +46,7 @@
 /**设置所有属性配置出一个圆角背景图,四个圆角弧度可以不同*/
 - (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode;
 
+/**设置所有属性配置出一个圆角背景图，并多传递了一个size参数，如果JMRoundedCorner没有拿到view的size，可以调用这个方法*/
+- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size;
+
 @end

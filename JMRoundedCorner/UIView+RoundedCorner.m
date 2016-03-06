@@ -112,7 +112,10 @@
 }
 
 - (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size {
-
+    if (size.width == 0 || size.height == 0) {
+        NSLog(@"JMRoundedCorner可能出了点状况，没有在布局之后拿到view的size，可以调用方法，- setJMRadius: withBorderColor: borderWidth: backgroundColor: backgroundImage: contentMode: size:");
+        return;
+    }
     size = CGSizeMake(pixel(size.width), pixel(size.height));
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
