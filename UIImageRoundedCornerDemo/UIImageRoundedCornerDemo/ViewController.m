@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "TableViewCell.h"
-#import "LPFPSLabel.h"
 #import "ViewController2.h"
 
 @interface ViewController () <UITableViewDataSource>;
@@ -29,10 +28,6 @@
     tableView.rowHeight = 54;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
-    
-    LPFPSLabel *fpsLabel = [[LPFPSLabel alloc] initWithFrame:CGRectMake(10, 74, 50, 30)];
-    [fpsLabel sizeToFit];
-    [self.view addSubview:fpsLabel];
 }
 
 - (void)viewDidLoad {
@@ -51,7 +46,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1000;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

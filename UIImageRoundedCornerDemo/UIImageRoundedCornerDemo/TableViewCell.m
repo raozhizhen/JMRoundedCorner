@@ -33,29 +33,29 @@
 - (void)setupViews {
     self.contentView.backgroundColor = [UIColor lightGrayColor];
         
-    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
-    [_avatarView setCornerRadius:20 withImage:[UIImage imageNamed:@"avatar.jpg"]];
+    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 50, 50)];
+    [_avatarView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) withBorderColor:[UIColor redColor] borderWidth:0 backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];
     [self.contentView addSubview:_avatarView];
     
     NSInteger viewWidth = ([UIScreen mainScreen].bounds.size.width - 78) / 3;
     
-    _button = [[UIButton alloc] initWithFrame:CGRectMake(60+0.22, 7, viewWidth + 0.34, 40)];
+    _button = [[UIButton alloc] initWithFrame:CGRectMake(60 + 0.22, 7, viewWidth + 0.34, 40)];
     [_button setTitle:@"button" forState:UIControlStateNormal];
-    [_button setJMRadius:JMRadiusMake(10, 0, 10, 0) withImage:[self imageWithColor:[UIColor redColor]]];
+    [_button jm_setJMRadius:JMRadiusMake(10, 0, 10, 0) withImage:[UIImage imageNamed:@"avatar.jpg"]];
     _button.titleLabel.font = [UIFont systemFontOfSize:12];
-    _button.titleLabel.textColor = [UIColor whiteColor];
+    [_button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [self.contentView addSubview:_button];
     
     _label = [[UILabel alloc] init];
     _label.text = @"label";
-    [_label setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
+    [_label jm_setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
     _label.font = [UIFont systemFontOfSize:12];
     _label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_label];
     
     _textField = [[UITextField alloc] init];
     _textField.text = @"textField";
-    [_textField setJMRadius:JMRadiusMake(10, 20, 10, 20) withBorderColor:[UIColor redColor] borderWidth:0.5];
+    [_textField jm_setJMRadius:JMRadiusMake(10, 20, 10, 20) withBorderColor:[UIColor redColor] borderWidth:0.5];
     _textField.font = [UIFont systemFontOfSize:12];
     _textField.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_textField];

@@ -7,8 +7,8 @@
 //
 
 #import "ViewController2.h"
+#import "ViewController3.h"
 #import "TableViewCell2.h"
-#import "LPFPSLabel.h"
 
 @interface ViewController2 () <UITableViewDataSource>;
 
@@ -20,17 +20,21 @@
 
 - (void)loadView {
     [super loadView];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"使用layer.cornerRadius";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"切换" style:UIBarButtonItemStylePlain target:self action:@selector(action)];
 
     UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     [tableView registerClass:[TableViewCell2 class] forCellReuseIdentifier:[TableViewCell2 cellReuseIdentifier]];
     tableView.rowHeight = 54;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
-    
-    LPFPSLabel *fpsLabel = [[LPFPSLabel alloc] initWithFrame:CGRectMake(10, 74, 50, 30)];
-    [fpsLabel sizeToFit];
-    [self.view addSubview:fpsLabel];
+}
+
+- (void)action {
+    ViewController3 *VC = [[ViewController3 alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
