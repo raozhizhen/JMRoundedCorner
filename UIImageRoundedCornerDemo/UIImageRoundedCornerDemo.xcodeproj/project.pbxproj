@@ -17,10 +17,11 @@
 		886AF3E71C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3E61C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m */; };
 		886AF40A1C7C6779000FF00E /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 886AF4091C7C6779000FF00E /* avatar.jpg */; };
 		886AF40D1C7C67DD000FF00E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF40C1C7C67DD000FF00E /* TableViewCell.m */; };
-		886AF4101C7C6CA5000FF00E /* LPFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF40F1C7C6CA5000FF00E /* LPFPSLabel.m */; };
 		886AF4131C7C7035000FF00E /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4121C7C7035000FF00E /* ViewController2.m */; };
 		886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4151C7C70A9000FF00E /* TableViewCell2.m */; };
 		886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */; };
+		8877A0561C933AC00054C88E /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 8877A0551C933AC00054C88E /* ViewController3.m */; };
+		8877A0591C9452F70054C88E /* UIControl+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 8877A0581C9452F70054C88E /* UIControl+YYAdd.m */; };
 		88A7E43D1C7ECC49001358B4 /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7E43C1C7ECC49001358B4 /* UIView+RoundedCorner.m */; };
 		88DBB8B51C897F9400751C55 /* luhu.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DBB8B41C897F9400751C55 /* luhu.png */; };
 		88EA464A1C7FFA1E00C231FB /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 88EA46301C7FFA1E00C231FB /* LICENSE */; };
@@ -72,14 +73,16 @@
 		886AF4091C7C6779000FF00E /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 		886AF40B1C7C67DD000FF00E /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
 		886AF40C1C7C67DD000FF00E /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
-		886AF40E1C7C6CA5000FF00E /* LPFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPFPSLabel.h; sourceTree = "<group>"; };
-		886AF40F1C7C6CA5000FF00E /* LPFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPFPSLabel.m; sourceTree = "<group>"; };
 		886AF4111C7C7035000FF00E /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		886AF4121C7C7035000FF00E /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		886AF4141C7C70A9000FF00E /* TableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell2.h; sourceTree = "<group>"; };
 		886AF4151C7C70A9000FF00E /* TableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell2.m; sourceTree = "<group>"; };
 		886AF41A1C7C8EEE000FF00E /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		8877A0541C933AC00054C88E /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		8877A0551C933AC00054C88E /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		8877A0571C9452F70054C88E /* UIControl+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+YYAdd.h"; sourceTree = "<group>"; };
+		8877A0581C9452F70054C88E /* UIControl+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+YYAdd.m"; sourceTree = "<group>"; };
 		88A7E43B1C7ECC49001358B4 /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
 		88A7E43C1C7ECC49001358B4 /* UIView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorner.m"; sourceTree = "<group>"; };
 		88DBB8B41C897F9400751C55 /* luhu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = luhu.png; sourceTree = "<group>"; };
@@ -165,8 +168,10 @@
 				886AF3C81C7C621E000FF00E /* ViewController.m */,
 				886AF4111C7C7035000FF00E /* ViewController2.h */,
 				886AF4121C7C7035000FF00E /* ViewController2.m */,
-				886AF40E1C7C6CA5000FF00E /* LPFPSLabel.h */,
-				886AF40F1C7C6CA5000FF00E /* LPFPSLabel.m */,
+				8877A0541C933AC00054C88E /* ViewController3.h */,
+				8877A0551C933AC00054C88E /* ViewController3.m */,
+				8877A0571C9452F70054C88E /* UIControl+YYAdd.h */,
+				8877A0581C9452F70054C88E /* UIControl+YYAdd.m */,
 				886AF40B1C7C67DD000FF00E /* TableViewCell.h */,
 				886AF40C1C7C67DD000FF00E /* TableViewCell.m */,
 				886AF4141C7C70A9000FF00E /* TableViewCell2.h */,
@@ -394,6 +399,7 @@
 			files = (
 				88EA46501C7FFA1E00C231FB /* MASViewConstraint.m in Sources */,
 				886AF3C91C7C621E000FF00E /* ViewController.m in Sources */,
+				8877A0561C933AC00054C88E /* ViewController3.m in Sources */,
 				88EA464F1C7FFA1E00C231FB /* MASViewAttribute.m in Sources */,
 				88A7E43D1C7ECC49001358B4 /* UIView+RoundedCorner.m in Sources */,
 				886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */,
@@ -402,6 +408,7 @@
 				88EA464D1C7FFA1E00C231FB /* MASConstraintMaker.m in Sources */,
 				88EA46531C7FFA1E00C231FB /* View+MASAdditions.m in Sources */,
 				88EA464E1C7FFA1E00C231FB /* MASLayoutConstraint.m in Sources */,
+				8877A0591C9452F70054C88E /* UIControl+YYAdd.m in Sources */,
 				88EA464C1C7FFA1E00C231FB /* MASConstraint.m in Sources */,
 				886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */,
 				886AF3C61C7C621E000FF00E /* AppDelegate.m in Sources */,
@@ -409,7 +416,6 @@
 				88EA46521C7FFA1E00C231FB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				886AF4131C7C7035000FF00E /* ViewController2.m in Sources */,
 				886AF3C31C7C621E000FF00E /* main.m in Sources */,
-				886AF4101C7C6CA5000FF00E /* LPFPSLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,2 @@
+/Users/jm/Library/Developer/Xcode/DerivedData/UIImageRoundedCornerDemo-cjomjshgwjsuocaioxtysnqohedf/Build/Products/Debug-iphonesimulator/UIImageRoundedCornerDemo.app
+iPhone Developer
