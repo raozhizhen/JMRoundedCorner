@@ -19,7 +19,6 @@
     UISlider *_slider4;
 }
 
-
 - (void)loadView {
     [super loadView];
     
@@ -27,8 +26,18 @@
     self.title = @"测试用页面";
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 300, 200)];
-    [_imageView jm_setJMRadius:JMRadiusMake(0, 0, 0, 0) withBorderColor:[UIColor redColor] borderWidth:10 backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];
+    [_imageView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) withBorderColor:[UIColor redColor] borderWidth:10 backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:_imageView];
+    
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 400, 300, 200)];
+//    imageView.contentMode = UIViewContentModeScaleAspectFit;
+//    imageView.image = [UIImage imageNamed:@"avatar.jpg"];
+//    imageView.layer.borderWidth = 10;
+//    imageView.layer.borderColor = [UIColor redColor].CGColor;
+//    imageView.layer.cornerRadius = 20;
+//    imageView.layer.masksToBounds = YES;
+//    imageView.contentMode = contentMode;
+//    [self.view addSubview:imageView];
     
     _slider0 = [[UISlider alloc] initWithFrame:CGRectMake(20, 400, 300, 20)];
     _slider0.minimumValue = 0;
@@ -56,7 +65,7 @@
     
     _slider4 = [[UISlider alloc] initWithFrame:CGRectMake(20, 560, 300, 20)];
     _slider4.minimumValue = 0;
-    _slider4.maximumValue = 150;
+    _slider4.maximumValue = 30;
     _slider4.value = 10;
     [self.view addSubview:_slider4];
     
@@ -75,7 +84,8 @@
     }];
     [_slider4 addBlockForControlEvents:UIControlEventValueChanged block:^(id sender) {
         [_self changed];
-    }];}
+    }];
+}
 
 - (void)changed {
     [_imageView jm_setJMRadius:JMRadiusMake(_slider0.value, _slider1.value, _slider2.value, _slider3.value) withBorderColor:[UIColor redColor] borderWidth:_slider4.value backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];

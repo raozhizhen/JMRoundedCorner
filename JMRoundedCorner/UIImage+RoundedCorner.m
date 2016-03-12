@@ -96,37 +96,41 @@ static inline CGFloat minimum(CGFloat a, CGFloat b, CGFloat c) {
         CGContextAddRect(context, rect);
         CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
     }
-    [self drawInRect:[self convertRect:CGRectMake(0.0f, 0.0f, size.width, size.height) withContentMode:contentMode]];
+    [self drawInRect:CGRectMake(0.0f, 0.0f, size.width, size.height) withContentMode:contentMode];
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return scaledImage;
+}
+
+-(void)drawInRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode {
+    [self drawInRect:[self convertRect:rect withContentMode:contentMode]];
 }
 
 - (CGRect)convertRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode {
     if (self.size.width != rect.size.width || self.size.height != rect.size.height) {
         if (contentMode == UIViewContentModeLeft) {
             return CGRectMake(rect.origin.x,
-                              rect.origin.y + floor(rect.size.height / 2 - self.size.height / 2),
+                              rect.origin.y + (rect.size.height / 2 - self.size.height / 2),
                               self.size.width, self.size.height);
         } else if (contentMode == UIViewContentModeRight) {
             return CGRectMake(rect.origin.x + (rect.size.width - self.size.width),
-                              rect.origin.y + floor(rect.size.height / 2 - self.size.height / 2),
+                              rect.origin.y + (rect.size.height / 2 - self.size.height / 2),
                               self.size.width, self.size.height);
         } else if (contentMode == UIViewContentModeTop) {
-            return CGRectMake(rect.origin.x + floor(rect.size.width / 2 - self.size.width / 2),
+            return CGRectMake(rect.origin.x + (rect.size.width / 2 - self.size.width / 2),
                               rect.origin.y,
                               self.size.width, self.size.height);
         } else if (contentMode == UIViewContentModeBottom) {
-            return CGRectMake(rect.origin.x + floor(rect.size.width / 2 - self.size.width / 2),
-                              rect.origin.y + floor(rect.size.height - self.size.height),
+            return CGRectMake(rect.origin.x + (rect.size.width / 2 - self.size.width / 2),
+                              rect.origin.y + (rect.size.height - self.size.height),
                               self.size.width, self.size.height);
         } else if (contentMode == UIViewContentModeCenter) {
-            return CGRectMake(rect.origin.x + floor(rect.size.width / 2 - self.size.width / 2),
-                              rect.origin.y + floor(rect.size.height / 2 - self.size.height / 2),
+            return CGRectMake(rect.origin.x + (rect.size.width / 2 - self.size.width / 2),
+                              rect.origin.y + (rect.size.height / 2 - self.size.height / 2),
                               self.size.width, self.size.height);
         } else if (contentMode == UIViewContentModeBottomLeft) {
             return CGRectMake(rect.origin.x,
-                              rect.origin.y + floor(rect.size.height - self.size.height),
+                              rect.origin.y + (rect.size.height - self.size.height),
                               self.size.width, self.size.height);
         } else if (contentMode == UIViewContentModeBottomRight) {
             return CGRectMake(rect.origin.x + (rect.size.width - self.size.width),
@@ -143,26 +147,26 @@ static inline CGFloat minimum(CGFloat a, CGFloat b, CGFloat c) {
         } else if (contentMode == UIViewContentModeScaleAspectFit) {
             CGSize imageSize = self.size;
             if (imageSize.height < imageSize.width) {
-                imageSize.width = floor((imageSize.width/imageSize.height) * rect.size.height);
+                imageSize.width = ((imageSize.width/imageSize.height) * rect.size.height);
                 imageSize.height = rect.size.height;
             } else {
-                imageSize.height = floor((imageSize.height/imageSize.width) * rect.size.width);
+                imageSize.height = ((imageSize.height/imageSize.width) * rect.size.width);
                 imageSize.width = rect.size.width;
             }
-            return CGRectMake(rect.origin.x + floor(rect.size.width / 2 - imageSize.width / 2),
-                              rect.origin.y + floor(rect.size.height / 2 - imageSize.height / 2),
+            return CGRectMake(rect.origin.x + (rect.size.width / 2 - imageSize.width / 2),
+                              rect.origin.y + (rect.size.height / 2 - imageSize.height / 2),
                               imageSize.width, imageSize.height);
         } else if (contentMode == UIViewContentModeScaleAspectFill) {
             CGSize imageSize = self.size;
             if (imageSize.height < imageSize.width) {
-                imageSize.height = floor((imageSize.height/imageSize.width) * rect.size.width);
+                imageSize.height = ((imageSize.height/imageSize.width) * rect.size.width);
                 imageSize.width = rect.size.width;
             } else {
-                imageSize.width = floor((imageSize.width/imageSize.height) * rect.size.height);
+                imageSize.width = ((imageSize.width/imageSize.height) * rect.size.height);
                 imageSize.height = rect.size.height;
             }
-            return CGRectMake(rect.origin.x + floor(rect.size.width / 2 - imageSize.width / 2),
-                              rect.origin.y + floor(rect.size.height / 2 - imageSize.height / 2),
+            return CGRectMake(rect.origin.x + (rect.size.width / 2 - imageSize.width / 2),
+                              rect.origin.y + (rect.size.height / 2 - imageSize.height / 2),
                               imageSize.width, imageSize.height);
         }
     }
