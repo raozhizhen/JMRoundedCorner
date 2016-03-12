@@ -47,7 +47,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.0.5'
+	pod 'JMRoundedCorner', '~> 1.1.0'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -56,44 +56,49 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 #####给view设置一个圆角边框
 
 ```objc	
-- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+- (void)jm_setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
 ```
 
 #####给view设置一个圆角背景颜色
 
 ```objc
-- (void)setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)backgroundColor;
+- (void)jm_setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)backgroundColor;
 ```
 
 #####给view设置一个圆角背景图
 
 ```objc
-- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image;
+- (void)jm_setCornerRadius:(CGFloat)radius withImage:(UIImage *)image;
 ```
 
 #####给view设置一个contentMode模式的圆角背景图
 
 ```objc
-- (void)setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode;
+- (void)jm_setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode;
 ```
 
 #####设置所有属性配置出一个圆角背景图
 
 ```objc
-- (void)setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage ContentMode:(UIViewContentMode)contentMode;
+- (void)jm_setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode;
 ```
 
 #####代码示例
 ```objc
     _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
-    [_avatarView setCornerRadius:20 withImage:[UIImage imageNamed:@"avatar.jpg"]];
+    [_avatarView jm_setCornerRadius:20 withImage:[UIImage imageNamed:@"avatar.jpg"]];
     [self.contentView addSubview:_avatarView];
 ```
 
 ```objc
+//添加占位图
+if (!_avatarView.image) {
+	_avatarView.backgroundColor = [UIColor colorWithPatternImage:placeholderImage jm_imageWithRoundedCornersAndSize:CGSizeMake(60, 60) andCornerRadius:30]];
+} 
+//下载完之后设置圆角image
 [[SDWebImageManager sharedManager] downloadImageWithURL:_model.avatarURL options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
 	if (finished) {
-		[_avatarView setCornerRadius:20 withImage:image];
+		[_avatarView jm_setCornerRadius:20 withImage:image];
 	}
 }];
 ```
@@ -107,7 +112,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 #####0.0.4版本支持通过JMRadius设置4个角为不同的弧度，例如：
 
 ```objc
-[_label setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
+[_label jm_setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
 ```
 
 ![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2592.PNG?raw=true)
@@ -139,6 +144,8 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 ####更新日志
+- 2016/3/12  1.1.0版本 : 接口带上了jm_前缀，JMRadius 添加圆角优先级，经过大量测试，解决细节上的一些小BUG。
+
 - 2016/3/6   1.0.5版本 : 优化
 
 - 2016/3/4   1.0.4版本 : 修复有背景图片就不绘制背景颜色的BUG
