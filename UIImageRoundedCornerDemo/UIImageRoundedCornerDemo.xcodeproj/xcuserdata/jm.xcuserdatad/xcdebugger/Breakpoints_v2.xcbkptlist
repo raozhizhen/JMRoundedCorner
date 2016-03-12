@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../JMRoundedCorner/UIImage+RoundedCorner.m"
-            timestampString = "479411127.904121"
+            timestampString = "479483973.135588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "+jm_imageWithRoundedCornersAndSize:JMRadius:borderColor:borderWidth:backgroundColor:backgroundImage:withContentMode:"
             landmarkType = "5">
             <Locations>

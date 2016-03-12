@@ -53,7 +53,15 @@
     CGFloat width = sizeToFit.width;
     radius = [UIImage transformationJMRadius:radius size:sizeToFit boardWidth:borderWidth];
     
-    CGContextMoveToPoint(context, width - halfBorderWidth, radius.topRightRadius > 0 ? halfBorderWidth + radius.topRightRadius : 0);  // 开始坐标右边开始
+    CGFloat startPointY;
+    if (radius.topRightRadius >= height - borderWidth) {
+        startPointY = borderWidth + radius.topRightRadius;
+    } else if (radius.topRightRadius > 0){
+        startPointY = halfBorderWidth + radius.topRightRadius;
+    } else {
+        startPointY = 0;
+    }
+    CGContextMoveToPoint(context, width - halfBorderWidth, startPointY);  // 开始坐标右边开始
     CGContextAddArcToPoint(context, width - halfBorderWidth, height - halfBorderWidth, width / 2, height - halfBorderWidth, radius.bottomRightRadius);  // 右下角角度
     CGContextAddArcToPoint(context, halfBorderWidth, height - halfBorderWidth, halfBorderWidth, height / 2, radius.bottomLeftRadius); // 左下角角度
     CGContextAddArcToPoint(context, halfBorderWidth, halfBorderWidth, width / 2, halfBorderWidth, radius.topLeftRadius); // 左上角
@@ -66,10 +74,10 @@
 }
 
 + (JMRadius)transformationJMRadius:(JMRadius)radius size:(CGSize)size boardWidth:(CGFloat)borderWidth {
-    radius.topRightRadius = minimum(size.width - borderWidth, size.height - borderWidth, radius.topRightRadius - borderWidth / 2);
-    radius.bottomRightRadius = minimum(size.width - borderWidth, size.height - borderWidth - radius.topRightRadius, radius.bottomRightRadius - borderWidth / 2);
-    radius.bottomLeftRadius = minimum(size.width - borderWidth - MAX(radius.bottomRightRadius, radius.topRightRadius), size.height - borderWidth - radius.bottomRightRadius, radius.bottomLeftRadius - borderWidth / 2);
-    radius.topLeftRadius = minimum(size.width - borderWidth - MAX(radius.topRightRadius, radius.bottomRightRadius), size.height - borderWidth - MAX(radius.bottomLeftRadius, radius.bottomRightRadius), radius.topLeftRadius - borderWidth / 2);
+    radius.topLeftRadius = minimum(size.width - borderWidth, size.height - borderWidth, radius.topLeftRadius - borderWidth / 2);
+    radius.topRightRadius = minimum(size.width - borderWidth - radius.topLeftRadius, size.height - borderWidth, radius.topRightRadius - borderWidth / 2);
+    radius.bottomLeftRadius = minimum(size.width - borderWidth, size.height - borderWidth - radius.topLeftRadius, radius.bottomLeftRadius - borderWidth / 2);
+    radius.bottomRightRadius = minimum(size.width - borderWidth - radius.bottomLeftRadius, size.height - borderWidth - radius.topRightRadius, radius.bottomRightRadius - borderWidth / 2);
     return radius;
 }
 

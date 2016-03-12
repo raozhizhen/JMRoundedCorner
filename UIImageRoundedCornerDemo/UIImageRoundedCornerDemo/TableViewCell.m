@@ -33,7 +33,7 @@
 - (void)setupViews {
     self.contentView.backgroundColor = [UIColor lightGrayColor];
         
-    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 50, 50)];
+    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
     [_avatarView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) withBorderColor:[UIColor redColor] borderWidth:0 backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];
     [self.contentView addSubview:_avatarView];
     
