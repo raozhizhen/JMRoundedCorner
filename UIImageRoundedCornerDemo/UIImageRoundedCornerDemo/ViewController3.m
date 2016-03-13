@@ -42,25 +42,25 @@
     _slider0 = [[UISlider alloc] initWithFrame:CGRectMake(20, 400, 300, 20)];
     _slider0.minimumValue = 0;
     _slider0.maximumValue = 300;
-    _slider0.value = 0;
+    _slider0.value = 20;
     [self.view addSubview:_slider0];
 
     _slider1 = [[UISlider alloc] initWithFrame:CGRectMake(20, 440, 300, 20)];
     _slider1.minimumValue = 0;
     _slider1.maximumValue = 300;
-    _slider1.value = 0;
+    _slider1.value = 20;
     [self.view addSubview:_slider1];
     
     _slider2 = [[UISlider alloc] initWithFrame:CGRectMake(20, 480, 300, 20)];
     _slider2.minimumValue = 0;
     _slider2.maximumValue = 300;
-    _slider2.value = 0;
+    _slider2.value = 20;
     [self.view addSubview:_slider2];
     
     _slider3 = [[UISlider alloc] initWithFrame:CGRectMake(20, 520, 300, 20)];
     _slider3.minimumValue = 0;
     _slider3.maximumValue = 300;
-    _slider3.value = 0;
+    _slider3.value = 20;
     [self.view addSubview:_slider3];
     
     _slider4 = [[UISlider alloc] initWithFrame:CGRectMake(20, 560, 300, 20)];
