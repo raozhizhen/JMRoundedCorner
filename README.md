@@ -140,7 +140,7 @@ if (!_avatarView.image) {
 虽然去掉了 size 参数，但某些场景可能会出现 JMRoundedCorner 拿不到 size 参数的情况，如果 JMRoundedCorner 没有拿到 view 的 size ，可以调用这个方法
 
 ```objc
-- (void)setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size;
+- (void)jm_setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size;
 ```
 
 ####更新日志
