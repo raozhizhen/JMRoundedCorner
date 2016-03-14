@@ -47,7 +47,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.1.0'
+	pod 'JMRoundedCorner', '~> 1.1.1'
 	
 	#import "UIView+RoundedCorner.h"
 
