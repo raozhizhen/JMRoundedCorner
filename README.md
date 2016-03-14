@@ -15,7 +15,7 @@ _label.layer.masksToBounds = YES;
 cornerRadius 和 maskToBounds 独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了离屏渲染， 
 Instrument的 Core Animation 有一个叫做 Color Offscreen-Rendered Yellow 的选项。它会将已经被渲染到屏幕外缓冲区的区域标注为黄色，下图中黄色的部分就是离屏渲染的地方。
 
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2582.PNG?raw=true)
+![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2590.PNG?raw=true)
 
 ####离屏渲染是什么？
 
