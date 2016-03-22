@@ -109,7 +109,7 @@ if (!_avatarView.image) {
 
 将 Demo 下下来，试试使用 JMRoundedCorner 带来的顺滑提升。
 
-##### 0.0.4 版本支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下，例如：
+##### 支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下，例如：
 
 ```objc
 [_label jm_setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
