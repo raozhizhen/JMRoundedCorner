@@ -123,7 +123,7 @@
     });
 }
 
-extern float pixel(float num) {
+static inline float pixel(float num) {
     float unit = 1.0 / [UIScreen mainScreen].scale;
     double remain = fmod(num, unit);
     return num - remain + (remain >= unit / 2.0? unit: 0);

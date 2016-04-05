@@ -51,7 +51,7 @@
     CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
     CGFloat height = sizeToFit.height;
     CGFloat width = sizeToFit.width;
-    radius = [UIImage transformationJMRadius:radius size:sizeToFit boardWidth:borderWidth];
+    radius = [UIImage transformationJMRadius:radius size:sizeToFit borderWidth:borderWidth];
     
     CGFloat startPointY;
     if (radius.topRightRadius >= height - borderWidth) {
@@ -73,7 +73,7 @@
     return outImage;
 }
 
-+ (JMRadius)transformationJMRadius:(JMRadius)radius size:(CGSize)size boardWidth:(CGFloat)borderWidth {
++ (JMRadius)transformationJMRadius:(JMRadius)radius size:(CGSize)size borderWidth:(CGFloat)borderWidth {
     radius.topLeftRadius = minimum(size.width - borderWidth, size.height - borderWidth, radius.topLeftRadius - borderWidth / 2);
     radius.topRightRadius = minimum(size.width - borderWidth - radius.topLeftRadius, size.height - borderWidth, radius.topRightRadius - borderWidth / 2);
     radius.bottomLeftRadius = minimum(size.width - borderWidth, size.height - borderWidth - radius.topLeftRadius, radius.bottomLeftRadius - borderWidth / 2);

@@ -25,6 +25,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"测试用页面";
     
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 300, 200)];
     [_imageView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) withBorderColor:[UIColor redColor] borderWidth:10 backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:_imageView];
