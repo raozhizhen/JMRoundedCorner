@@ -27,7 +27,7 @@
     
     UIImage *image = [UIImage imageNamed:@"avatar.jpg"];
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.image = image;
     _imageView.layer.borderWidth = 0.5;
     _imageView.layer.borderColor = [UIColor redColor].CGColor;

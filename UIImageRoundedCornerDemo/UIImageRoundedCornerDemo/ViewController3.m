@@ -22,9 +22,7 @@
 - (void)loadView {
     [super loadView];
     
-    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"测试用页面";
-    
     self.view.backgroundColor = [UIColor lightGrayColor];
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 300, 200)];
@@ -46,7 +44,7 @@
     _slider0.maximumValue = 300;
     _slider0.value = 20;
     [self.view addSubview:_slider0];
-
+    
     _slider1 = [[UISlider alloc] initWithFrame:CGRectMake(20, 440, 300, 20)];
     _slider1.minimumValue = 0;
     _slider1.maximumValue = 300;

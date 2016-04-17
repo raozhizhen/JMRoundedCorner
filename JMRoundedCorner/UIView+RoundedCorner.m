@@ -12,19 +12,19 @@
 @implementation UIView (RoundedCorner)
 
 - (void)jm_setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth {
-    [self jm_setCornerRadius:radius withBorderColor:borderColor borderWidth:borderWidth backgroundColor:nil backgroundImage:nil contentMode:UIViewContentModeScaleToFill];
+    [self jm_setCornerRadius:radius withBorderColor:borderColor borderWidth:borderWidth backgroundColor:nil backgroundImage:nil contentMode:UIViewContentModeScaleAspectFill];
 }
 
 - (void)jm_setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth {
-    [self jm_setJMRadius:radius withBorderColor:borderColor borderWidth:borderWidth backgroundColor:nil backgroundImage:nil contentMode:UIViewContentModeScaleToFill];
+    [self jm_setJMRadius:radius withBorderColor:borderColor borderWidth:borderWidth backgroundColor:nil backgroundImage:nil contentMode:UIViewContentModeScaleAspectFill];
 }
 
 - (void)jm_setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)backgroundColor {
-    [self jm_setCornerRadius:radius withBorderColor:nil borderWidth:0 backgroundColor:backgroundColor backgroundImage:nil contentMode:UIViewContentModeScaleToFill];
+    [self jm_setCornerRadius:radius withBorderColor:nil borderWidth:0 backgroundColor:backgroundColor backgroundImage:nil contentMode:UIViewContentModeScaleAspectFill];
 }
 
 - (void)jm_setJMRadius:(JMRadius)radius withBackgroundColor:(UIColor *)backgroundColor {
-    [self jm_setJMRadius:radius withBorderColor:nil borderWidth:0 backgroundColor:backgroundColor backgroundImage:nil contentMode:UIViewContentModeScaleToFill];
+    [self jm_setJMRadius:radius withBorderColor:nil borderWidth:0 backgroundColor:backgroundColor backgroundImage:nil contentMode:UIViewContentModeScaleAspectFill];
 }
 
 - (void)jm_setCornerRadius:(CGFloat)radius withImage:(UIImage *)image {
@@ -76,6 +76,10 @@
 }
 
 - (void)setRadius:(NSMutableDictionary *)dic {
+    if (self.bounds.size.width == 0 || self.bounds.size.height == 0) {
+        NSLog(@"JMRoundedCorner 可能受到某些邪恶力量的影响，没有在布局之后拿到 view 的 size （也可能这个 View 的 size 就是这个样子 -。-！），可以调用方法，- jm_setJMRadius: withBorderColor: borderWidth: backgroundColor: backgroundImage: contentMode: size: 方法给 JMRoundedCorner 提供 size");
+        return;
+    }
     JMRadius radius;
     [dic[@"radius"] getValue:&radius];
     UIColor *borderColor;
@@ -101,13 +105,9 @@
 }
 
 - (void)jm_setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode size:(CGSize)size {
-    if (size.width == 0 || size.height == 0) {
-        NSLog(@" JMRoundedCorner 可能出了点状况，没有在布局之后拿到 view 的 size ，可以调用方法，- jm_setJMRadius: withBorderColor: borderWidth: backgroundColor: backgroundImage: contentMode: size:");
-        return;
-    }
-    size = CGSizeMake(pixel(size.width), pixel(size.height));
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:size JMRadius:radius borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage withContentMode:contentMode];
+        CGSize size2 = CGSizeMake(pixel(size.width), pixel(size.height));
+        UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:size2 JMRadius:radius borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage withContentMode:contentMode];
         dispatch_async(dispatch_get_main_queue(), ^{
             self.frame = CGRectMake(pixel(self.frame.origin.x), pixel(self.frame.origin.y), size.width, size.height);
             if ([self isKindOfClass:[UIImageView class]]) {
