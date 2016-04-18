@@ -47,7 +47,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', '~> 1.1.1'
+	pod 'JMRoundedCorner', '~> 1.1.2'
 	
 	#import "UIView+RoundedCorner.h"
 
@@ -143,6 +143,8 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 ####更新日志
+- 2016/4/18  1.1.2版本 : 修改一点小 BUG
+
 - 2016/3/14  1.1.1版本 : 解决设置 contentMode 效果的一些 BUG。
 
 - 2016/3/12  1.1.0版本 : 接口带上了 jm_ 前缀，JMRadius 添加圆角优先级，经过大量测试，解决细节上的一些小BUG。
