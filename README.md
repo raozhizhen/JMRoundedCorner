@@ -93,7 +93,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```objc
 //添加占位图
 if (!_avatarView.image) {
-	_avatarView.backgroundColor = [UIColor colorWithPatternImage:placeholderImage jm_imageWithRoundedCornersAndSize:CGSizeMake(60, 60) andCornerRadius:30]];
+	_avatarView.backgroundColor = [UIColor colorWithPatternImage:[placeholderImage jm_imageWithRoundedCornersAndSize:CGSizeMake(60, 60) andCornerRadius:30]];
 } 
 //下载完之后设置圆角 image
 [[SDWebImageManager sharedManager] downloadImageWithURL:_model.avatarURL options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
