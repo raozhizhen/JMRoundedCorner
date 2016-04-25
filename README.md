@@ -134,7 +134,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 
 ####更新日志
-- 2016/4/25  1.2.0版本 : 使用 NSOperationQueue 代替dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
+- 2016/4/25  1.2.0版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
 
 - 2016/4/18  1.1.2版本 : 修改一点小 BUG
 
