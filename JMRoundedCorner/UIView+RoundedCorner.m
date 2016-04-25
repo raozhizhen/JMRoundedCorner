@@ -71,7 +71,6 @@
     
     dic[@"contentMode"] = [NSNumber numberWithFloat:contentMode];
     
-    [self setNeedsLayout];
     [self performSelector:@selector(setRadius:) withObject:dic afterDelay:0 inModes:@[NSRunLoopCommonModes]];
 }
 
