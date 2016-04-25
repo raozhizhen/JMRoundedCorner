@@ -10,6 +10,7 @@
 
 @interface TableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UIImage *image;
 + (NSString *)cellReuseIdentifier;
 
 @end

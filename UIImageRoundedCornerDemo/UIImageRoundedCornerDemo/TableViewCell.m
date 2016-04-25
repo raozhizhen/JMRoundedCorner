@@ -34,7 +34,6 @@
     self.contentView.backgroundColor = [UIColor lightGrayColor];
         
     _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
-    [_avatarView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) withBorderColor:[UIColor redColor] borderWidth:0.5 backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];
     [self.contentView addSubview:_avatarView];
     
     NSInteger viewWidth = ([UIScreen mainScreen].bounds.size.width - 78) / 3;
@@ -90,6 +89,10 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
+- (void)setImage:(UIImage *)image {
+    [_avatarView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) withBorderColor:[UIColor redColor] borderWidth:0.5 backgroundColor:[UIColor blueColor] backgroundImage:image contentMode:UIViewContentModeScaleAspectFill];
 }
 
 + (NSString *)cellReuseIdentifier {

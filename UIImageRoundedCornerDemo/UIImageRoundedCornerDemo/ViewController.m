@@ -51,6 +51,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TableViewCell cellReuseIdentifier] forIndexPath:indexPath];
+    if ((indexPath.row & 1) == 1) {
+        cell.image = [UIImage imageNamed:@"avatar.jpg"];
+    } else {
+        cell.image = [UIImage imageNamed:@"luhu"];
+    }
     return cell;
 }
 

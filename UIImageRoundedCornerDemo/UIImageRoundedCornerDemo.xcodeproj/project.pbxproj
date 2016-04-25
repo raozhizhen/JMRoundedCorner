@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		886AF3C31C7C621E000FF00E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3C21C7C621E000FF00E /* main.m */; };
 		886AF3C61C7C621E000FF00E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3C51C7C621E000FF00E /* AppDelegate.m */; };
-		886AF3C91C7C621E000FF00E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3C81C7C621E000FF00E /* ViewController.m */; };
 		886AF3CC1C7C621E000FF00E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3CA1C7C621E000FF00E /* Main.storyboard */; };
 		886AF3CE1C7C621E000FF00E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3CD1C7C621E000FF00E /* Assets.xcassets */; };
 		886AF3D11C7C621E000FF00E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3CF1C7C621E000FF00E /* LaunchScreen.storyboard */; };
 		886AF3DC1C7C621E000FF00E /* UIImageRoundedCornerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3DB1C7C621E000FF00E /* UIImageRoundedCornerDemoTests.m */; };
 		886AF3E71C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3E61C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m */; };
 		886AF40A1C7C6779000FF00E /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 886AF4091C7C6779000FF00E /* avatar.jpg */; };
-		886AF40D1C7C67DD000FF00E /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF40C1C7C67DD000FF00E /* TableViewCell.m */; };
 		886AF4131C7C7035000FF00E /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4121C7C7035000FF00E /* ViewController2.m */; };
 		886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF4151C7C70A9000FF00E /* TableViewCell2.m */; };
 		886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF41B1C7C8EEE000FF00E /* UIImage+RoundedCorner.m */; };
@@ -34,6 +32,8 @@
 		88EA46511C7FFA1E00C231FB /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA46421C7FFA1E00C231FB /* NSArray+MASAdditions.m */; };
 		88EA46521C7FFA1E00C231FB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA46451C7FFA1E00C231FB /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		88EA46531C7FFA1E00C231FB /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA46471C7FFA1E00C231FB /* View+MASAdditions.m */; };
+		88FB8C141CCE291B007232BD /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FB8C111CCE291B007232BD /* TableViewCell.m */; };
+		88FB8C151CCE291B007232BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FB8C131CCE291B007232BD /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +58,6 @@
 		886AF3C21C7C621E000FF00E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		886AF3C41C7C621E000FF00E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		886AF3C51C7C621E000FF00E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		886AF3C71C7C621E000FF00E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		886AF3C81C7C621E000FF00E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		886AF3CB1C7C621E000FF00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		886AF3CD1C7C621E000FF00E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		886AF3D01C7C621E000FF00E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,8 +69,6 @@
 		886AF3E61C7C621E000FF00E /* UIImageRoundedCornerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIImageRoundedCornerDemoUITests.m; sourceTree = "<group>"; };
 		886AF3E81C7C621E000FF00E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		886AF4091C7C6779000FF00E /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
-		886AF40B1C7C67DD000FF00E /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		886AF40C1C7C67DD000FF00E /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		886AF4111C7C7035000FF00E /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		886AF4121C7C7035000FF00E /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		886AF4141C7C70A9000FF00E /* TableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell2.h; sourceTree = "<group>"; };
@@ -110,6 +106,10 @@
 		88EA46461C7FFA1E00C231FB /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		88EA46471C7FFA1E00C231FB /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		88EA46481C7FFA1E00C231FB /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		88FB8C101CCE291B007232BD /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		88FB8C111CCE291B007232BD /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		88FB8C121CCE291B007232BD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		88FB8C131CCE291B007232BD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,18 +162,18 @@
 			isa = PBXGroup;
 			children = (
 				88EA462F1C7FFA1E00C231FB /* Masonry */,
+				88FB8C101CCE291B007232BD /* TableViewCell.h */,
+				88FB8C111CCE291B007232BD /* TableViewCell.m */,
+				88FB8C121CCE291B007232BD /* ViewController.h */,
+				88FB8C131CCE291B007232BD /* ViewController.m */,
 				886AF3C41C7C621E000FF00E /* AppDelegate.h */,
 				886AF3C51C7C621E000FF00E /* AppDelegate.m */,
-				886AF3C71C7C621E000FF00E /* ViewController.h */,
-				886AF3C81C7C621E000FF00E /* ViewController.m */,
 				886AF4111C7C7035000FF00E /* ViewController2.h */,
 				886AF4121C7C7035000FF00E /* ViewController2.m */,
 				8877A0541C933AC00054C88E /* ViewController3.h */,
 				8877A0551C933AC00054C88E /* ViewController3.m */,
 				8877A0571C9452F70054C88E /* UIControl+YYAdd.h */,
 				8877A0581C9452F70054C88E /* UIControl+YYAdd.m */,
-				886AF40B1C7C67DD000FF00E /* TableViewCell.h */,
-				886AF40C1C7C67DD000FF00E /* TableViewCell.m */,
 				886AF4141C7C70A9000FF00E /* TableViewCell2.h */,
 				886AF4151C7C70A9000FF00E /* TableViewCell2.m */,
 				88DBB8B41C897F9400751C55 /* luhu.png */,
@@ -398,20 +398,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				88EA46501C7FFA1E00C231FB /* MASViewConstraint.m in Sources */,
-				886AF3C91C7C621E000FF00E /* ViewController.m in Sources */,
 				8877A0561C933AC00054C88E /* ViewController3.m in Sources */,
 				88EA464F1C7FFA1E00C231FB /* MASViewAttribute.m in Sources */,
 				88A7E43D1C7ECC49001358B4 /* UIView+RoundedCorner.m in Sources */,
 				886AF41D1C7C8EEE000FF00E /* UIImage+RoundedCorner.m in Sources */,
-				886AF40D1C7C67DD000FF00E /* TableViewCell.m in Sources */,
 				88EA464B1C7FFA1E00C231FB /* MASCompositeConstraint.m in Sources */,
 				88EA464D1C7FFA1E00C231FB /* MASConstraintMaker.m in Sources */,
 				88EA46531C7FFA1E00C231FB /* View+MASAdditions.m in Sources */,
+				88FB8C151CCE291B007232BD /* ViewController.m in Sources */,
 				88EA464E1C7FFA1E00C231FB /* MASLayoutConstraint.m in Sources */,
 				8877A0591C9452F70054C88E /* UIControl+YYAdd.m in Sources */,
 				88EA464C1C7FFA1E00C231FB /* MASConstraint.m in Sources */,
 				886AF4161C7C70A9000FF00E /* TableViewCell2.m in Sources */,
 				886AF3C61C7C621E000FF00E /* AppDelegate.m in Sources */,
+				88FB8C141CCE291B007232BD /* TableViewCell.m in Sources */,
 				88EA46511C7FFA1E00C231FB /* NSArray+MASAdditions.m in Sources */,
 				88EA46521C7FFA1E00C231FB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				886AF4131C7C7035000FF00E /* ViewController2.m in Sources */,
