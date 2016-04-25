@@ -72,29 +72,6 @@ static char jm_operationKey;
 - (void)jm_setJMRadius:(JMRadius)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode {
     [self jm_cancelOperation];
     
-<<<<<<< HEAD
-    [self performSelector:@selector(setRadius:) withObject:dic afterDelay:0 inModes:@[NSRunLoopCommonModes]];
-}
-
-- (void)setRadius:(NSMutableDictionary *)dic {
-    if (self.bounds.size.width == 0 || self.bounds.size.height == 0) {
-        NSLog(@"JMRoundedCorner 可能受到某些邪恶力量的影响，没有在布局之后拿到 view 的 size （也可能这个 View 的 size 就是这个样子 -。-！），可以调用方法，- jm_setJMRadius: withBorderColor: borderWidth: backgroundColor: backgroundImage: contentMode: size: 方法给 JMRoundedCorner 提供 size");
-        return;
-    }
-    JMRadius radius;
-    [dic[@"radius"] getValue:&radius];
-    UIColor *borderColor;
-    UIColor *backgroundColor;
-    UIImage *backgroundImage;
-    
-    if (dic[@"borderColor"] == NSNull.null)
-        borderColor = nil;
-    else
-        borderColor = dic[@"borderColor"];
-=======
-    [self setNeedsLayout];
->>>>>>> 5c599963de156b91ec24fb6a395a69aba622ad3f
-    
     [self jm_setJMRadius:radius withBorderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage contentMode:contentMode size:CGSizeZero];
 }
 
