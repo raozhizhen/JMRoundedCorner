@@ -135,7 +135,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 优点：没有了离屏渲染，调整了 image 的像素大小以避免不必要的缩放
 
 缺点：会造成图层混合，且因为只是绘制了一个带圆角的图片，所以不能使子视图超出圆角部分不显示。
-
+注意：内存会持续提升，是正常现象，点击 home 键内存会回到正常水平，并非内存泄漏，只是绘制的缓存，在内存不足时会自动释放。
 
 ####更新日志
 - 2016/4/25  1.2.0版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
@@ -165,3 +165,4 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 - 2016/2/24  0.0.2版本 ：支持设置背景图片的绘制模式（cotentmode）
 
 - 2016/2/23  0.0.1版本 ：绘制一个圆角 image
+
