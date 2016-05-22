@@ -91,12 +91,14 @@ static char jm_operationKey;
         }
         
         CGSize size2 = CGSizeMake(pixel(_size.width), pixel(_size.height));
+        
         UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:size2 JMRadius:radius borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage withContentMode:contentMode];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            if ([[wself jm_getOperation] isCancelled]) return;
+            __strong typeof(wself) self = wself;
+            if ([[self jm_getOperation] isCancelled]) return;
             
-            self.frame = CGRectMake(pixel(self.frame.origin.x), pixel(self.frame.origin.y), _size.width, _size.height);
+            self.frame = CGRectMake(pixel(self.frame.origin.x), pixel(self.frame.origin.y), size2.width, size2.height);
             if ([self isKindOfClass:[UIImageView class]]) {
                 ((UIImageView *)self).image = image;
             } else if ([self isKindOfClass:[UIButton class]] && backgroundImage) {
