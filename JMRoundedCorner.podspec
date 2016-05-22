@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JMRoundedCorner"
-  s.version      = "1.2.0"
+  s.version      = "1.2.1"
   s.summary      = "UIView set Corner Radius"
   s.homepage     = "https://github.com/raozhizhen/JMRoundedCorner.git"
   s.license             = { :type => "MIT", :file => "LICENSE" } 
