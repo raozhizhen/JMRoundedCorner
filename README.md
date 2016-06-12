@@ -146,6 +146,11 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 - (void)jm_setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)backgroundColor;
 ```
 
+[控制器输出以下错误，这是 Xcode-7 的 BUG](https://forums.developer.apple.com/thread/13683)。
+```objc
+<Error>: CGContextSaveGState: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
+```
+
 ####更新日志
 - 2016/4/25  1.2.1 版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
 
