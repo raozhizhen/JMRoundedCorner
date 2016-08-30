@@ -44,7 +44,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 则可以用 GraphicsContext 绘制一张带圆角的 image 给 view 来避免离屏渲染。
 
-我将这个过程封装了一下
+我将这个过程封装了一下。
 
 ####使用 JMRoundedCorner 来绘制圆角
 
@@ -56,7 +56,8 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 	#import "UIView+RoundedCorner.h"
 
 	
-	
+需要注意的是：我是在 layer 层上做的操作，所以效果会被背景颜色和背景图片遮住。需要对背景颜色和图片做处理请使用下方带背景颜色或者背景图片的接口
+
 #####给 view 设置一个圆角边框
 
 ```objc	
