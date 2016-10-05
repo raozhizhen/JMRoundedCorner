@@ -115,6 +115,7 @@ static char jm_operationKey;
     [jm_operationQueue addOperation:blockOperation];
 }
 
+//像素对其
 static inline float pixel(float num) {
     float unit = 1.0 / [UIScreen mainScreen].scale;
     double remain = fmod(num, unit);
