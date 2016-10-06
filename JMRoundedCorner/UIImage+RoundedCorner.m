@@ -31,104 +31,45 @@
 }
 
 + (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit JMRadius:(JMRadius)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode {
-    if (backgroundImage) {
-        backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode backgroundColor:backgroundColor];
-        backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-    } else if (!backgroundColor){
+    if (!backgroundColor) {
         backgroundColor = [UIColor whiteColor];
     }
+    backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode backgroundColor:backgroundColor];
     
     UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect rect = CGRectMake(0, 0, sizeToFit.width, sizeToFit.height);
-//    CGContextScaleCTM(context, 1, -1);
-//    CGContextTranslateCTM(context, 0, -rect.size.height);
-    
-    CGFloat halfBorderWidth = borderWidth / 2;
+    CGContextScaleCTM(context, 1, -1);
+    CGContextTranslateCTM(context, 0, -rect.size.height);
     CGFloat height = sizeToFit.height;
     CGFloat width = sizeToFit.width;
     radius = [UIImage transformationJMRadius:radius size:sizeToFit borderWidth:borderWidth];
     
-    CGFloat startPointY;
-    if (radius.topRightRadius >= height - borderWidth) {
-        startPointY = height;
-    } else if (radius.topRightRadius > 0){
-        startPointY = halfBorderWidth + radius.topRightRadius;
-    } else {
-        startPointY = 0;
-    }
-    
     UIBezierPath *path = [[UIBezierPath alloc] init];
-    [path moveToPoint:CGPointMake(0, 0)];
-//    [path moveToPoint:CGPointMake(width - halfBorderWidth, height - radius.bottomRightRadius)];
-    [path addArcWithCenter:CGPointMake(width - radius.bottomRightRadius, height - radius.bottomRightRadius) radius:radius.bottomRightRadius startAngle:-M_PI_2 endAngle:0 clockwise:YES];
-//    [path addArcWithCenter:CGPointMake(radius.bottomLeftRadius, height - radius.bottomLeftRadius) radius:radius.bottomLeftRadius startAngle:-M_PI endAngle:-M_PI_2 clockwise:NO];
-////
-//    [path addArcWithCenter:CGPointMake(radius.topLeftRadius, radius.topLeftRadius) radius:radius.topLeftRadius startAngle:M_PI_2 endAngle:-M_PI clockwise:NO];
-//    [path addArcWithCenter:CGPointMake(width - radius.topRightRadius, radius.topRightRadius) radius:radius.topRightRadius startAngle:0 endAngle:M_PI_2 clockwise:NO];
-//    [path closePath];
-    CGContextSaveGState(context);
+    [path addArcWithCenter:CGPointMake(width - radius.bottomRightRadius, height - radius.bottomRightRadius) radius:radius.bottomRightRadius startAngle:0 endAngle:M_PI_2 clockwise:YES];
+    [path addArcWithCenter:CGPointMake(radius.bottomLeftRadius, height - radius.bottomLeftRadius) radius:radius.bottomLeftRadius startAngle:M_PI_2 endAngle:M_PI clockwise:YES];
+    [path addArcWithCenter:CGPointMake(radius.topLeftRadius, radius.topLeftRadius) radius:radius.topLeftRadius startAngle:M_PI endAngle:3.0 * M_PI_2 clockwise:YES];
+    [path addArcWithCenter:CGPointMake(width - radius.topRightRadius, radius.topRightRadius) radius:radius.topRightRadius startAngle:3.0 * M_PI_2 endAngle:2.0 * M_PI clockwise:YES];
+    [path closePath];
+    
     [path addClip];
     CGContextDrawImage(context, rect, backgroundImage.CGImage);
-    
-//    UIImage *outImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    
-//        UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectInset(rect, borderWidth, borderWidth) byRoundingCorners:corners cornerRadii:CGSizeMake(radius, borderWidth)];
-//        [path closePath];
-//        
-//        CGContextSaveGState(context);
-//        [path addClip];
-//        CGContextDrawImage(context, rect, self.CGImage);
-//        CGContextRestoreGState(context);
-//        
-        path.lineWidth = borderWidth;
-        path.lineJoinStyle = kCGLineJoinMiter;
-        [borderColor setStroke];
-        [path stroke];
+
+    path.lineWidth = borderWidth;
+    [borderColor setStroke];
+    [backgroundColor setFill];
+    [path stroke];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
-    
-    
-    
-//    UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
-//
-//    CGFloat halfBorderWidth = borderWidth / 2;
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetLineWidth(context, borderWidth);
-//    CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-//    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
-//    CGFloat height = sizeToFit.height;
-//    CGFloat width = sizeToFit.width;
-//    radius = [UIImage transformationJMRadius:radius size:sizeToFit borderWidth:borderWidth];
-//    
-//    CGFloat startPointY;
-//    if (radius.topRightRadius >= height - borderWidth) {
-//        startPointY = height;
-//    } else if (radius.topRightRadius > 0){
-//        startPointY = halfBorderWidth + radius.topRightRadius;
-//    } else {
-//        startPointY = 0;
-//    }
-//    CGContextMoveToPoint(context, width - halfBorderWidth, startPointY);  // 开始坐标右边开始
-//    CGContextAddArcToPoint(context, width - halfBorderWidth, height - halfBorderWidth, width / 2, height - halfBorderWidth, radius.bottomRightRadius);  // 右下角角度
-//    CGContextAddArcToPoint(context, halfBorderWidth, height - halfBorderWidth, halfBorderWidth, height / 2, radius.bottomLeftRadius); // 左下角角度
-//    CGContextAddArcToPoint(context, halfBorderWidth, halfBorderWidth, width / 2, halfBorderWidth, radius.topLeftRadius); // 左上角
-//    CGContextAddArcToPoint(context, width - halfBorderWidth, halfBorderWidth, width - halfBorderWidth, height / 2, radius.topRightRadius); // 右上角
-//    CGContextDrawPath(context, kCGPathFillStroke);
-//    
-//    UIImage *outImage = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    return outImage;
 }
 
 + (JMRadius)transformationJMRadius:(JMRadius)radius size:(CGSize)size borderWidth:(CGFloat)borderWidth {
-    radius.topLeftRadius = minimum(size.width - borderWidth, size.height - borderWidth, radius.topLeftRadius - borderWidth / 2);
-    radius.topRightRadius = minimum(size.width - borderWidth - radius.topLeftRadius, size.height - borderWidth, radius.topRightRadius - borderWidth / 2);
-    radius.bottomLeftRadius = minimum(size.width - borderWidth, size.height - borderWidth - radius.topLeftRadius, radius.bottomLeftRadius - borderWidth / 2);
-    radius.bottomRightRadius = minimum(size.width - borderWidth - radius.bottomLeftRadius, size.height - borderWidth - radius.topRightRadius, radius.bottomRightRadius - borderWidth / 2);
+    radius.topLeftRadius = minimum(size.width, size.height, radius.topLeftRadius);
+    radius.topRightRadius = minimum(size.width - radius.topLeftRadius, size.height, radius.topRightRadius);
+    radius.bottomLeftRadius = minimum(size.width, size.height - radius.topLeftRadius, radius.bottomLeftRadius);
+    radius.bottomRightRadius = minimum(size.width - radius.bottomLeftRadius, size.height - radius.topRightRadius, radius.bottomRightRadius);
     return radius;
 }
 
@@ -140,21 +81,14 @@ static inline CGFloat minimum(CGFloat a, CGFloat b, CGFloat c) {
 - (UIImage *)scaleToSize:(CGSize)size withContentMode:(UIViewContentMode)contentMode backgroundColor:(UIColor *)backgroundColor {
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
-    
-    if (backgroundColor) {
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
-        CGContextAddRect(context, rect);
-        CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
-    }
-    [self drawInRect:CGRectMake(0.0f, 0.0f, size.width, size.height) withContentMode:contentMode];
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
+    CGContextAddRect(context, rect);
+    CGContextDrawPath(context, kCGPathFillStroke);
+    [self drawInRect:[self convertRect:rect withContentMode:contentMode]];
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return scaledImage;
-}
-
-- (void)drawInRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode {
-    [self drawInRect:[self convertRect:rect withContentMode:contentMode]];
 }
 
 - (CGRect)convertRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode {

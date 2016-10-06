@@ -29,9 +29,9 @@
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
     _imageView.contentMode = UIViewContentModeScaleAspectFill;
     _imageView.image = image;
-    _imageView.layer.borderWidth = 0.5;
+    _imageView.layer.borderWidth = 10;
     _imageView.layer.borderColor = [UIColor redColor].CGColor;
-    _imageView.layer.cornerRadius = 20;
+    _imageView.layer.cornerRadius = 5;
     _imageView.layer.masksToBounds = YES;
     _imageView.layer.shouldRasterize = YES;
     _imageView.layer.rasterizationScale = [UIScreen mainScreen].scale;

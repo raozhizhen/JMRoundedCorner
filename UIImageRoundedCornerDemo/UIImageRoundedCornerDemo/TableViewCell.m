@@ -92,7 +92,7 @@
 }
 
 - (void)setImage:(UIImage *)image {
-    [_avatarView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) withBorderColor:[UIColor redColor] borderWidth:0.5 backgroundColor:[UIColor blueColor] backgroundImage:image contentMode:UIViewContentModeScaleAspectFill];
+    [_avatarView jm_setJMRadius:JMRadiusMake(5, 5, 5, 5) withBorderColor:[UIColor redColor] borderWidth:20 backgroundColor:[UIColor blueColor] backgroundImage:image contentMode:UIViewContentModeScaleAspectFill];
 }
 
 + (NSString *)cellReuseIdentifier {

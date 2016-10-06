@@ -162,8 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				88EA462F1C7FFA1E00C231FB /* Masonry */,
-				88FB8C101CCE291B007232BD /* TableViewCell.h */,
-				88FB8C111CCE291B007232BD /* TableViewCell.m */,
 				88FB8C121CCE291B007232BD /* ViewController.h */,
 				88FB8C131CCE291B007232BD /* ViewController.m */,
 				886AF3C41C7C621E000FF00E /* AppDelegate.h */,
@@ -174,6 +172,8 @@
 				8877A0551C933AC00054C88E /* ViewController3.m */,
 				8877A0571C9452F70054C88E /* UIControl+YYAdd.h */,
 				8877A0581C9452F70054C88E /* UIControl+YYAdd.m */,
+				88FB8C101CCE291B007232BD /* TableViewCell.h */,
+				88FB8C111CCE291B007232BD /* TableViewCell.m */,
 				886AF4141C7C70A9000FF00E /* TableViewCell2.h */,
 				886AF4151C7C70A9000FF00E /* TableViewCell2.m */,
 				88DBB8B41C897F9400751C55 /* luhu.png */,
