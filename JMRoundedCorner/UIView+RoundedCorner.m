@@ -79,26 +79,23 @@ static char jm_operationKey;
     
     __block CGSize _size = size;
     
-    __weak typeof(self) wself = self;
+    __weak typeof(self) weakSelf = self;
     NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
         
-        if ([[wself jm_getOperation] isCancelled]) return;
+        if ([[weakSelf jm_getOperation] isCancelled]) return;
         
         if (CGSizeEqualToSize(_size, CGSizeZero)) {
             dispatch_sync(dispatch_get_main_queue(), ^{
-                _size = wself.bounds.size;
+                _size = weakSelf.bounds.size;
             });
         }
-        
-        CGSize size2 = CGSizeMake(pixel(_size.width), pixel(_size.height));
-        
-        UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:size2 JMRadius:radius borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage withContentMode:contentMode];
+        CGSize pixelSize = CGSizeMake(pixel(_size.width), pixel(_size.height));
+        UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:pixelSize JMRadius:radius borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:backgroundImage withContentMode:contentMode];
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            __strong typeof(wself) self = wself;
+            __strong typeof(weakSelf) self = weakSelf;
             if ([[self jm_getOperation] isCancelled]) return;
-            
-            self.frame = CGRectMake(pixel(self.frame.origin.x), pixel(self.frame.origin.y), size2.width, size2.height);
+            self.frame = CGRectMake(pixel(self.frame.origin.x), pixel(self.frame.origin.y), pixelSize.width, pixelSize.height);
             if ([self isKindOfClass:[UIImageView class]]) {
                 ((UIImageView *)self).image = image;
             } else if ([self isKindOfClass:[UIButton class]] && backgroundImage) {
@@ -115,9 +112,9 @@ static char jm_operationKey;
     [jm_operationQueue addOperation:blockOperation];
 }
 
-static inline float pixel(float num) {
-    float unit = 1.0 / [UIScreen mainScreen].scale;
-    double remain = fmod(num, unit);
+static inline CGFloat pixel(CGFloat num) {
+    CGFloat unit = 1.0 / [UIScreen mainScreen].scale;
+    CGFloat remain = fmod(num, unit);
     return num - remain + (remain >= unit / 2.0? unit: 0);
 }
 

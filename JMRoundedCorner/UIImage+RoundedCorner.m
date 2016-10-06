@@ -34,7 +34,11 @@
     if (!backgroundColor) {
         backgroundColor = [UIColor whiteColor];
     }
-    backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode backgroundColor:backgroundColor];
+    if (backgroundImage) {
+        backgroundImage = [backgroundImage scaleToSize:CGSizeMake(sizeToFit.width, sizeToFit.height) withContentMode:contentMode backgroundColor:backgroundColor];
+    } else {
+        backgroundImage = [UIImage imageWithColor:backgroundColor];
+    }
     
     UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -54,10 +58,8 @@
     
     [path addClip];
     CGContextDrawImage(context, rect, backgroundImage.CGImage);
-
     path.lineWidth = borderWidth;
     [borderColor setStroke];
-    [backgroundColor setFill];
     [path stroke];
     
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -89,6 +91,17 @@ static inline CGFloat minimum(CGFloat a, CGFloat b, CGFloat c) {
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return scaledImage;
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 - (CGRect)convertRect:(CGRect)rect withContentMode:(UIViewContentMode)contentMode {

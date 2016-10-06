@@ -47,14 +47,14 @@
     
     _label = [[UILabel alloc] init];
     _label.text = @"label";
-    [_label jm_setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
+//    [_label jm_setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
     _label.font = [UIFont systemFontOfSize:12];
     _label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_label];
     
     _textField = [[UITextField alloc] init];
     _textField.text = @"textField";
-    [_textField jm_setJMRadius:JMRadiusMake(10, 20, 10, 20) withBorderColor:[UIColor redColor] borderWidth:0.5];
+//    [_textField jm_setJMRadius:JMRadiusMake(10, 20, 10, 20) withBorderColor:[UIColor redColor] borderWidth:0.5];
     _textField.font = [UIFont systemFontOfSize:12];
     _textField.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:_textField];
@@ -80,19 +80,8 @@
     }];
 }
 
-- (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0, 0, 1, 1);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
-}
-
 - (void)setImage:(UIImage *)image {
-    [_avatarView jm_setJMRadius:JMRadiusMake(5, 5, 5, 5) withBorderColor:[UIColor redColor] borderWidth:20 backgroundColor:[UIColor blueColor] backgroundImage:image contentMode:UIViewContentModeScaleAspectFill];
+//    [_avatarView jm_setJMRadius:JMRadiusMake(5, 5, 5, 5) withBorderColor:[UIColor redColor] borderWidth:20 backgroundColor:[UIColor blueColor] backgroundImage:image contentMode:UIViewContentModeScaleAspectFill];
 }
 
 + (NSString *)cellReuseIdentifier {
