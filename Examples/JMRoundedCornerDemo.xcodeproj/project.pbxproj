@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EB0B1641DA7CC4D0087CC5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1631DA7CC4D0087CC5A /* main.m */; };
+		1EB0B1671DA7CC4D0087CC5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1661DA7CC4D0087CC5A /* AppDelegate.m */; };
+		1EB0B16A1DA7CC4D0087CC5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1691DA7CC4D0087CC5A /* ViewController.m */; };
+		1EB0B16D1DA7CC4D0087CC5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB0B16B1DA7CC4D0087CC5A /* Main.storyboard */; };
+		1EB0B16F1DA7CC4D0087CC5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB0B16E1DA7CC4D0087CC5A /* Assets.xcassets */; };
+		1EB0B1721DA7CC4D0087CC5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB0B1701DA7CC4D0087CC5A /* LaunchScreen.storyboard */; };
+		1EB0B1851DA7CD9C0087CC5A /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1821DA7CD9C0087CC5A /* UIImage+RoundedCorner.m */; };
+		1EB0B1861DA7CD9C0087CC5A /* UIView+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1841DA7CD9C0087CC5A /* UIView+RoundedCorner.m */; };
+		1EB0B1891DA7CEA30087CC5A /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1881DA7CEA30087CC5A /* TableViewCell.m */; };
+		1EB0B18C1DA7CEB20087CC5A /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B18B1DA7CEB20087CC5A /* ViewController2.m */; };
+		1EB0B18F1DA7CF080087CC5A /* UIControl+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B18E1DA7CF080087CC5A /* UIControl+YYAdd.m */; };
+		FC64F754D0F015E110BD795B /* libPods-JMRoundedCornerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D24A7ACD3D1671C96AB874D7 /* libPods-JMRoundedCornerDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1EB0B15F1DA7CC4D0087CC5A /* JMRoundedCornerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMRoundedCornerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EB0B1631DA7CC4D0087CC5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1EB0B1651DA7CC4D0087CC5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1EB0B1661DA7CC4D0087CC5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1EB0B1681DA7CC4D0087CC5A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1EB0B1691DA7CC4D0087CC5A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1EB0B16C1DA7CC4D0087CC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1EB0B16E1DA7CC4D0087CC5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EB0B1711DA7CC4D0087CC5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1EB0B1731DA7CC4D0087CC5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EB0B1811DA7CD9C0087CC5A /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		1EB0B1821DA7CD9C0087CC5A /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		1EB0B1831DA7CD9C0087CC5A /* UIView+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RoundedCorner.h"; sourceTree = "<group>"; };
+		1EB0B1841DA7CD9C0087CC5A /* UIView+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RoundedCorner.m"; sourceTree = "<group>"; };
+		1EB0B1871DA7CEA30087CC5A /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		1EB0B1881DA7CEA30087CC5A /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		1EB0B18A1DA7CEB20087CC5A /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		1EB0B18B1DA7CEB20087CC5A /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		1EB0B18D1DA7CF080087CC5A /* UIControl+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+YYAdd.h"; sourceTree = "<group>"; };
+		1EB0B18E1DA7CF080087CC5A /* UIControl+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+YYAdd.m"; sourceTree = "<group>"; };
+		309BD4E6387B9ED34291820E /* Pods-JMRoundedCornerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMRoundedCornerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JMRoundedCornerDemo/Pods-JMRoundedCornerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		74FB6BE5C6C8C17FDB1DB67F /* Pods-JMRoundedCornerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JMRoundedCornerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JMRoundedCornerDemo/Pods-JMRoundedCornerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D24A7ACD3D1671C96AB874D7 /* libPods-JMRoundedCornerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JMRoundedCornerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EB0B15C1DA7CC4D0087CC5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC64F754D0F015E110BD795B /* libPods-JMRoundedCornerDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EB0B1561DA7CC4D0087CC5A = {
+			isa = PBXGroup;
+			children = (
+				1EB0B1801DA7CD9C0087CC5A /* JMRoundedCorner */,
+				1EB0B1611DA7CC4D0087CC5A /* JMRoundedCornerDemo */,
+				1EB0B1601DA7CC4D0087CC5A /* Products */,
+				AE00CFBE9B3FDEE08CE798E0 /* Pods */,
+				2E12A4324FC3426BC7AA3066 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1EB0B1601DA7CC4D0087CC5A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EB0B15F1DA7CC4D0087CC5A /* JMRoundedCornerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EB0B1611DA7CC4D0087CC5A /* JMRoundedCornerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1EB0B1651DA7CC4D0087CC5A /* AppDelegate.h */,
+				1EB0B1661DA7CC4D0087CC5A /* AppDelegate.m */,
+				1EB0B1681DA7CC4D0087CC5A /* ViewController.h */,
+				1EB0B1691DA7CC4D0087CC5A /* ViewController.m */,
+				1EB0B1871DA7CEA30087CC5A /* TableViewCell.h */,
+				1EB0B1881DA7CEA30087CC5A /* TableViewCell.m */,
+				1EB0B18A1DA7CEB20087CC5A /* ViewController2.h */,
+				1EB0B18B1DA7CEB20087CC5A /* ViewController2.m */,
+				1EB0B18D1DA7CF080087CC5A /* UIControl+YYAdd.h */,
+				1EB0B18E1DA7CF080087CC5A /* UIControl+YYAdd.m */,
+				1EB0B16B1DA7CC4D0087CC5A /* Main.storyboard */,
+				1EB0B16E1DA7CC4D0087CC5A /* Assets.xcassets */,
+				1EB0B1701DA7CC4D0087CC5A /* LaunchScreen.storyboard */,
+				1EB0B1731DA7CC4D0087CC5A /* Info.plist */,
+				1EB0B1621DA7CC4D0087CC5A /* Supporting Files */,
+			);
+			path = JMRoundedCornerDemo;
+			sourceTree = "<group>";
+		};
+		1EB0B1621DA7CC4D0087CC5A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EB0B1631DA7CC4D0087CC5A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1EB0B1801DA7CD9C0087CC5A /* JMRoundedCorner */ = {
+			isa = PBXGroup;
+			children = (
+				1EB0B1811DA7CD9C0087CC5A /* UIImage+RoundedCorner.h */,
+				1EB0B1821DA7CD9C0087CC5A /* UIImage+RoundedCorner.m */,
+				1EB0B1831DA7CD9C0087CC5A /* UIView+RoundedCorner.h */,
+				1EB0B1841DA7CD9C0087CC5A /* UIView+RoundedCorner.m */,
+			);
+			name = JMRoundedCorner;
+			path = ../JMRoundedCorner;
+			sourceTree = "<group>";
+		};
+		2E12A4324FC3426BC7AA3066 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D24A7ACD3D1671C96AB874D7 /* libPods-JMRoundedCornerDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE00CFBE9B3FDEE08CE798E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74FB6BE5C6C8C17FDB1DB67F /* Pods-JMRoundedCornerDemo.debug.xcconfig */,
+				309BD4E6387B9ED34291820E /* Pods-JMRoundedCornerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EB0B15E1DA7CC4D0087CC5A /* JMRoundedCornerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EB0B1761DA7CC4D0087CC5A /* Build configuration list for PBXNativeTarget "JMRoundedCornerDemo" */;
+			buildPhases = (
+				ACEE9A976B16DEF2D7D987F5 /* [CP] Check Pods Manifest.lock */,
+				1EB0B15B1DA7CC4D0087CC5A /* Sources */,
+				1EB0B15C1DA7CC4D0087CC5A /* Frameworks */,
+				1EB0B15D1DA7CC4D0087CC5A /* Resources */,
+				968681332EC75ACD5BD073F5 /* [CP] Embed Pods Frameworks */,
+				B516F0CC6E9B5804C5D32040 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JMRoundedCornerDemo;
+			productName = JMRoundedCornerDemo;
+			productReference = 1EB0B15F1DA7CC4D0087CC5A /* JMRoundedCornerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EB0B1571DA7CC4D0087CC5A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "饶志臻";
+				TargetAttributes = {
+					1EB0B15E1DA7CC4D0087CC5A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1EB0B15A1DA7CC4D0087CC5A /* Build configuration list for PBXProject "JMRoundedCornerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1EB0B1561DA7CC4D0087CC5A;
+			productRefGroup = 1EB0B1601DA7CC4D0087CC5A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EB0B15E1DA7CC4D0087CC5A /* JMRoundedCornerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EB0B15D1DA7CC4D0087CC5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB0B1721DA7CC4D0087CC5A /* LaunchScreen.storyboard in Resources */,
+				1EB0B16F1DA7CC4D0087CC5A /* Assets.xcassets in Resources */,
+				1EB0B16D1DA7CC4D0087CC5A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		968681332EC75ACD5BD073F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JMRoundedCornerDemo/Pods-JMRoundedCornerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACEE9A976B16DEF2D7D987F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B516F0CC6E9B5804C5D32040 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JMRoundedCornerDemo/Pods-JMRoundedCornerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EB0B15B1DA7CC4D0087CC5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB0B18C1DA7CEB20087CC5A /* ViewController2.m in Sources */,
+				1EB0B18F1DA7CF080087CC5A /* UIControl+YYAdd.m in Sources */,
+				1EB0B1851DA7CD9C0087CC5A /* UIImage+RoundedCorner.m in Sources */,
+				1EB0B1891DA7CEA30087CC5A /* TableViewCell.m in Sources */,
+				1EB0B1861DA7CD9C0087CC5A /* UIView+RoundedCorner.m in Sources */,
+				1EB0B16A1DA7CC4D0087CC5A /* ViewController.m in Sources */,
+				1EB0B1671DA7CC4D0087CC5A /* AppDelegate.m in Sources */,
+				1EB0B1641DA7CC4D0087CC5A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1EB0B16B1DA7CC4D0087CC5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EB0B16C1DA7CC4D0087CC5A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1EB0B1701DA7CC4D0087CC5A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EB0B1711DA7CC4D0087CC5A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1EB0B1741DA7CC4D0087CC5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1EB0B1751DA7CC4D0087CC5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EB0B1771DA7CC4D0087CC5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74FB6BE5C6C8C17FDB1DB67F /* Pods-JMRoundedCornerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JMRoundedCornerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raozhizhen.JMRoundedCornerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1EB0B1781DA7CC4D0087CC5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 309BD4E6387B9ED34291820E /* Pods-JMRoundedCornerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JMRoundedCornerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.raozhizhen.JMRoundedCornerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EB0B15A1DA7CC4D0087CC5A /* Build configuration list for PBXProject "JMRoundedCornerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB0B1741DA7CC4D0087CC5A /* Debug */,
+				1EB0B1751DA7CC4D0087CC5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EB0B1761DA7CC4D0087CC5A /* Build configuration list for PBXNativeTarget "JMRoundedCornerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EB0B1771DA7CC4D0087CC5A /* Debug */,
+				1EB0B1781DA7CC4D0087CC5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EB0B1571DA7CC4D0087CC5A /* Project object */;
+}

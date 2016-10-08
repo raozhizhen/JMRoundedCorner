@@ -1,6 +1,6 @@
 //
 //  UIImage+RoundedCorner.h
-//  SelectTags
+//  UIImageRoundedCornerDemo
 //
 //  Created by jm on 16/2/22.
 //  Copyright © 2016年 Jim. All rights reserved.
@@ -28,16 +28,12 @@ static inline JMRadius JMRadiusMake(CGFloat topLeftRadius, CGFloat topRightRadiu
 
 @interface UIImage (RoundedCorner)
 
-+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit JMRadius:(JMRadius)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode;
++ (UIImage *)jm_setJMRadius:(JMRadius)radius size:(CGSize)size borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode;
 
-- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius;
+- (UIImage *)jm_setRadiu:(CGFloat)radiu size:(CGSize)size;
 
-- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius withContentMode:(UIViewContentMode)contentMode;
+- (UIImage *)jm_setRadiu:(CGFloat)radiu size:(CGSize)size contentMode:(UIViewContentMode)contentMode;
 
-+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
-
-+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius andColor:(UIColor *)color;
-
-+ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode;
++ (UIImage *)jm_setRadiu:(CGFloat)radiu size:(CGSize)size borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor;
 
 @end
