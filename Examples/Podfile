@@ -1,7 +1,7 @@
 target ‘JMRoundedCornerDemo’ do
 platform :ios,’7.0’
 
-pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :commit => '90f78df032d6861202aa9ad4930bface46b28655'
+pod 'YYWebImage'
 
 end
 

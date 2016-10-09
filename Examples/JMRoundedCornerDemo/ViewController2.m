@@ -24,35 +24,37 @@
     self.title = @"测试用页面";
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 300, 200)];
+    CGFloat viewWidth = self.view.frame.size.width - 40;
+    
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 80, viewWidth, 200)];
     [_imageView jm_setImageWithJMRadius: JMRadiusMake(20, 20, 20, 20) image:[UIImage imageNamed:@"avatar"] borderColor:[UIColor redColor] borderWidth:10 backgroundColor:[UIColor blueColor] contentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:_imageView];
     
-    _slider0 = [[UISlider alloc] initWithFrame:CGRectMake(20, 400, 300, 20)];
+    _slider0 = [[UISlider alloc] initWithFrame:CGRectMake(20, 340, viewWidth, 20)];
     _slider0.minimumValue = 0;
     _slider0.maximumValue = 300;
     _slider0.value = 20;
     [self.view addSubview:_slider0];
     
-    _slider1 = [[UISlider alloc] initWithFrame:CGRectMake(20, 440, 300, 20)];
+    _slider1 = [[UISlider alloc] initWithFrame:CGRectMake(20, 380, viewWidth, 20)];
     _slider1.minimumValue = 0;
     _slider1.maximumValue = 300;
     _slider1.value = 20;
     [self.view addSubview:_slider1];
     
-    _slider2 = [[UISlider alloc] initWithFrame:CGRectMake(20, 480, 300, 20)];
+    _slider2 = [[UISlider alloc] initWithFrame:CGRectMake(20, 420, viewWidth, 20)];
     _slider2.minimumValue = 0;
     _slider2.maximumValue = 300;
     _slider2.value = 20;
     [self.view addSubview:_slider2];
     
-    _slider3 = [[UISlider alloc] initWithFrame:CGRectMake(20, 520, 300, 20)];
+    _slider3 = [[UISlider alloc] initWithFrame:CGRectMake(20, 460, viewWidth, 20)];
     _slider3.minimumValue = 0;
     _slider3.maximumValue = 300;
     _slider3.value = 20;
     [self.view addSubview:_slider3];
     
-    _slider4 = [[UISlider alloc] initWithFrame:CGRectMake(20, 560, 300, 20)];
+    _slider4 = [[UISlider alloc] initWithFrame:CGRectMake(20, 520, viewWidth, 20)];
     _slider4.minimumValue = 0;
     _slider4.maximumValue = 30;
     _slider4.value = 10;

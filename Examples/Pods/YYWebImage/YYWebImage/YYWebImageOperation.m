@@ -178,7 +178,6 @@ static void URLInBlackListAdd(NSURL *url) {
 
 @property (nonatomic, copy) YYWebImageProgressBlock progress;
 @property (nonatomic, copy) YYWebImageTransformBlock transform;
-@property (nonatomic, copy) NSString *transformKey;
 @property (nonatomic, copy) YYWebImageCompletionBlock completion;
 @end
 
@@ -242,7 +241,7 @@ static void URLInBlackListAdd(NSURL *url) {
 
 - (instancetype)init {
     @throw [NSException exceptionWithName:@"YYWebImageOperation init error" reason:@"YYWebImageOperation must be initialized with a request. Use the designated initializer to init." userInfo:nil];
-    return [self initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]] options:0 cache:nil cacheKey:nil progress:nil transform:nil transformKey:nil completion:nil];
+    return [self initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@""]] options:0 cache:nil cacheKey:nil progress:nil transform:nil completion:nil];
 }
 
 - (instancetype)initWithRequest:(NSURLRequest *)request
@@ -251,7 +250,6 @@ static void URLInBlackListAdd(NSURL *url) {
                        cacheKey:(NSString *)cacheKey
                        progress:(YYWebImageProgressBlock)progress
                       transform:(YYWebImageTransformBlock)transform
-                   transformKey:(nullable NSString *)transformKey
                      completion:(YYWebImageCompletionBlock)completion {
     self = [super init];
     if (!self) return nil;
@@ -263,7 +261,6 @@ static void URLInBlackListAdd(NSURL *url) {
     _shouldUseCredentialStorage = YES;
     _progress = progress;
     _transform = transform;
-    _transformKey = transformKey;
     _completion = completion;
     _executing = NO;
     _finished = NO;
@@ -510,7 +507,7 @@ static void URLInBlackListAdd(NSURL *url) {
             _data = [NSMutableData dataWithCapacity:_expectedSize > 0 ? _expectedSize : 0];
             if (_progress) {
                 [_lock lock];
-                if ([self isCancelled]) _progress(0, _expectedSize);
+                if (![self isCancelled]) _progress(0, _expectedSize);
                 [_lock unlock];
             }
         }

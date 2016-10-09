@@ -188,19 +188,17 @@ typedef void (^YYWebImageCompletionBlock)(UIImage * _Nullable image,
 /**
  Creates and returns a new image operation, the operation will start immediately.
  
- @param url          The image url (remote or local file path).
- @param options      The options to control image operation.
- @param progress     Progress block which will be invoked on background thread (pass nil to avoid).
- @param transform    Transform block which will be invoked on background thread  (pass nil to avoid).
- @param transformKey 转换key，链接相同但key不同会有不同的缓存
- @param completion   Completion block which will be invoked on background thread  (pass nil to avoid).
+ @param url        The image url (remote or local file path).
+ @param options    The options to control image operation.
+ @param progress   Progress block which will be invoked on background thread (pass nil to avoid).
+ @param transform  Transform block which will be invoked on background thread  (pass nil to avoid).
+ @param completion Completion block which will be invoked on background thread  (pass nil to avoid).
  @return A new image operation.
  */
 - (nullable YYWebImageOperation *)requestImageWithURL:(NSURL *)url
                                               options:(YYWebImageOptions)options
                                              progress:(nullable YYWebImageProgressBlock)progress
                                             transform:(nullable YYWebImageTransformBlock)transform
-                                         transformKey:(nullable NSString *)transformKey
                                            completion:(nullable YYWebImageCompletionBlock)completion;
 
 /**
@@ -275,7 +273,7 @@ typedef void (^YYWebImageCompletionBlock)(UIImage * _Nullable image,
  @param url A specified URL
  @return Cache key used in YYImageCache.
  */
-- (NSString *)cacheKeyForURL:(NSURL *)url transformKey:(NSString *)transformKey;
+- (NSString *)cacheKeyForURL:(NSURL *)url;
 
 
 /**

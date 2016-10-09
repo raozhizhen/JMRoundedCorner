@@ -54,7 +54,7 @@
 - (void)setAvatarURL:(NSURL *)avatarURL {
     _avatarURL = avatarURL;
     
-    [_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20) imageURL:_avatarURL placeholder:[UIImage imageNamed:@"avatar"] borderColor:[UIColor redColor] borderWidth:1 backgroundColor:[UIColor blueColor] contentMode:UIViewContentModeScaleAspectFill size:CGSizeMake(40, 40)];
+    [_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20) imageURL:_avatarURL placeholder:@"avatar" borderColor:[UIColor redColor] borderWidth:1 backgroundColor:[UIColor blueColor] contentMode:UIViewContentModeScaleAspectFill size:CGSizeMake(40, 40)];
 }
 
 + (NSString *)cellReuseIdentifier {
