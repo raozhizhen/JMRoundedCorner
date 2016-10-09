@@ -6,30 +6,31 @@
 //  Copyright © 2016年 Jim. All rights reserved.
 //
 
-#import "UIImage+RoundedCorner.h"
+#import "UIImage+JMRadius.h"
 
 @implementation UIImage (RoundedCorner)
 
-- (UIImage *)jm_setRadiu:(CGFloat)radiu size:(CGSize)size {
-    return [UIImage jm_setJMRadius:JMRadiusMake(radiu, radiu, radiu, radiu) size:size borderColor:nil borderWidth:0 backgroundColor:nil backgroundImage:self withContentMode:UIViewContentModeScaleToFill];
+- (UIImage *)jm_setRadius:(CGFloat)radius size:(CGSize)size {
+    return [UIImage jm_setJMRadius:JMRadiusMake(radius, radius, radius, radius) image:self size:size borderColor:nil borderWidth:0 backgroundColor:nil withContentMode:UIViewContentModeScaleToFill];
 }
 
-- (UIImage *)jm_setRadiu:(CGFloat)radiu size:(CGSize)size contentMode:(UIViewContentMode)contentMode {
-        return [UIImage jm_setJMRadius:JMRadiusMake(radiu, radiu, radiu, radiu) size:size borderColor:nil borderWidth:0 backgroundColor:nil backgroundImage:self withContentMode:contentMode];
+- (UIImage *)jm_setRadius:(CGFloat)radius size:(CGSize)size contentMode:(UIViewContentMode)contentMode {
+        return [UIImage jm_setJMRadius:JMRadiusMake(radius, radius, radius, radius) image:self size:size borderColor:nil borderWidth:0 backgroundColor:nil withContentMode:contentMode];
 }
 
-+ (UIImage *)jm_setRadiu:(CGFloat)radiu size:(CGSize)size borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor {
-    return [UIImage jm_setJMRadius:JMRadiusMake(radiu, radiu, radiu, radiu) size:size borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor backgroundImage:nil withContentMode:UIViewContentModeScaleToFill];
++ (UIImage *)jm_setRadius:(CGFloat)radius size:(CGSize)size borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor {
+    return [UIImage jm_setJMRadius:JMRadiusMake(radius, radius, radius, radius) image:nil size:size borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor withContentMode:UIViewContentModeScaleToFill];
 }
 
-+ (UIImage *)jm_setJMRadius:(JMRadius)radius size:(CGSize)size borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage withContentMode:(UIViewContentMode)contentMode {
++ (UIImage *)jm_setJMRadius:(JMRadius)radius image:(UIImage *)image size:(CGSize)size borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor withContentMode:(UIViewContentMode)contentMode {
+    
     if (!backgroundColor) {
         backgroundColor = [UIColor whiteColor];
     }
-    if (backgroundImage) {
-        backgroundImage = [backgroundImage scaleToSize:CGSizeMake(size.width, size.height) withContentMode:contentMode backgroundColor:backgroundColor];
+    if (image) {
+        image = [image scaleToSize:CGSizeMake(size.width, size.height) withContentMode:contentMode backgroundColor:backgroundColor];
     } else {
-        backgroundImage = [UIImage imageWithColor:backgroundColor];
+        image = [UIImage imageWithColor:backgroundColor];
     }
     
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
@@ -49,14 +50,14 @@
     [path closePath];
     
     [path addClip];
-    CGContextDrawImage(context, rect, backgroundImage.CGImage);
+    CGContextDrawImage(context, rect, image.CGImage);
     path.lineWidth = borderWidth;
     [borderColor setStroke];
     [path stroke];
     
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *currentImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return image;
+    return currentImage;
 }
 
 + (JMRadius)transformationJMRadius:(JMRadius)radius size:(CGSize)size borderWidth:(CGFloat)borderWidth {

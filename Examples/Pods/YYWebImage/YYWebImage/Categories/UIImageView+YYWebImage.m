@@ -38,6 +38,7 @@ static int _YYWebImageHighlightedSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:nil];
 }
 
@@ -48,6 +49,7 @@ static int _YYWebImageHighlightedSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:nil];
 }
 
@@ -58,6 +60,7 @@ static int _YYWebImageHighlightedSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:nil];
 }
 
@@ -71,6 +74,7 @@ static int _YYWebImageHighlightedSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:completion];
 }
 
@@ -79,6 +83,7 @@ static int _YYWebImageHighlightedSetterKey;
                    options:(YYWebImageOptions)options
                   progress:(YYWebImageProgressBlock)progress
                  transform:(YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(YYWebImageCompletionBlock)completion {
     [self yy_setImageWithURL:imageURL
                  placeholder:placeholder
@@ -86,6 +91,7 @@ static int _YYWebImageHighlightedSetterKey;
                      manager:nil
                     progress:progress
                    transform:transform
+                transformKey:transformKey
                   completion:completion];
 }
 
@@ -95,6 +101,7 @@ static int _YYWebImageHighlightedSetterKey;
                    manager:(YYWebImageManager *)manager
                   progress:(YYWebImageProgressBlock)progress
                  transform:(YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
@@ -126,7 +133,7 @@ static int _YYWebImageHighlightedSetterKey;
         if (manager.cache &&
             !(options & YYWebImageOptionUseNSURLCache) &&
             !(options & YYWebImageOptionRefreshImageCache)) {
-            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL] withType:YYImageCacheTypeMemory];
+            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL transformKey:transformKey] withType:YYImageCacheTypeMemory];
         }
         if (imageFromMemory) {
             if (!(options & YYWebImageOptionAvoidSetImage)) {
@@ -177,7 +184,7 @@ static int _YYWebImageHighlightedSetterKey;
                 });
             };
             
-            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform transformKey:transformKey completion:_completion];
             weakSetter = setter;
         });
     });
@@ -203,6 +210,7 @@ static int _YYWebImageHighlightedSetterKey;
                                 manager:nil
                                progress:nil
                               transform:nil
+                           transformKey:nil
                              completion:nil];
 }
 
@@ -213,6 +221,7 @@ static int _YYWebImageHighlightedSetterKey;
                                 manager:nil
                                progress:nil
                               transform:nil
+                           transformKey:nil
                              completion:nil];
 }
 
@@ -223,6 +232,7 @@ static int _YYWebImageHighlightedSetterKey;
                                 manager:nil
                                progress:nil
                               transform:nil
+                           transformKey:nil
                              completion:nil];
 }
 
@@ -236,6 +246,7 @@ static int _YYWebImageHighlightedSetterKey;
                                 manager:nil
                                progress:nil
                               transform:nil
+                           transformKey:nil
                              completion:completion];
 }
 
@@ -244,6 +255,7 @@ static int _YYWebImageHighlightedSetterKey;
                               options:(YYWebImageOptions)options
                              progress:(YYWebImageProgressBlock)progress
                             transform:(YYWebImageTransformBlock)transform
+                         transformKey:(nullable NSString *)transformKey
                            completion:(YYWebImageCompletionBlock)completion {
     [self yy_setHighlightedImageWithURL:imageURL
                             placeholder:placeholder
@@ -251,6 +263,7 @@ static int _YYWebImageHighlightedSetterKey;
                                 manager:nil
                                progress:progress
                               transform:nil
+                           transformKey:transformKey
                              completion:completion];
 }
 
@@ -260,6 +273,7 @@ static int _YYWebImageHighlightedSetterKey;
                               manager:(YYWebImageManager *)manager
                              progress:(YYWebImageProgressBlock)progress
                             transform:(YYWebImageTransformBlock)transform
+                         transformKey:(nullable NSString *)transformKey
                            completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
@@ -290,7 +304,7 @@ static int _YYWebImageHighlightedSetterKey;
         if (manager.cache &&
             !(options & YYWebImageOptionUseNSURLCache) &&
             !(options & YYWebImageOptionRefreshImageCache)) {
-            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL] withType:YYImageCacheTypeMemory];
+            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL transformKey:transformKey] withType:YYImageCacheTypeMemory];
         }
         if (imageFromMemory) {
             if (!(options & YYWebImageOptionAvoidSetImage)) {
@@ -341,7 +355,7 @@ static int _YYWebImageHighlightedSetterKey;
                 });
             };
             
-            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform transformKey:transformKey completion:_completion];
             weakSetter = setter;
         });
     });

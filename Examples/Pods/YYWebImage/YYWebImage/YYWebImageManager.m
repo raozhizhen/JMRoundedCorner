@@ -80,6 +80,7 @@ static UIApplication *_YYSharedApplication() {
                                      options:(YYWebImageOptions)options
                                     progress:(YYWebImageProgressBlock)progress
                                    transform:(YYWebImageTransformBlock)transform
+                                transformKey:(nullable NSString *)transformKey
                                   completion:(YYWebImageCompletionBlock)completion {
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -90,13 +91,14 @@ static UIApplication *_YYSharedApplication() {
     request.cachePolicy = (options & YYWebImageOptionUseNSURLCache) ?
         NSURLRequestUseProtocolCachePolicy : NSURLRequestReloadIgnoringLocalCacheData;
     
-    YYWebImageOperation *operation = [[YYWebImageOperation alloc] initWithRequest:request
-                                                                          options:options
-                                                                            cache:_cache
-                                                                         cacheKey:[self cacheKeyForURL:url]
-                                                                         progress:progress
-                                                                        transform:transform ? transform : _sharedTransformBlock
-                                                                       completion:completion];
+    YYWebImageOperation *operation = [[YYWebImageOperation alloc]initWithRequest:request
+                                                                         options:options
+                                                                           cache:_cache
+                                                                        cacheKey:[self cacheKeyForURL:url transformKey:transformKey]
+                                                                        progress:progress
+                                                                       transform:transform ? transform : _sharedTransformBlock
+                                                                    transformKey:transformKey
+                                                                      completion:completion];
 
     if (_username && _password) {
         operation.credential = [NSURLCredential credentialWithUser:_username password:_password persistence:NSURLCredentialPersistenceForSession];
@@ -117,12 +119,14 @@ static UIApplication *_YYSharedApplication() {
     return _headersFilter ? _headersFilter(url, _headers) : _headers;
 }
 
-- (NSString *)cacheKeyForURL:(NSURL *)url {
+- (NSString *)cacheKeyForURL:(NSURL *)url transformKey:(NSString *)transformKey {
     if (!url) return nil;
-    return _cacheKeyFilter ? _cacheKeyFilter(url) : url.absoluteString;
+    NSString *cacheKey = _cacheKeyFilter ? _cacheKeyFilter(url) : url.absoluteString;
+    if (transformKey)
+        return cacheKey;
+    else
+        return [NSString stringWithFormat:@"%@--%@", cacheKey, transformKey];
 }
-
-
 
 #pragma mark Network Indicator
 

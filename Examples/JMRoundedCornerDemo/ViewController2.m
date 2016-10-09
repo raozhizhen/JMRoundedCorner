@@ -7,7 +7,7 @@
 //
 
 #import "ViewController2.h"
-#import "UIView+RoundedCorner.h"
+#import "JMRoundedCorner.h"
 #import "UIControl+YYAdd.h"
 
 @implementation ViewController2 {
@@ -25,7 +25,7 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 100, 300, 200)];
-    [_imageView jm_setJMRadius:JMRadiusMake(20, 20, 20, 20) borderColor:[UIColor redColor] borderWidth:10 backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar"] contentMode:UIViewContentModeScaleAspectFill];
+    [_imageView jm_setImageWithJMRadius: JMRadiusMake(20, 20, 20, 20) image:[UIImage imageNamed:@"avatar"] borderColor:[UIColor redColor] borderWidth:10 backgroundColor:[UIColor blueColor] contentMode:UIViewContentModeScaleAspectFill];
     [self.view addSubview:_imageView];
     
     _slider0 = [[UISlider alloc] initWithFrame:CGRectMake(20, 400, 300, 20)];
@@ -77,7 +77,7 @@
 }
 
 - (void)sliderChanged {
-    [_imageView jm_setJMRadius:JMRadiusMake(_slider0.value, _slider1.value, _slider2.value, _slider3.value) borderColor:[UIColor redColor] borderWidth:_slider4.value backgroundColor:[UIColor blueColor] backgroundImage:[UIImage imageNamed:@"avatar.jpg"] contentMode:UIViewContentModeScaleAspectFill];
+    [_imageView jm_setImageWithJMRadius:JMRadiusMake(_slider0.value, _slider1.value, _slider2.value, _slider3.value) image:[UIImage imageNamed:@"avatar.jpg"] borderColor:[UIColor redColor] borderWidth:_slider4.value backgroundColor:[UIColor blueColor] contentMode:UIViewContentModeScaleAspectFill];
 }
 
 @end
