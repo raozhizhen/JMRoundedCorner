@@ -8,13 +8,23 @@ PODS:
     - YYImage
 
 DEPENDENCIES:
-  - YYWebImage
+  - YYWebImage (from `https://github.com/raozhizhen/YYWebImage.git`, commit `06efdf9461e644f1e94492b41150681d5bfcc3c6`)
+
+EXTERNAL SOURCES:
+  YYWebImage:
+    :commit: 06efdf9461e644f1e94492b41150681d5bfcc3c6
+    :git: https://github.com/raozhizhen/YYWebImage.git
+
+CHECKOUT OPTIONS:
+  YYWebImage:
+    :commit: 06efdf9461e644f1e94492b41150681d5bfcc3c6
+    :git: https://github.com/raozhizhen/YYWebImage.git
 
 SPEC CHECKSUMS:
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ff98d02bc5bf4236a9ca7df83b2c0f3e52da17b6
+PODFILE CHECKSUM: 14cf29813d19113b181c8afe9a5eb049a1da9578
 
 COCOAPODS: 1.0.1

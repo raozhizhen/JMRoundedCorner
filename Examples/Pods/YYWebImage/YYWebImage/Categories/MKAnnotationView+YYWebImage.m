@@ -35,6 +35,7 @@ static int _YYWebImageSetterKey;
                   manager:nil
                  progress:nil
                 transform:nil
+             transformKey:nil
                completion:nil];
 }
 
@@ -45,6 +46,7 @@ static int _YYWebImageSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:nil];
 }
 
@@ -55,6 +57,7 @@ static int _YYWebImageSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:nil];
 }
 
@@ -68,6 +71,7 @@ static int _YYWebImageSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:completion];
 }
 
@@ -76,6 +80,7 @@ static int _YYWebImageSetterKey;
                    options:(YYWebImageOptions)options
                   progress:(YYWebImageProgressBlock)progress
                  transform:(YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(YYWebImageCompletionBlock)completion {
     [self yy_setImageWithURL:imageURL
                  placeholder:placeholder
@@ -83,6 +88,7 @@ static int _YYWebImageSetterKey;
                      manager:nil
                     progress:progress
                    transform:transform
+                transformKey:transformKey
                   completion:completion];
 }
 
@@ -92,6 +98,7 @@ static int _YYWebImageSetterKey;
                    manager:(YYWebImageManager *)manager
                   progress:(YYWebImageProgressBlock)progress
                  transform:(YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
@@ -122,7 +129,7 @@ static int _YYWebImageSetterKey;
         if (manager.cache &&
             !(options & YYWebImageOptionUseNSURLCache) &&
             !(options & YYWebImageOptionRefreshImageCache)) {
-            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL] withType:YYImageCacheTypeMemory];
+            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL transformKey:transformKey] withType:YYImageCacheTypeMemory];
         }
         if (imageFromMemory) {
             if (!(options & YYWebImageOptionAvoidSetImage)) {
@@ -173,7 +180,7 @@ static int _YYWebImageSetterKey;
                 });
             };
             
-            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform transformKey:transformKey completion:_completion];
             weakSetter = setter;
         });
     });

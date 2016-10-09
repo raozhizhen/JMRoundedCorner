@@ -67,30 +67,33 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Set the view's `image` with a specified URL.
  
- @param imageURL    The image url (remote or local file path).
- @param placeholder The image to be set initially, until the image request finishes.
- @param options     The options to use when request the image.
- @param progress    The block invoked (on main thread) during image request.
- @param transform   The block invoked (on background thread) to do additional image process.
- @param completion  The block invoked (on main thread) when image request completed.
+ @param imageURL     The image url (remote or local file path).
+ @param placeholder  The image to be set initially, until the image request finishes.
+ @param options      The options to use when request the image.
+ @param progress     The block invoked (on main thread) during image request.
+ @param transform    The block invoked (on background thread) to do additional image process.
+ @param transformKey 转换key，链接相同但key不同会有不同的缓存
+ @param completion   The block invoked (on main thread) when image request completed.
  */
 - (void)yy_setImageWithURL:(nullable NSURL *)imageURL
                placeholder:(nullable UIImage *)placeholder
                    options:(YYWebImageOptions)options
                   progress:(nullable YYWebImageProgressBlock)progress
                  transform:(nullable YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(nullable YYWebImageCompletionBlock)completion;
 
 /**
  Set the view's `image` with a specified URL.
  
- @param imageURL    The image url (remote or local file path).
- @param placeholder he image to be set initially, until the image request finishes.
- @param options     The options to use when request the image.
- @param manager     The manager to create image request operation.
- @param progress    The block invoked (on main thread) during image request.
- @param transform   The block invoked (on background thread) to do additional image process.
- @param completion  The block invoked (on main thread) when image request completed.
+ @param imageURL     The image url (remote or local file path).
+ @param placeholder  he image to be set initially, until the image request finishes.
+ @param options      The options to use when request the image.
+ @param manager      The manager to create image request operation.
+ @param progress     The block invoked (on main thread) during image request.
+ @param transform    The block invoked (on background thread) to do additional image process.
+ @param transformKey 转换key，链接相同但key不同会有不同的缓存
+ @param completion   The block invoked (on main thread) when image request completed.
  */
 - (void)yy_setImageWithURL:(nullable NSURL *)imageURL
                placeholder:(nullable UIImage *)placeholder
@@ -98,6 +101,7 @@ NS_ASSUME_NONNULL_BEGIN
                    manager:(nullable YYWebImageManager *)manager
                   progress:(nullable YYWebImageProgressBlock)progress
                  transform:(nullable YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(nullable YYWebImageCompletionBlock)completion;
 
 /**
@@ -155,6 +159,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param options     The options to use when request the image.
  @param progress    The block invoked (on main thread) during image request.
  @param transform   The block invoked (on background thread) to do additional image process.
+ @param transformKey 转换key，链接相同但key不同会有不同的缓存
  @param completion  The block invoked (on main thread) when image request completed.
  */
 - (void)yy_setHighlightedImageWithURL:(nullable NSURL *)imageURL
@@ -162,6 +167,7 @@ NS_ASSUME_NONNULL_BEGIN
                               options:(YYWebImageOptions)options
                              progress:(nullable YYWebImageProgressBlock)progress
                             transform:(nullable YYWebImageTransformBlock)transform
+                         transformKey:(nullable NSString *)transformKey
                            completion:(nullable YYWebImageCompletionBlock)completion;
 
 /**
@@ -173,6 +179,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param manager     The manager to create image request operation.
  @param progress    The block invoked (on main thread) during image request.
  @param transform   The block invoked (on background thread) to do additional image process.
+ @param transformKey 转换key，链接相同但key不同会有不同的缓存
  @param completion  The block invoked (on main thread) when image request completed.
  */
 - (void)yy_setHighlightedImageWithURL:(nullable NSURL *)imageURL
@@ -181,6 +188,7 @@ NS_ASSUME_NONNULL_BEGIN
                               manager:(nullable YYWebImageManager *)manager
                              progress:(nullable YYWebImageProgressBlock)progress
                             transform:(nullable YYWebImageTransformBlock)transform
+                         transformKey:(nullable NSString *)transformKey
                            completion:(nullable YYWebImageCompletionBlock)completion;
 
 /**

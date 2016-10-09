@@ -49,13 +49,14 @@ const NSTimeInterval _YYWebImageProgressiveFadeTime = 0.4;
                             manager:(YYWebImageManager *)manager
                            progress:(YYWebImageProgressBlock)progress
                           transform:(YYWebImageTransformBlock)transform
+                       transformKey:(nullable NSString *)transformKey
                          completion:(YYWebImageCompletionBlock)completion {
     if (sentinel != _sentinel) {
         if (completion) completion(nil, imageURL, YYWebImageFromNone, YYWebImageStageCancelled, nil);
         return _sentinel;
     }
     
-    NSOperation *operation = [manager requestImageWithURL:imageURL options:options progress:progress transform:transform completion:completion];
+    NSOperation *operation = [manager requestImageWithURL:imageURL options:options progress:progress transform:transform                transformKey:transformKey completion:completion];
     if (!operation && completion) {
         NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : @"YYWebImageOperation create failed." };
         completion(nil, imageURL, YYWebImageFromNone, YYWebImageStageFinished, [NSError errorWithDomain:@"com.ibireme.webimage" code:-1 userInfo:userInfo]);

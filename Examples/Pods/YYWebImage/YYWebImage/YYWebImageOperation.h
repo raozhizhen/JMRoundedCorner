@@ -78,7 +78,8 @@ NS_ASSUME_NONNULL_BEGIN
                      The block will be invoked in background thread. Pass nil to avoid it.
  @param completion A block invoked when image fetch finished or cancelled.
                      The block will be invoked in background thread. Pass nil to avoid it.
- 
+ @param transformKey 转换key，链接相同但key不同会有不同的缓存
+
  @return The image request opeartion, or nil if an error occurs.
  */
 - (instancetype)initWithRequest:(NSURLRequest *)request
@@ -87,6 +88,7 @@ NS_ASSUME_NONNULL_BEGIN
                        cacheKey:(nullable NSString *)cacheKey
                        progress:(nullable YYWebImageProgressBlock)progress
                       transform:(nullable YYWebImageTransformBlock)transform
+                   transformKey:(nullable NSString *)transformKey
                      completion:(nullable YYWebImageCompletionBlock)completion NS_DESIGNATED_INITIALIZER;
 
 - (instancetype)init UNAVAILABLE_ATTRIBUTE;

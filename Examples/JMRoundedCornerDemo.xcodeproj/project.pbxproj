@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E55AE0F1DA9E3BB00023051 /* UIImageView+JMRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E55AE0E1DA9E3BB00023051 /* UIImageView+JMRadius.m */; };
+		1E55AE131DAA22A900023051 /* UIButton+JMRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E55AE121DAA22A900023051 /* UIButton+JMRadius.m */; };
 		1EB0B1641DA7CC4D0087CC5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1631DA7CC4D0087CC5A /* main.m */; };
 		1EB0B1671DA7CC4D0087CC5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1661DA7CC4D0087CC5A /* AppDelegate.m */; };
 		1EB0B16A1DA7CC4D0087CC5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0B1691DA7CC4D0087CC5A /* ViewController.m */; };
@@ -26,6 +27,8 @@
 		1E55AE0D1DA9E3BB00023051 /* UIImageView+JMRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JMRadius.h"; sourceTree = "<group>"; };
 		1E55AE0E1DA9E3BB00023051 /* UIImageView+JMRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JMRadius.m"; sourceTree = "<group>"; };
 		1E55AE101DA9E9C800023051 /* JMRoundedCorner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMRoundedCorner.h; sourceTree = "<group>"; };
+		1E55AE111DAA22A900023051 /* UIButton+JMRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JMRadius.h"; sourceTree = "<group>"; };
+		1E55AE121DAA22A900023051 /* UIButton+JMRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JMRadius.m"; sourceTree = "<group>"; };
 		1EB0B15F1DA7CC4D0087CC5A /* JMRoundedCornerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMRoundedCornerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB0B1631DA7CC4D0087CC5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1EB0B1651DA7CC4D0087CC5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				1EB0B1841DA7CD9C0087CC5A /* UIView+JMRadius.m */,
 				1E55AE0D1DA9E3BB00023051 /* UIImageView+JMRadius.h */,
 				1E55AE0E1DA9E3BB00023051 /* UIImageView+JMRadius.m */,
+				1E55AE111DAA22A900023051 /* UIButton+JMRadius.h */,
+				1E55AE121DAA22A900023051 /* UIButton+JMRadius.m */,
 			);
 			name = JMRoundedCorner;
 			path = ../JMRoundedCorner;
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E55AE131DAA22A900023051 /* UIButton+JMRadius.m in Sources */,
 				1EB0B18C1DA7CEB20087CC5A /* ViewController2.m in Sources */,
 				1E55AE0F1DA9E3BB00023051 /* UIImageView+JMRadius.m in Sources */,
 				1EB0B18F1DA7CF080087CC5A /* UIControl+YYAdd.m in Sources */,

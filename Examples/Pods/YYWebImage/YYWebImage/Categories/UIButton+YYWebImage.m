@@ -84,6 +84,7 @@ static int _YYWebImageBackgroundSetterKey;
                     manager:(YYWebImageManager *)manager
                    progress:(YYWebImageProgressBlock)progress
                   transform:(YYWebImageTransformBlock)transform
+               transformKey:(nullable NSString *)transformKey
                  completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
@@ -109,7 +110,7 @@ static int _YYWebImageBackgroundSetterKey;
         if (manager.cache &&
             !(options & YYWebImageOptionUseNSURLCache) &&
             !(options & YYWebImageOptionRefreshImageCache)) {
-            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL] withType:YYImageCacheTypeMemory];
+            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL transformKey:transformKey] withType:YYImageCacheTypeMemory];
         }
         if (imageFromMemory) {
             if (!(options & YYWebImageOptionAvoidSetImage)) {
@@ -153,7 +154,7 @@ static int _YYWebImageBackgroundSetterKey;
                 });
             };
             
-            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform transformKey:transformKey completion:_completion];
             weakSetter = setter;
         });
     });
@@ -181,6 +182,7 @@ static int _YYWebImageBackgroundSetterKey;
                   manager:nil
                  progress:nil
                 transform:nil
+             transformKey:nil
                completion:nil];
 }
 
@@ -194,6 +196,7 @@ static int _YYWebImageBackgroundSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:nil];
 }
 
@@ -209,6 +212,7 @@ static int _YYWebImageBackgroundSetterKey;
                      manager:nil
                     progress:nil
                    transform:nil
+                transformKey:nil
                   completion:completion];
 }
 
@@ -218,6 +222,7 @@ static int _YYWebImageBackgroundSetterKey;
                    options:(YYWebImageOptions)options
                   progress:(YYWebImageProgressBlock)progress
                  transform:(YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(YYWebImageCompletionBlock)completion {
     [self yy_setImageWithURL:imageURL
                     forState:state
@@ -226,6 +231,7 @@ static int _YYWebImageBackgroundSetterKey;
                      manager:nil
                     progress:progress
                    transform:transform
+                transformKey:transformKey
                   completion:completion];
 }
 
@@ -236,6 +242,7 @@ static int _YYWebImageBackgroundSetterKey;
                    manager:(YYWebImageManager *)manager
                   progress:(YYWebImageProgressBlock)progress
                  transform:(YYWebImageTransformBlock)transform
+              transformKey:(nullable NSString *)transformKey
                 completion:(YYWebImageCompletionBlock)completion {
     for (NSNumber *num in UIControlStateMulti(state)) {
         [self _yy_setImageWithURL:imageURL
@@ -245,6 +252,7 @@ static int _YYWebImageBackgroundSetterKey;
                           manager:manager
                          progress:progress
                         transform:transform
+                     transformKey:transformKey
                        completion:completion];
     }
 }
@@ -265,6 +273,7 @@ static int _YYWebImageBackgroundSetterKey;
                               manager:(YYWebImageManager *)manager
                              progress:(YYWebImageProgressBlock)progress
                             transform:(YYWebImageTransformBlock)transform
+                         transformKey:(nullable NSString *)transformKey
                            completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
@@ -290,7 +299,7 @@ static int _YYWebImageBackgroundSetterKey;
         if (manager.cache &&
             !(options & YYWebImageOptionUseNSURLCache) &&
             !(options & YYWebImageOptionRefreshImageCache)) {
-            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL] withType:YYImageCacheTypeMemory];
+            imageFromMemory = [manager.cache getImageForKey:[manager cacheKeyForURL:imageURL transformKey:transformKey] withType:YYImageCacheTypeMemory];
         }
         if (imageFromMemory) {
             if (!(options & YYWebImageOptionAvoidSetImage)) {
@@ -334,7 +343,7 @@ static int _YYWebImageBackgroundSetterKey;
                 });
             };
             
-            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform completion:_completion];
+            newSentinel = [setter setOperationWithSentinel:sentinel url:imageURL options:options manager:manager progress:_progress transform:transform transformKey:transformKey completion:_completion];
             weakSetter = setter;
         });
     });
@@ -362,6 +371,7 @@ static int _YYWebImageBackgroundSetterKey;
                                manager:nil
                               progress:nil
                              transform:nil
+                          transformKey:nil
                             completion:nil];
 }
 
@@ -375,6 +385,7 @@ static int _YYWebImageBackgroundSetterKey;
                                manager:nil
                               progress:nil
                              transform:nil
+                          transformKey:nil
                             completion:nil];
 }
 
@@ -390,6 +401,7 @@ static int _YYWebImageBackgroundSetterKey;
                                manager:nil
                               progress:nil
                              transform:nil
+                          transformKey:nil
                             completion:completion];
 }
 
@@ -399,6 +411,7 @@ static int _YYWebImageBackgroundSetterKey;
                              options:(YYWebImageOptions)options
                             progress:(YYWebImageProgressBlock)progress
                            transform:(YYWebImageTransformBlock)transform
+                        transformKey:(nullable NSString *)transformKey
                           completion:(YYWebImageCompletionBlock)completion {
     [self yy_setBackgroundImageWithURL:imageURL
                               forState:state
@@ -407,6 +420,7 @@ static int _YYWebImageBackgroundSetterKey;
                                manager:nil
                               progress:progress
                              transform:transform
+                          transformKey:transformKey
                             completion:completion];
 }
 
@@ -417,6 +431,7 @@ static int _YYWebImageBackgroundSetterKey;
                              manager:(YYWebImageManager *)manager
                             progress:(YYWebImageProgressBlock)progress
                            transform:(YYWebImageTransformBlock)transform
+                        transformKey:(nullable NSString *)transformKey
                           completion:(YYWebImageCompletionBlock)completion {
     for (NSNumber *num in UIControlStateMulti(state)) {
         [self _yy_setBackgroundImageWithURL:imageURL
@@ -426,6 +441,7 @@ static int _YYWebImageBackgroundSetterKey;
                                     manager:manager
                                    progress:progress
                                   transform:transform
+                               transformKey:transformKey
                                  completion:completion];
     }
 }
