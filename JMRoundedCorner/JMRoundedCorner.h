@@ -12,5 +12,6 @@
 #import "UIImage+JMRadius.h"
 #import "UIView+JMRadius.h"
 #import "UIImageView+JMRadius.h"
+#import "UIButton+JMRadius.h"
 
 #endif /* JMRoundedCorner_h */

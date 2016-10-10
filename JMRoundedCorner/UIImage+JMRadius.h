@@ -26,6 +26,10 @@ static inline JMRadius JMRadiusMake(CGFloat topLeftRadius, CGFloat topRightRadiu
     return radius;
 }
 
+static inline NSString * NSStringFromJMRadius(JMRadius radius) {
+    return [NSString stringWithFormat:@"{%.2f, %.2f, %.2f, %.2f}", radius.topLeftRadius, radius.topRightRadius, radius.bottomLeftRadius, radius.bottomRightRadius];
+}
+
 @interface UIImage (RoundedCorner)
 
 - (UIImage *)jm_setRadius:(CGFloat)radius

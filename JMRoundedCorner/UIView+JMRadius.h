@@ -12,6 +12,8 @@
 
 @interface UIView (RoundedCorner)
 
+typedef void (^JMRoundedCornerCompletionBlock)(UIImage * image);
+
 /**设置圆角背景图，默认 UIViewContentModeScaleAspectFill 模式*/
 - (void)jm_setImageWithCornerRadius:(CGFloat)radius
                               image:(UIImage *)image;
@@ -49,5 +51,16 @@
                     borderWidth:(CGFloat)borderWidth
                 backgroundColor:(UIColor *)backgroundColor
                     contentMode:(UIViewContentMode)contentMode;
+
+/**配置所有属性配置圆角背景图*/
+- (void)jm_setImageWithJMRadius:(JMRadius)radius
+                          image:(UIImage *)image
+                    borderColor:(UIColor *)borderColor
+                    borderWidth:(CGFloat)borderWidth
+                backgroundColor:(UIColor *)backgroundColor
+                    contentMode:(UIViewContentMode)contentMode
+                           size:(CGSize)size
+                       forState:(UIControlState)state
+                     completion:(JMRoundedCornerCompletionBlock)completion;
 
 @end

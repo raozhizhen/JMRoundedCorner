@@ -6,26 +6,8 @@
 [![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_7)&nbsp;
 [![BLOG](https://img.shields.io/badge/blog-raozhizhen.com-orange.svg?style=flat)](http://raozhizhen.com)&nbsp;
 
-###Swift 版本：[JMRoundedCornerSwift](https://github.com/raozhizhen/JMRoundedCornerSwift)
 
-
-当我们需要给一个 View 设置圆角的时候，一般会这样写
-
-```objc	
-_label.layer.cornerRadius = 10;
-_label.layer.masksToBounds = YES;
-```  	 
-  	 
-cornerRadius 和 maskToBounds 独立作用的时候都不会有太大的性能问题，但是当他俩结合在一起，就触发了离屏渲染， 
-Instrument的 Core Animation 有一个叫做 Color Offscreen-Rendered Yellow 的选项。它会将已经被渲染到屏幕外缓冲区的区域标注为黄色，下图中黄色的部分就是离屏渲染的地方。
-
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2590.PNG?raw=true)
-
-####离屏渲染是什么？
-
-离屏渲染绘制 layer tree 中的一部分到一个新的缓存里面（这个缓存不是屏幕，是另一个地方），然后再把这个缓存渲染到屏幕上面。一般来说，你需要避免离屏渲染。因为这个开销很大。在屏幕上面直接合成层要比先创建一个离屏缓存然后在缓存上面绘制，最后再绘制缓存到屏幕上面快很多。这里面有 2 个上下文环境的切换（切换到屏幕外缓存环境，和屏幕环境）。
-
-####解决方案
+####避免离屏渲染
 
 如果你的 view 不需要让子视图超出部分不显示，且不需要给 view 的 image 绘制圆角，
 
@@ -40,86 +22,40 @@ view.layer.cornerRadius = radius;
 view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
-但如果需要给 view 的 image 绘制圆角，如 UIImageView.image 和 UIButton 的背景图片。
-
-则可以用 GraphicsContext 绘制一张带圆角的 image 给 view 来避免离屏渲染。
-
-我将这个过程封装了一下。
-
 ####使用 JMRoundedCorner 来绘制圆角
 
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner'
+	pod 'JMRoundedCorner' 
 	
-	#import "UIView+RoundedCorner.h"
+	#import "JMRoundedCorner.h"
 
-	
-**需要注意的是：我是在 layer 层上做的操作，所以效果会被背景颜色和背景图片遮住。需要对背景颜色和图片做处理请使用下方带背景颜色或者背景图片的接口**
-
-#####给 view 设置一个圆角边框
-
-```objc	
-- (void)jm_setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
-```
-
-#####给 view 设置一个圆角背景颜色
-
-```objc
-- (void)jm_setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)backgroundColor;
-```
-
-#####给 view 设置一个圆角背景图
-
-```objc
-- (void)jm_setCornerRadius:(CGFloat)radius withImage:(UIImage *)image;
-```
-
-#####给 view 设置一个 contentMode 模式的圆角背景图
-
-```objc
-- (void)jm_setCornerRadius:(CGFloat)radius withImage:(UIImage *)image contentMode:(UIViewContentMode)contentMode;
-```
-
-#####设置所有属性配置出一个圆角背景图
-
-```objc
-- (void)jm_setCornerRadius:(CGFloat)radius withBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage contentMode:(UIViewContentMode)contentMode;
-```
 
 #####代码示例
+
 ```objc
-    _avatarView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 7, 40, 40)];
-    [_avatarView jm_setCornerRadius:20 withImage:[UIImage imageNamed:@"avatar.jpg"]];
-    [self.contentView addSubview:_avatarView];
+[_avatarView jm_setImageWithCornerRadius:10 image:[UIImage imageNamed:@"avatar"]];
 ```
 
 ```objc
-//添加占位图
-    _avatarView.image = [placeholderImage jm_imageWithRoundedCornersAndSize:CGSizeMake(60, 60) andCornerRadius:30];
-
-//下载完之后设置圆角 image
-[[SDWebImageManager sharedManager] downloadImageWithURL:_model.avatarURL options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-	if (image) {
-		[_avatarView jm_setCornerRadius:30 withImage:image];
-	}
-}];
+[_avatarView jm_setImageWithCornerRadius:20 imageURL:_avatarURL placeholder:@"avatar" size:CGSizeMake(40, 40)];
 ```
 
-这样，绘制出了圆角，也可以避免在大量 view 离屏渲染的时候拖慢 FPS
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/IMG_2580.PNG?raw=true)
-
-
-将 Demo 下下来，试试使用 JMRoundedCorner 带来的顺滑提升。
-
-##### 支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下，例如：
+##### 支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下，
 
 ```objc
-[_label jm_setJMRadius:JMRadiusMake(0, 10, 0, 10) withBorderColor:[UIColor redColor] borderWidth:0.5];
+    [_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20)
+                                imageURL:_avatarURL 
+                             placeholder:@"avatar"
+                             borderColor:[UIColor redColor]
+                             borderWidth:1
+                         backgroundColor:[UIColor blueColor]
+                             contentMode:UIViewContentModeScaleAspectFill
+                                    size:CGSizeMake(40, 40)];
+
 ```
 
-![](https://github.com/raozhizhen/JMRoundedCorner/blob/master/JMRoundedCornerGIF.gif?raw=true)
 ####联系我
 
 - QQ:337519524
@@ -144,8 +80,11 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 不要设置 view 的 backgroundColor，需要设置的话可以通过带 backgroundColor 参数的接口进行设置，例如：
 
 ```objc
-- (void)jm_setCornerRadius:(CGFloat)radius withBackgroundColor:(UIColor *)backgroundColor;
-```
+- (void)jm_setImageWithCornerRadius:(CGFloat)radius
+                        borderColor:(UIColor *)borderColor
+                        borderWidth:(CGFloat)borderWidth
+                    backgroundColor:(UIColor *)backgroundColor;
+- ```
 
 [控制器输出以下错误，这是 Xcode-7 的 BUG](https://forums.developer.apple.com/thread/13683)。
 ```objc
@@ -153,9 +92,11 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 ####更新日志
+- 2016/10/10 1.9.0 版本 : 依赖 **[YYWebImage](https://github.com/ibireme/YYWebImage)** 实现网络图片圆角处理和圆角图片缓存，1.9 版本属于测试版，稳定后会发布 2.0.0 版本。
+
 - 2016/4/25  1.2.1 版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
 
-- 2016/3/12  1.1.0 版本 : 接口带上了 jm_ 前缀，JMRadius 添加圆角优先级，经过大量测试，解决细节上的一些小BUG。
+- 2016/3/12  1.1.0 版本 : 接口带上了 jm_ 前缀，JMRadius 添加圆角优先级。
 
 - 2016/3/3   1.0.3 版本 : 修复 label 里如果没有汉字，文字就不显示的 BUG，以及做了使 view 落在像素点上的优化。
 
@@ -169,3 +110,5 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 - 2016/2/23  0.0.1 版本 ：绘制一个圆角 image
 
+####许可证
+JMRoundedCorner 使用 MIT 许可证，详情见 LICENSE 文件。

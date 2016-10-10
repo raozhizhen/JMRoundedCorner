@@ -64,10 +64,10 @@ static char jm_operationKey;
 - (void)jm_setImageWithJMRadius:(JMRadius)radius image:(UIImage *)image borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor contentMode:(UIViewContentMode)contentMode {
     [self jm_cancelOperation];
     
-    [self jm_setImageWithJMRadius:radius image:image borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor contentMode:contentMode size:CGSizeZero];
+    [self jm_setImageWithJMRadius:radius image:image borderColor:borderColor borderWidth:borderWidth backgroundColor:backgroundColor contentMode:contentMode size:CGSizeZero forState:UIControlStateNormal completion:nil];
 }
 
-- (void)jm_setImageWithJMRadius:(JMRadius)radius image:(UIImage *)image borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor contentMode:(UIViewContentMode)contentMode size:(CGSize)size {
+- (void)jm_setImageWithJMRadius:(JMRadius)radius image:(UIImage *)image borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor contentMode:(UIViewContentMode)contentMode size:(CGSize)size forState:(UIControlState)state completion:(JMRoundedCornerCompletionBlock)completion {
     
     __block CGSize _size = size;
     
@@ -91,12 +91,13 @@ static char jm_operationKey;
             if ([self isKindOfClass:[UIImageView class]]) {
                 ((UIImageView *)self).image = currentImage;
             } else if ([self isKindOfClass:[UIButton class]] && image) {
-                [((UIButton *)self) setBackgroundImage:currentImage forState:UIControlStateNormal];
+                [((UIButton *)self) setBackgroundImage:currentImage forState:state];
             } else if ([self isKindOfClass:[UILabel class]]) {
                 self.layer.backgroundColor = [UIColor colorWithPatternImage:currentImage].CGColor;
             } else {
                 self.layer.contents = (__bridge id _Nullable)(currentImage.CGImage);
             }
+            if (completion) completion(currentImage);
         }];
     }];
     
