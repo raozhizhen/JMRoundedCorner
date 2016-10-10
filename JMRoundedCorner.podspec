@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JMRoundedCorner"
-  s.version      = "2.0.0"
+  s.version      = "1.9.0"
   s.summary      = "UIView set Corner Radius"
   s.homepage     = "https://github.com/raozhizhen/JMRoundedCorner.git"
   s.license             = { :type => "MIT", :file => "LICENSE" } 
@@ -11,5 +11,4 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/raozhizhen/JMRoundedCorner.git", :tag => s.version }
   s.source_files = "JMRoundedCorner/*.{h,m}"
   s.requires_arc = true
-  s.dependency 'YYWebImage', :git => "raozhizhen/YYWebImage.git", :tag => '1.0.5'
 end
