@@ -7,7 +7,7 @@
 //
 
 #import "UIButton+JMRadius.h"
-#import <UIButton+YYWebImage.h>
+#import <YYWebImage/UIButton+YYWebImage.h>
 
 @implementation UIButton (JMRadius)
 
@@ -29,7 +29,7 @@
 
 - (void)jm_setImageWithJMRadius:(JMRadius)radius imageURL:(NSURL *)imageURL placeholder:(NSString *)placeholder borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor contentMode:(UIViewContentMode)contentMode size:(CGSize)size forState:(UIControlState)state {
     
-    NSString *transformKey =  [NSString stringWithFormat:@"%@%@%.1f%@%li%@", NSStringFromJMRadius(radius), borderColor.description, borderWidth, backgroundColor.description, contentMode,NSStringFromCGSize(size)];
+    NSString *transformKey =  [NSString stringWithFormat:@"%@%@%.1f%@%li%@", NSStringFromJMRadius(radius), borderColor.description, borderWidth, backgroundColor.description, (long)contentMode,NSStringFromCGSize(size)];
     NSString *transformImageKey = [[YYWebImageManager sharedManager] cacheKeyForURL:imageURL transformKey:transformKey];
     UIImage *cacheImage = [[YYWebImageManager sharedManager].cache getImageForKey:transformImageKey];
     
