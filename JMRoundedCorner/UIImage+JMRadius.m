@@ -79,7 +79,7 @@ static inline CGFloat minimum(CGFloat a, CGFloat b, CGFloat c) {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
     CGContextAddRect(context, rect);
-    CGContextDrawPath(context, kCGPathFillStroke);
+    CGContextDrawPath(context, kCGPathFill);
     [self drawInRect:[self convertRect:rect withContentMode:contentMode]];
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
