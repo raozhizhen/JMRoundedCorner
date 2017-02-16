@@ -93,7 +93,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 ####更新日志
-- 2016/10/10 1.9.0 版本 : 依赖 **[YYWebImage](https://github.com/ibireme/YYWebImage)** 实现网络图片圆角处理和圆角图片缓存，1.9 版本属于测试版，稳定后会发布 2.0.0 版本。
+- 2016/10/10 1.9.0 版本 : 依赖 **[YYWebImage](https://github.com/ibireme/YYWebImage)** 实现网络图片圆角处理和圆角图片缓存。
 
 - 2016/4/25  1.2.1 版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
 
