@@ -54,7 +54,7 @@
 - (void)setAvatarURL:(NSURL *)avatarURL {
     _avatarURL = avatarURL;
     
-    [_avatarView jm_setImageWithCornerRadius:20 imageURL:_avatarURL placeholder:@"avatar" size:CGSizeMake(40, 40)];
+//    [_avatarView jm_setImageWithCornerRadius:20 imageURL:_avatarURL placeholder:@"avatar" size:CGSizeMake(40, 40)];
     
     [_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20)
                                 imageURL:_avatarURL
