@@ -27,7 +27,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 	platform :ios, '7.0'
 	
-	pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.2'
+	pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.3'
 	pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
 
 	#import "JMRoundedCorner.h"
