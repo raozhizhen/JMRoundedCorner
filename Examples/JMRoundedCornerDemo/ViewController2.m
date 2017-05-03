@@ -79,7 +79,7 @@
 }
 
 - (void)sliderChanged {
-    [_imageView jm_setImageWithJMRadius:JMRadiusMake(_slider0.value, _slider1.value, _slider2.value, _slider3.value) imageURL:[NSURL URLWithString:@"https://oepjvpu5g.qnssl.com/avatar12.jpg"] placeholder:@"avatar" borderColor:[UIColor redColor] borderWidth:_slider4.value backgroundColor:[UIColor whiteColor] contentMode:UIViewContentModeScaleAspectFill size:CGSizeMake(self.view.frame.size.width - 40, 200)];
+    [_imageView jm_setImageWithJMRadius:JMRadiusMake(_slider0.value, _slider1.value, _slider2.value, _slider3.value) imageURL:[NSURL URLWithString:@"https://oepjvpu5g.qnssl.com/avatar12.jpg"] placeholder:[UIImage imageNamed:@"avatar"] borderColor:[UIColor redColor] borderWidth:_slider4.value backgroundColor:[UIColor whiteColor] contentMode:UIViewContentModeScaleAspectFill size:CGSizeMake(self.view.frame.size.width - 40, 200)];
     
 //    [_imageView jm_setImageWithJMRadius:JMRadiusMake(_slider0.value, _slider1.value, _slider2.value, _slider3.value) image:[UIImage imageNamed:@"avatar.jpg"] borderColor:[UIColor redColor] borderWidth:_slider4.value backgroundColor:[UIColor blueColor] contentMode:UIViewContentModeScaleAspectFill];
 }

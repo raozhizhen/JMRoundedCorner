@@ -58,14 +58,14 @@
     
     [_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20)
                                 imageURL:_avatarURL
-                             placeholder:@"avatar"
+                             placeholder:[UIImage imageNamed:@"avatar"]
                              borderColor:[UIColor redColor]
                              borderWidth:1
                          backgroundColor:[UIColor blueColor]
                              contentMode:UIViewContentModeScaleAspectFill
                                     size:CGSizeMake(40, 40)];
     
-    [_button jm_setImageWithJMRadius:JMRadiusMake(2, 10, 2, 10) imageURL:_avatarURL placeholder:@"avatar" borderColor:[UIColor redColor] borderWidth:1 backgroundColor:nil contentMode:UIViewContentModeScaleAspectFill size:_button.bounds.size forState:UIControlStateHighlighted];
+    [_button jm_setImageWithJMRadius:JMRadiusMake(2, 10, 2, 10) imageURL:_avatarURL placeholder:[UIImage imageNamed:@"avatar"] borderColor:[UIColor redColor] borderWidth:1 backgroundColor:nil contentMode:UIViewContentModeScaleAspectFill size:_button.bounds.size forState:UIControlStateHighlighted];
 }
 
 + (NSString *)cellReuseIdentifier {
