@@ -10,7 +10,7 @@
 #if __has_include(<YYWebImage/UIImageView+YYWebImage.h>)
 #import <YYWebImage/UIImageView+YYWebImage.h>
 #else
-#import "YYWebImage/UIImageView+YYWebImage.h"
+#import "UIImageView+YYWebImage.h"
 #endif
 
 @implementation UIImageView (JMRadius)

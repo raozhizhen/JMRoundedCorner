@@ -10,7 +10,7 @@
 #if __has_include(<YYWebImage/UIButton+YYWebImage.h>)
 #import <YYWebImage/UIButton+YYWebImage.h>
 #else
-#import "YYWebImage/UIButton+YYWebImage.h"
+#import "UIButton+YYWebImage.h"
 #endif
 
 
