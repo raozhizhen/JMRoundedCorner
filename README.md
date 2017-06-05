@@ -6,7 +6,7 @@
 [![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_7)&nbsp;
 [![BLOG](https://img.shields.io/badge/blog-raozhizhen.com-orange.svg?style=flat)](http://raozhizhen.com)&nbsp;
 
-
+iOS 9.0 之后 UIButton 设置圆角会触发离屏渲染，而 UIImageView 里 png 图片设置圆角不会触发离屏渲染了，所以你还在等什么，上 iOS 9 吧。
 ####避免离屏渲染
 
 如果你的 view 不需要让子视图超出部分不显示，且不需要给 view 的 image 绘制圆角，
