@@ -23,7 +23,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
 
-## 使用 JMRoundedCorner 来绘制圆角
+## 使用
 
 在工程的 Podfile 文件中添加如下行:
 
@@ -32,7 +32,7 @@ pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.gi
 pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
 ```
 
-在代码中引入
+在代码中引入:
 
 ``` objc
 #import <JMRoundedCorner/JMRoundedCorner.h>
@@ -43,24 +43,21 @@ pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag =
 
 ```objc
 [_avatarView jm_setImageWithCornerRadius:10 image:[UIImage imageNamed:@"avatar"]];
-```
-
-```objc
+// or
 [_avatarView jm_setImageWithCornerRadius:20 imageURL:_avatarURL placeholder:@"avatar" size:CGSizeMake(40, 40)];
 ```
 
-## 支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下，
+支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下：
 
 ```objc
-    [_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20)
-                                imageURL:_avatarURL
-                             placeholder:@"avatar"
-                             borderColor:[UIColor redColor]
-                             borderWidth:1
-                         backgroundColor:[UIColor blueColor]
-                             contentMode:UIViewContentModeScaleAspectFill
-                                    size:CGSizeMake(40, 40)];
-
+[_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20)
+                            imageURL:_avatarURL
+                         placeholder:@"avatar"
+                         borderColor:[UIColor redColor]
+                         borderWidth:1
+                     backgroundColor:[UIColor blueColor]
+                         contentMode:UIViewContentModeScaleAspectFill
+                                size:CGSizeMake(40, 40)];
 ```
 
 
@@ -81,7 +78,8 @@ pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag =
                         borderColor:(UIColor *)borderColor
                         borderWidth:(CGFloat)borderWidth
                     backgroundColor:(UIColor *)backgroundColor;
-- ```
+-
+```
 
 [控制器输出以下错误，这是 Xcode-7 的 BUG](https://forums.developer.apple.com/thread/13683)。
 
@@ -104,9 +102,8 @@ pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag =
 
 ## 感谢
 
-- [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
-
-- [Getting Pixels Onto the Screen](https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen/)
+* [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
+* [Getting Pixels Onto the Screen](https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen/)
 
 
 ## 联系我
