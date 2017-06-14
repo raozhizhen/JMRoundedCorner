@@ -7,33 +7,39 @@
 [![BLOG](https://img.shields.io/badge/blog-raozhizhen.com-orange.svg?style=flat)](http://raozhizhen.com)&nbsp;
 
 iOS 9.0 之后 UIButton 设置圆角会触发离屏渲染，而 UIImageView 里 png 图片设置圆角不会触发离屏渲染了，所以你还在等什么，上 iOS 9 吧。
-####避免离屏渲染
 
-如果你的 view 不需要让子视图超出部分不显示，且不需要给 view 的 image 绘制圆角，
 
-可以查看 cornerRadius 属性的注释：
+## 避免离屏渲染
 
-	By default, the corner radius does not apply to the image in the layer’s contents property; it applies only to the background color and border of the layer. However, setting the masksToBounds property to true causes the content to be clipped to the rounded corners.
+如果你的 view 不需要让子视图超出部分不显示，且不需要给 view 的 image 绘制圆角，可以查看 cornerRadius 属性的注释：
+
+> By default, the corner radius does not apply to the image in the layer’s contents property; it applies only to the background color and border of the layer. However, setting the masksToBounds property to true causes the content to be clipped to the rounded corners.
 
 这个属性会影响 layer 的背景颜色和 border，所以如下代码即可避免离屏渲染。
 
-```objc	
+```objc
 view.layer.cornerRadius = radius;
 view.layer.backgroundColor = backgroundColor.CGColor;
 ```
 
-####使用 JMRoundedCorner 来绘制圆角
+
+## 使用 JMRoundedCorner 来绘制圆角
+
+在工程的 Podfile 文件中添加如下行:
+
+```
+pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.6'
+pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
+```
+
+在代码中引入
+
+``` objc
+#import <JMRoundedCorner/JMRoundedCorner.h>
+```
 
 
-	platform :ios, '7.0'
-	
-	pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.6'
-	pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
-
-	#import "JMRoundedCorner.h"
-
-
-#####代码示例
+## 代码示例
 
 ```objc
 [_avatarView jm_setImageWithCornerRadius:10 image:[UIImage imageNamed:@"avatar"]];
@@ -43,11 +49,11 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 [_avatarView jm_setImageWithCornerRadius:20 imageURL:_avatarURL placeholder:@"avatar" size:CGSizeMake(40, 40)];
 ```
 
-##### 支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下，
+## 支持通过 JMRadius 设置4个角为不同的弧度，角度优先级为左上 > 右上 > 左下 > 右下，
 
 ```objc
     [_avatarView jm_setImageWithJMRadius:JMRadiusMake(20, 20, 20, 20)
-                                imageURL:_avatarURL 
+                                imageURL:_avatarURL
                              placeholder:@"avatar"
                              borderColor:[UIColor redColor]
                              borderWidth:1
@@ -57,24 +63,14 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 ```
 
-####联系我
 
-- QQ:337519524
-- 邮箱：raozhizhen@gmail.com
+## 性能上的优缺点
 
-####感谢
+* 优点：没有了离屏渲染，调整了 image 的像素大小以避免不必要的缩放；
+* 缺点：会造成图层混合，且因为只是绘制了一个带圆角的图片，所以不能使子视图超出圆角部分不显示。
 
-- [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
 
-- [Getting Pixels Onto the Screen](https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen/)
-
-####性能上的优缺点
-
-优点：没有了离屏渲染，调整了 image 的像素大小以避免不必要的缩放
-
-缺点：会造成图层混合，且因为只是绘制了一个带圆角的图片，所以不能使子视图超出圆角部分不显示。
-
-####注意事项
+## 注意事项
 
 内存会持续提升，是正常现象，点击 home 键内存会回到正常水平，并非内存泄漏，只是绘制的缓存，在内存不足时会自动释放。
 
@@ -88,28 +84,36 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 - ```
 
 [控制器输出以下错误，这是 Xcode-7 的 BUG](https://forums.developer.apple.com/thread/13683)。
+
 ```objc
 <Error>: CGContextSaveGState: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
 ```
 
-####更新日志
-- 2016/10/10 1.9.0 版本 : 依赖 **[YYWebImage](https://github.com/ibireme/YYWebImage)** 实现网络图片圆角处理和圆角图片缓存。
+## 更新日志
 
-- 2016/4/25  1.2.1 版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
+* 2016/10/10 1.9.0 版本 : 依赖 **[YYWebImage](https://github.com/ibireme/YYWebImage)** 实现网络图片圆角处理和圆角图片缓存。
+* 2016/4/25  1.2.1 版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
+* 2016/3/12  1.1.0 版本 : 接口带上了 jm_ 前缀，JMRadius 添加圆角优先级。
+* 2016/3/3   1.0.3 版本 : 修复 label 里如果没有汉字，文字就不显示的 BUG，以及做了使 view 落在像素点上的优化。
+* 2016/2/28  1.0.0 版本 ：发布正式版本。
+* 2016/2/26  0.0.4 版本 ：去掉了 size 参数及支持 JMRadius 设置4个角为不同的弧度。
+* 2016/2/25  0.0.3 版本 ：去掉了 UIImageView 这个中间控件。
+* 2016/2/24  0.0.2 版本 ：支持设置背景图片的绘制模式（cotentmode）。
+* 2016/2/23  0.0.1 版本 ：绘制一个圆角 image。
 
-- 2016/3/12  1.1.0 版本 : 接口带上了 jm_ 前缀，JMRadius 添加圆角优先级。
 
-- 2016/3/3   1.0.3 版本 : 修复 label 里如果没有汉字，文字就不显示的 BUG，以及做了使 view 落在像素点上的优化。
+## 感谢
 
-- 2016/2/28  1.0.0 版本 ：发布正式版本
+- [reviewcode.cn](http://www.reviewcode.cn/article.html?reviewId=7)
 
-- 2016/2/26  0.0.4 版本 ：去掉了 size 参数及支持 JMRadius 设置4个角为不同的弧度
+- [Getting Pixels Onto the Screen](https://www.objc.io/issues/3-views/moving-pixels-onto-the-screen/)
 
-- 2016/2/25  0.0.3 版本 ：去掉了 UIImageView 这个中间控件
 
-- 2016/2/24  0.0.2 版本 ：支持设置背景图片的绘制模式（cotentmode）
+## 联系我
 
-- 2016/2/23  0.0.1 版本 ：绘制一个圆角 image
+* QQ：337519524
+* 邮箱：raozhizhen@gmail.com
 
-####许可证
+## 许可证
+
 JMRoundedCorner 使用 MIT 许可证，详情见 LICENSE 文件。
