@@ -1,6 +1,5 @@
 # JMRoundedCorner
 
-
 [![LICENSE](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/raozhizhen/JMRoundedCorner/master/LICENSE)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/v/JMRoundedCorner.svg?style=flat)](http://cocoapods.org/?q=JMRoundedCorner)&nbsp;
 [![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_7)&nbsp;
@@ -27,7 +26,7 @@ view.layer.backgroundColor = backgroundColor.CGColor;
 
 在工程的 Podfile 文件中添加如下行:
 
-```
+```ruby
 pod 'JMRoundedCorner', :git => 'https://github.com/raozhizhen/JMRoundedCorner.git', :tag => '1.9.6'
 pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag => '1.0.5'
 ```
@@ -78,26 +77,25 @@ pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag =
                         borderColor:(UIColor *)borderColor
                         borderWidth:(CGFloat)borderWidth
                     backgroundColor:(UIColor *)backgroundColor;
--
 ```
 
-[控制器输出以下错误，这是 Xcode-7 的 BUG](https://forums.developer.apple.com/thread/13683)。
+控制器输出以下错误，这是 Xcode 7 的 [BUG](https://forums.developer.apple.com/thread/13683)。
 
-```objc
+```
 <Error>: CGContextSaveGState: invalid context 0x0. If you want to see the backtrace, please set CG_CONTEXT_SHOW_BACKTRACE environmental variable.
 ```
 
 ## 更新日志
 
-* 2016/10/10 1.9.0 版本 : 依赖 **[YYWebImage](https://github.com/ibireme/YYWebImage)** 实现网络图片圆角处理和圆角图片缓存。
-* 2016/4/25  1.2.1 版本 : 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
-* 2016/3/12  1.1.0 版本 : 接口带上了 jm_ 前缀，JMRadius 添加圆角优先级。
-* 2016/3/3   1.0.3 版本 : 修复 label 里如果没有汉字，文字就不显示的 BUG，以及做了使 view 落在像素点上的优化。
-* 2016/2/28  1.0.0 版本 ：发布正式版本。
-* 2016/2/26  0.0.4 版本 ：去掉了 size 参数及支持 JMRadius 设置4个角为不同的弧度。
-* 2016/2/25  0.0.3 版本 ：去掉了 UIImageView 这个中间控件。
-* 2016/2/24  0.0.2 版本 ：支持设置背景图片的绘制模式（cotentmode）。
-* 2016/2/23  0.0.1 版本 ：绘制一个圆角 image。
+* 2016/10/10 1.9.0 版本: 依赖 **[YYWebImage](https://github.com/ibireme/YYWebImage)** 实现网络图片圆角处理和圆角图片缓存。
+* 2016/4/25  1.2.1 版本: 使用 NSOperationQueue 代替 dispatch_queue，当重复设置圆角的时候会自动 cancel 上一次操作，感谢 **[kudocc](https://github.com/kudocc)** 的 pull request。
+* 2016/3/12  1.1.0 版本: 接口带上了 jm_ 前缀，JMRadius 添加圆角优先级。
+* 2016/3/3   1.0.3 版本: 修复 label 里如果没有汉字，文字就不显示的 BUG，以及做了使 view 落在像素点上的优化。
+* 2016/2/28  1.0.0 版本：发布正式版本。
+* 2016/2/26  0.0.4 版本：去掉了 size 参数及支持 JMRadius 设置4个角为不同的弧度。
+* 2016/2/25  0.0.3 版本：去掉了 UIImageView 这个中间控件。
+* 2016/2/24  0.0.2 版本：支持设置背景图片的绘制模式（cotentmode）。
+* 2016/2/23  0.0.1 版本：绘制一个圆角 image。
 
 
 ## 感谢
@@ -110,6 +108,7 @@ pod 'YYWebImage', :git => 'https://github.com/raozhizhen/YYWebImage.git', :tag =
 
 * QQ：337519524
 * 邮箱：raozhizhen@gmail.com
+
 
 ## 许可证
 
