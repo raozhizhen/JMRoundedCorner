@@ -23,7 +23,8 @@
 }
 
 + (UIImage *)jm_setJMRadius:(JMRadius)radius image:(UIImage *)image size:(CGSize)size borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor withContentMode:(UIViewContentMode)contentMode {
-    
+    if (size.width <= 0 || size.height <= 0) return nil;
+
     if (!backgroundColor) {
         backgroundColor = [UIColor whiteColor];
     }
@@ -74,6 +75,8 @@ static inline CGFloat minimum(CGFloat a, CGFloat b, CGFloat c) {
 }
 
 - (UIImage *)scaleToSize:(CGSize)size withContentMode:(UIViewContentMode)contentMode backgroundColor:(UIColor *)backgroundColor {
+    if (size.width <= 0 || size.height <= 0) return nil;
+
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
